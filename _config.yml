@@ -3,11 +3,11 @@
 # ----------------------- #
 
 url: http://shoestringpsycholing.github.com
-title: My Dorky Octopress Blog
-subtitle: A blogging framework for hackers.
+title: Shoestring Psycholing
+subtitle :A blog about language learning, language science, and reproducible research
 author: Scott
 simple_search: http://google.com/search
-description:
+description: A blog about language learning, language science, and reproducible research
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -96,4 +96,4 @@ disqus_show_comment_count: false
 google_analytics_tracking_id:
 
 # Facebook Like
-facebook_like: false
+facebook_like: true
