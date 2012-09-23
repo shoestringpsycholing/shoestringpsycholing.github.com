@@ -4,7 +4,7 @@
   <title><![CDATA[Shoestring Psycholing]]></title>
   <link href="http://shoestringpsycholing.github.com/atom.xml" rel="self"/>
   <link href="http://shoestringpsycholing.github.com/"/>
-  <updated>2012-09-22T21:29:54-04:00</updated>
+  <updated>2012-09-23T09:12:24-04:00</updated>
   <id>http://shoestringpsycholing.github.com/</id>
   <author>
     <name><![CDATA[Scott Jackson]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[This is a trial to see if RSS works]]></title>
+    <link href="http://shoestringpsycholing.github.com/blog/2012/09/23/this-is-a-trial-to-see-if-rss-works/"/>
+    <updated>2012-09-23T09:10:00-04:00</updated>
+    <id>http://shoestringpsycholing.github.com/blog/2012/09/23/this-is-a-trial-to-see-if-rss-works</id>
+    <content type="html"><![CDATA[<h1>This is a trial</h1>
+
+<p>I wonder if it worked.</p>
+
+<h2>How long will it take for Google Reader to inform me?</h2>
+
+<p>I just don&#8217;t know, but I&#8217;ll find out!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Third post from the future]]></title>
@@ -32,7 +47,7 @@ ggplot(cars, aes(mpg)) + geom_histogram()
 
 <h2>Another, cooler code block</h2>
 
-<p>Wait, there&#8217;s more!</p>
+<p>With the % sign</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>

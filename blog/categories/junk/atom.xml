@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: junk | Shoestring Psycholing]]></title>
+  <link href="http://shoestringpsycholing.github.com/blog/categories/junk/atom.xml" rel="self"/>
+  <link href="http://shoestringpsycholing.github.com/"/>
+  <updated>2012-09-23T09:12:24-04:00</updated>
+  <id>http://shoestringpsycholing.github.com/</id>
+  <author>
+    <name><![CDATA[Scott Jackson]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[This is a trial to see if RSS works]]></title>
+    <link href="http://shoestringpsycholing.github.com/blog/2012/09/23/this-is-a-trial-to-see-if-rss-works/"/>
+    <updated>2012-09-23T09:10:00-04:00</updated>
+    <id>http://shoestringpsycholing.github.com/blog/2012/09/23/this-is-a-trial-to-see-if-rss-works</id>
+    <content type="html"><![CDATA[<h1>This is a trial</h1>
+
+<p>I wonder if it worked.</p>
+
+<h2>How long will it take for Google Reader to inform me?</h2>
+
+<p>I just don't know, but I'll find out!</p>
+]]></content>
+  </entry>
+  
+</feed>
