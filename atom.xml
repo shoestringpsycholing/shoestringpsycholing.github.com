@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Shoestring Psycholing]]></title>
+  <link href="http://shoestringpsycholing.github.com/atom.xml" rel="self"/>
+  <link href="http://shoestringpsycholing.github.com/"/>
+  <updated>2012-09-22T21:29:54-04:00</updated>
+  <id>http://shoestringpsycholing.github.com/</id>
+  <author>
+    <name><![CDATA[Scott Jackson]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Third post from the future]]></title>
+    <link href="http://shoestringpsycholing.github.com/blog/2012/09/18/third-post-from-the-future/"/>
+    <updated>2012-09-18T20:29:00-04:00</updated>
+    <id>http://shoestringpsycholing.github.com/blog/2012/09/18/third-post-from-the-future</id>
+    <content type="html"><![CDATA[<h1>What the heck is going on here?</h1>
+
+<h2>A code block</h2>
+
+<p>Let&#8217;s see&#8230;</p>
+
+<pre><code>library(ggplot2)
+ggplot(cars, aes(mpg)) + geom_histogram()
+</code></pre>
+
+<p>Yep, that&#8217;s about it!</p>
+
+<h2>Another, cooler code block</h2>
+
+<p>Wait, there&#8217;s more!</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>x &lt;- rnorm(1000)
+</span><span class='line'>y &lt;- rnorm(1000)
+</span><span class='line'>t.test(x, y)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Did this work?</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Another post]]></title>
+    <link href="http://shoestringpsycholing.github.com/blog/2012/09/16/another-post/"/>
+    <updated>2012-09-16T22:38:00-04:00</updated>
+    <id>http://shoestringpsycholing.github.com/blog/2012/09/16/another-post</id>
+    <content type="html"><![CDATA[<p>What is this?  Is this another post?  It can&#8217;t be!</p>
+
+<p>-s</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[First post]]></title>
+    <link href="http://shoestringpsycholing.github.com/blog/2012/09/16/first-post/"/>
+    <updated>2012-09-16T20:29:00-04:00</updated>
+    <id>http://shoestringpsycholing.github.com/blog/2012/09/16/first-post</id>
+    <content type="html"><![CDATA[<h1>Helloooo world!</h1>
+
+<p>So&#8230; this is a blog!</p>
+
+<ul>
+<li>Bayesian stats</li>
+<li>reproducible research</li>
+<li>language learning</li>
+<li>linguistics</li>
+<li>psycholinguistics</li>
+</ul>
+
+
+<p>Hooray!</p>
+]]></content>
+  </entry>
+  
+</feed>
