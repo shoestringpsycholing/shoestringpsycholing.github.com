@@ -1,11 +1,25 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://shoestringpsycholing.github.com/blog/2012/09/16/first-post/</loc>
+        <lastmod>2012-09-16T21:14:06-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://shoestringpsycholing.github.com/blog/2012/09/16/another-post/</loc>
+        <lastmod>2012-09-16T22:40:02-04:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://shoestringpsycholing.github.com/blog/2012/09/18/third-post-from-the-future/
+        </loc>
+        <lastmod>2012-09-22T21:25:42-04:00</lastmod>
+    </url>
+    <url>
         <loc>http://shoestringpsycholing.github.com/blog/archives/</loc>
-        <lastmod>2012-09-14T21:20:04-04:00</lastmod>
+        <lastmod>2012-09-22T21:25:42-04:00</lastmod>
     </url>
     <url>
         <loc>http://shoestringpsycholing.github.com/</loc>
-        <lastmod>2012-09-14T21:20:04-04:00</lastmod>
+        <lastmod>2012-09-22T21:25:42-04:00</lastmod>
     </url>
 </urlset>
