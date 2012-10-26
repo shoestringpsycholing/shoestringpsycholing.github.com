@@ -4,7 +4,7 @@
   <title><![CDATA[Category: teaching | Shoestring Psycholing]]></title>
   <link href="http://shoestringpsycholing.github.com/blog/categories/teaching/atom.xml" rel="self"/>
   <link href="http://shoestringpsycholing.github.com/"/>
-  <updated>2012-10-25T21:38:48-04:00</updated>
+  <updated>2012-10-25T22:24:57-04:00</updated>
   <id>http://shoestringpsycholing.github.com/</id>
   <author>
     <name><![CDATA[Scott Jackson]]></name>
@@ -26,7 +26,7 @@
 
 <p>I had a nice plan.  Nice in my head, at least.  I'd get through a few of the basics, and then show off two really great things: the ease of merging data sets (for example, getting item and subject info merged into some raw data), and some of the nice ways to get some summary stats broken down by conditions.  Instead, we got tripped up by dumb things like "where's the file?" and "how do I change the working directory?".  "Dumb" in the sense of "dumb of me to not be better prepared for those," not that it's dumb to have those problems. Those problems are always the first ones to make people stumble and walk away, frustrated.</p>
 
-<p>Luckily, I have anouther couple of chances to redeem myself.  We'll see how it goes.</p>
+<p>Luckily, I have another couple of chances to redeem myself.  We'll see how it goes.</p>
 
 <p>If you want to follow along, you can check out my "startR" repo here on GitHub.  <a href="https://github.com/shoestringpsycholing/startR">Here's a link to it</a>, but there may also be a link off in the right hand bar of the blog.  Comments for improvements welcome!  I think my plan next time is to recap a little, but to try to walk through the workflow a little better.  I think one of the biggest initial hurdles is getting a sense of the R "ecology," for lack of a better term.</p>
 ]]></content>
