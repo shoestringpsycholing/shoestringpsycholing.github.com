@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: R | Shoestring Psycholing]]></title>
-  <link href="http://shoestringpsycholing.github.com/blog/categories/r/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Bayesian | Shoestring Psycholing]]></title>
+  <link href="http://shoestringpsycholing.github.com/blog/categories/bayesian/atom.xml" rel="self"/>
   <link href="http://shoestringpsycholing.github.com/"/>
   <updated>2012-11-02T07:51:33-04:00</updated>
   <id>http://shoestringpsycholing.github.com/</id>
@@ -43,40 +43,6 @@
 <p>This is a very short chapter, but a nice one to have.  It walks you through the structure of the book, and tries to assuage your fears that this book might be too much for you. In terms of prerequisites, Kruschke says that you don't really need any programming experience, and as long as you have a "dim knowledge of basic calculus," you should be fine.  I'm pretty sure my R skills will be up to snuff, but I will be a good test for his claims about calculus.  My knowledge (specifically, my memory of calculus from my high school course um... 18(!) years ago) is about as dim as it gets.  This chapter also gets you an intro to Kruschke's writing style, which is pretty goofy.  I mean that in a good way, though.  It's very conversational, and peppered with plenty of corny humor.  I imagine Kruschke's students groaning a lot (maybe on the inside, if they're respectful) in class, but staying awake because of it, and I suspect this will play out similarly in the book. I think this is probably a good thing, but we'll see.</p>
 
 <p>One note, I didn't do an exhaustive search, but Kruschke gives HTTP addresses for both the Elsevier site and his personal site, and it looks like his personal site is where you should go to get programs, etc.  It's a little more scattered, visually, but his site is much more complete, and looks like it has a bunch of updated versions of programs, exercises, etc., where the Elsevier site has the more "basic" version of the code.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[NaBloPoMo and More Starting R]]></title>
-    <link href="http://shoestringpsycholing.github.com/blog/2012/11/01/nablopomo-and-more-r/"/>
-    <updated>2012-11-01T20:22:00-04:00</updated>
-    <id>http://shoestringpsycholing.github.com/blog/2012/11/01/nablopomo-and-more-r</id>
-    <content type="html"><![CDATA[<p>I'm using <a href="http://www.blogher.com/blogher-topics/blogging-social-media/nablopomo">NaBloPoMo</a> as an excuse to kick-start this blog into a little more action.  Let's see if I can keep it up the whole month...</p>
-
-<p>Today was the second session of an <a href="http://shoestringpsycholing.github.com/blog/2012/10/25/starting-r/">R tutorial for beginners</a>.  This one went a bit more smoothly, I think.  I'll update my work-in-progress <a href="https://github.com/shoestringpsycholing/startR">startR</a> repo, if you're interested in the script.  I've done a few of these tutorial sessions now (for different audiences), and this one was the first time I really used an R script as a "script" in the more general sense of "scripted presentation."  In the past, I've had a kind of outline of things I want to cover, and I've usually run code, etc. to make sure things would work as expected beforehand, but when I'm actually in the middle of a tutorial, things inevitably go a little awry.  For me, usually in the form of annoying typos, in forgetting something or getting a little sidetracked, or sometimes even blanking on a particular function (last session I tried using <code>getwd()</code> and <code>setwd()</code>, but I rarely use those, and I was just sure they were <code>get.wd()</code> and <code>set.wd()</code>, and it totally threw me for a loop).</p>
-
-<p>So this time I literally typed out every single thing in advance, in "walk-through" style, into a <code>.R</code> script, even things you'd normally never put in a script, like <code>head()</code> or <code>summary()</code>, and I think it really helped.  Not only did it save time and frustration by saving me from my inevitable typos, it helped me stay on track, and reminded me of all the little points I wanted to make, and the sequence in which I planned to make them.</p>
-
-<p>I didn't get a whole lot of immediate feedback, but people seemed to be following a little better, and in general the reaction seemed more positive. Of course, even the most effective demo or lecture is only the very beginning of the learning process.  But I think a clear demo, set up to be run as an actual walk-through, is a pretty efficient way to present a fair amount of code without getting people lost in the process of having to fix your own mistakes on the fly. And I think when you're presenting to a group of more than just a couple of people (I think there were at least 20 or so tonight), a clear demo is about the best you can hope for.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Starting R]]></title>
-    <link href="http://shoestringpsycholing.github.com/blog/2012/10/25/starting-r/"/>
-    <updated>2012-10-25T21:13:00-04:00</updated>
-    <id>http://shoestringpsycholing.github.com/blog/2012/10/25/starting-r</id>
-    <content type="html"><![CDATA[<p><a href="http://www.r-project.org/">R</a> is a wonderful thing. It's also managed to consume my life, for better or for worse. I've been learning and working with R for about 5 years now, since finishing my PhD, and it's had a profound impact on my work, in a good way.</p>
-
-<p>So naturally, I like to spread the love.  I've gotten a few friends hooked, and I like to help out other folks with what I've learned when I can.  Tonight I had a nice opportunity to give an intro tutorial to a group of grad students.  Boy, are my teaching chops rusty!</p>
-
-<p>It went okay, maybe, possibly.  I got slowed down by some of the classic blunders (no, not a "land war in Asia," but maybe almost as bad).  But it's an interesting issue, really.  There are literally dozens and dozens of "intros to R" that you can find on the web, in print, or both.  Why try to make another one?  What can be improved on?  Why is it so difficult?</p>
-
-<p>I had a nice plan.  Nice in my head, at least.  I'd get through a few of the basics, and then show off two really great things: the ease of merging data sets (for example, getting item and subject info merged into some raw data), and some of the nice ways to get some summary stats broken down by conditions.  Instead, we got tripped up by dumb things like "where's the file?" and "how do I change the working directory?".  "Dumb" in the sense of "dumb of me to not be better prepared for those," not that it's dumb to have those problems. Those problems are always the first ones to make people stumble and walk away, frustrated.</p>
-
-<p>Luckily, I have another couple of chances to redeem myself.  We'll see how it goes.</p>
-
-<p>If you want to follow along, you can check out my "startR" repo here on GitHub.  <a href="https://github.com/shoestringpsycholing/startR">Here's a link to it</a>, but there may also be a link off in the right hand bar of the blog.  Comments for improvements welcome!  I think my plan next time is to recap a little, but to try to walk through the workflow a little better.  I think one of the biggest initial hurdles is getting a sense of the R "ecology," for lack of a better term.</p>
 ]]></content>
   </entry>
   
