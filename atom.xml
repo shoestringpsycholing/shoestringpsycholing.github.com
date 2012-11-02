@@ -4,7 +4,7 @@
   <title><![CDATA[Shoestring Psycholing]]></title>
   <link href="http://shoestringpsycholing.github.com/atom.xml" rel="self"/>
   <link href="http://shoestringpsycholing.github.com/"/>
-  <updated>2012-10-25T22:24:57-04:00</updated>
+  <updated>2012-11-01T21:20:42-04:00</updated>
   <id>http://shoestringpsycholing.github.com/</id>
   <author>
     <name><![CDATA[Scott Jackson]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[NaBloPoMo and More Starting R]]></title>
+    <link href="http://shoestringpsycholing.github.com/blog/2012/11/01/nablopomo-and-more-r/"/>
+    <updated>2012-11-01T20:22:00-04:00</updated>
+    <id>http://shoestringpsycholing.github.com/blog/2012/11/01/nablopomo-and-more-r</id>
+    <content type="html"><![CDATA[<p>I&#8217;m using <a href="http://www.blogher.com/blogher-topics/blogging-social-media/nablopomo">NaBloPoMo</a> as an excuse to kick-start this blog into a little more action.  Let&#8217;s see if I can keep it up the whole month&#8230;</p>
+
+<p>Today was the second session of an <a href="http://shoestringpsycholing.github.com/blog/2012/10/25/starting-r/">R tutorial for beginners</a>.  This one went a bit more smoothly, I think.  I&#8217;ll update my work-in-progress <a href="https://github.com/shoestringpsycholing/startR">startR</a> repo, if you&#8217;re interested in the script.  I&#8217;ve done a few of these tutorial sessions now (for different audiences), and this one was the first time I really used an R script as a &#8220;script&#8221; in the more general sense of &#8220;scripted presentation.&#8221;  In the past, I&#8217;ve had a kind of outline of things I want to cover, and I&#8217;ve usually run code, etc. to make sure things would work as expected beforehand, but when I&#8217;m actually in the middle of a tutorial, things inevitably go a little awry.  For me, usually in the form of annoying typos, in forgetting something or getting a little sidetracked, or sometimes even blanking on a particular function (last session I tried using <code>getwd()</code> and <code>setwd()</code>, but I rarely use those, and I was just sure they were <code>get.wd()</code> and <code>set.wd()</code>, and it totally threw me for a loop).</p>
+
+<p>So this time I literally typed out every single thing in advance, in &#8220;walk-through&#8221; style, into a <code>.R</code> script, even things you&#8217;d normally never put in a script, like <code>head()</code> or <code>summary()</code>, and I think it really helped.  Not only did it save time and frustration by saving me from my inevitable typos, it helped me stay on track, and reminded me of all the little points I wanted to make, and the sequence in which I planned to make them.</p>
+
+<p>I didn&#8217;t get a whole lot of immediate feedback, but people seemed to be following a little better, and in general the reaction seemed more positive. Of course, even the most effective demo or lecture is only the very beginning of the learning process.  But I think a clear demo, set up to be run as an actual walk-through, is a pretty efficient way to present a fair amount of code without getting people lost in the process of having to fix your own mistakes on the fly. And I think when you&#8217;re presenting to a group of more than just a couple of people (I think there were at least 20 or so tonight), a clear demo is about the best you can hope for.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Starting R]]></title>
