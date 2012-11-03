@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Kruschke Chapter 2 - Shoestring Psycholing</title>
+  <meta name="author" content="Scott Jackson">
+
+  
+  <meta name="description" content="(Here&#8217;s a link to the intro and Chapter 1 discussion) In this chapter, Kruschke does a nice job of succinctly laying out the primary goals of &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://shoestringpsycholing.github.com/blog/2012/11/03/kruschke-chapter-2/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Shoestring Psycholing" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Shoestring Psycholing</a></h1>
+  
+    <h2>A language science blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:shoestringpsycholing.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Kruschke Chapter 2</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-03T13:48:00-04:00" pubdate data-updated="true">Nov 3<span>rd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>(<a href="http://shoestringpsycholing.github.com/blog/2012/11/02/naive-bayesian">Here&#8217;s a link to the intro and Chapter 1 discussion</a>)</p>
+
+<p>In this chapter, Kruschke does a nice job of succinctly laying out the primary goals of statistical inferencing, and gives a pretty clear, intuitive description of what prior and posterior beliefs are about. To paraphrase in a nutshell, prior beliefs represent our beliefs (including level of uncertainty in those beliefs) before data collection or observation, and posterior beliefs reflect what we believe after taking data into account.</p>
+
+<p>This chapter strikes me as a nice place to do some discussions in a class about what the goals of statistics are, the idea of updating beliefs via statistics, etc.  For example, I can easily see some people being uneasy about the idea of mathematical formulas determining beliefs, in a philosophical sense. Kruschke does touch on this briefly, mentioning basically that beliefs that cannot be influenced by data are essentially &#8220;out of bounds,&#8221; but he does so in kind of a flippant way. I think even if we are talking about scientific beliefs, the idea of an analysis telling you what you <em>should</em> believe (and Kruschke does use the word &#8220;should&#8221;) can be uncomfortable, and not entirely realistic.</p>
+
+<p>To clarify, in case you&#8217;re new to Bayesian inference, one of the concepts behind Bayesian inference is that it gives a clear mathematical formulation for how beliefs should be changed (there&#8217;s that &#8220;should&#8221; again), given the prior beliefs and the data. For example, a detective might be able to express her beliefs about suspects in terms of relative probabilities. So maybe if a woman was murdered, there could be a relatively high prior belief that it was the jealous ex-husband, and relatively low prior belief that it was the woman&#8217;s 2-year-old daughter. If the detective finds the daughter&#8217;s fingerprints on the murder weapon, it may only slightly affect her (nearly zero) belief that the daughter did it, where finding the husband&#8217;s fingerprints may make a big difference. The point is that Bayesian inference gives a mathematical framework for actually computing how beliefs should be updated. But given what people often mean when they talk about &#8220;beliefs,&#8221; the idea of a mathematical system telling you how you should change your beliefs given some data might be uncomfortable.</p>
+
+<p>Of course, once you get a little farther, the Bayesian concept of &#8220;belief&#8221; is pretty circumscribed and clear, and it doesn&#8217;t quite mean what most people mean by &#8220;belief,&#8221; but I could see this point in the book being a good place for some discussion along these lines in a class. Especially because it&#8217;s such a different kind of approach compared to the null-hypothesis significance testing (NHST) way of thinking about things.  If NHST is new to you, too, the NHST way of thinking about things is more that you approach a set of data and ask &#8220;what are the odds that this data occurred this way purely by chance?&#8221;  And if you decide that the odds are sufficiently low (by convention in many fields, less than 5%, or 1-in-20 odds), then you draw the conclusion that the &#8220;null hypothesis&#8221; (the hypothesis that whatever you&#8217;re looking at happened just by chance) is probably false. This comes up more directly later in the book, but that&#8217;s the gist, if all this stats stuff is new to you.</p>
+
+<p>But back to the three goals as Kruschke presents them: (1) estimation of parameter values, (2) prediction of data values, and (3) model comparison.  Depending on the context of who&#8217;s reading this book, I could see the benefit of some more examples of these things, but the presentation in the text is nice and clear.  Kruschke makes an interesting point about Bayesian analysis &#8220;intrinsically adjust[ing] for model complexity&#8221; (p. 14), but the significance of this is likely to be lost on anyone not familiar with model comparison in other (e.g., NHST) methods. In terms of the audience of the book, I think these points will be much more interesting and meaningful to anyone who&#8217;s actually done data analysis before, and they may fly right by someone who&#8217;s relatively new to it.</p>
+
+<p>Finally, Kruschke includes a short intro to the <a href="http://www.r-project.org/">R software and programming language</a>. There&#8217;s not really a great way to introduce R in 7 pages, but Kruschke does a decent job of giving the minimum needed to help people get the ball rolling.  Again, here&#8217;s another spot where his <a href="http://www.indiana.edu/~kruschke/DoingBayesianDataAnalysis/">website</a> outpaces the book already, because the website makes the excellent recommendation of using <a href="http://www.rstudio.org/">RStudio</a>, instead of the (IMHO) inferior  <a href="http://www.sciviews.org/Tinn-R/">Tinn-R</a>. No knock against the fine folks who put together Tinn-R.  This is just one of those things that makes it hard to write static books about R.  RStudio is a pretty new player in the GUI game, but it&#8217;s quickly become the favorite for general users for a lot of good reasons.  In any case, Kruschke will not make you an expert at R. But he gives you enough to run through the code in the book, cookbook-style. I suspect for anyone needing to work with real data, some additional resources or expertise in R will be needed to go from raw data to Bayesian analysis. <strong>R pet peeve alert:</strong> throughout the book, Kruschke uses the style of using <code>=</code> instead of <code>&lt;-</code> for assignment. This may help many people coming from other programming languages, but it&#8217;s a little non-idiomatic for R.  But this is a pretty inconsequential pet peeve, and since the book is about Bayesian analysis, not R coding style, I think overall this is not a bad choice.</p>
+
+<p>In summary, it&#8217;s a good chapter and covers a bunch of introductory bases.  Depending on who&#8217;s reading the book, and what the goals are (class textbook vs. self-study), a good amount of supplementary material or discussion could be useful, or it could be fine to just skim this chapter to get on to the meatier stuff.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Scott Jackson</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-03T13:48:00-04:00" pubdate data-updated="true">Nov 3<span>rd</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bayesian/'>Bayesian</a>, <a class='category' href='/blog/categories/kruschke/'>Kruschke</a>, <a class='category' href='/blog/categories/r/'>R</a>, <a class='category' href='/blog/categories/statistics/'>statistics</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://shoestringpsycholing.github.com/blog/2012/11/03/kruschke-chapter-2/" data-via="" data-counturl="http://shoestringpsycholing.github.com/blog/2012/11/03/kruschke-chapter-2/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="large"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/11/02/naive-bayesian/" title="Previous Post: Naive Bayesian">&laquo; Naive Bayesian</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/11/03/kruschke-chapter-2/">Kruschke Chapter 2</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/02/naive-bayesian/">Naive Bayesian</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/01/nablopomo-and-more-r/">NaBloPoMo and More Starting R</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/25/starting-r/">Starting R</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/25/obligatory-first-post/">Obligatory first post</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/shoestringpsycholing">@shoestringpsycholing</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'shoestringpsycholing',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Scott Jackson -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'shoestringpsycholing';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://shoestringpsycholing.github.com/blog/2012/11/03/kruschke-chapter-2/';
+        var disqus_url = 'http://shoestringpsycholing.github.com/blog/2012/11/03/kruschke-chapter-2/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: R | Shoestring Psycholing]]></title>
   <link href="http://shoestringpsycholing.github.com/blog/categories/r/atom.xml" rel="self"/>
   <link href="http://shoestringpsycholing.github.com/"/>
-  <updated>2012-11-02T07:51:33-04:00</updated>
+  <updated>2012-11-03T13:57:47-04:00</updated>
   <id>http://shoestringpsycholing.github.com/</id>
   <author>
     <name><![CDATA[Scott Jackson]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Kruschke Chapter 2]]></title>
+    <link href="http://shoestringpsycholing.github.com/blog/2012/11/03/kruschke-chapter-2/"/>
+    <updated>2012-11-03T13:48:00-04:00</updated>
+    <id>http://shoestringpsycholing.github.com/blog/2012/11/03/kruschke-chapter-2</id>
+    <content type="html"><![CDATA[<p>(<a href="http://shoestringpsycholing.github.com/blog/2012/11/02/naive-bayesian">Here's a link to the intro and Chapter 1 discussion</a>)</p>
+
+<p>In this chapter, Kruschke does a nice job of succinctly laying out the primary goals of statistical inferencing, and gives a pretty clear, intuitive description of what prior and posterior beliefs are about. To paraphrase in a nutshell, prior beliefs represent our beliefs (including level of uncertainty in those beliefs) before data collection or observation, and posterior beliefs reflect what we believe after taking data into account.</p>
+
+<p>This chapter strikes me as a nice place to do some discussions in a class about what the goals of statistics are, the idea of updating beliefs via statistics, etc.  For example, I can easily see some people being uneasy about the idea of mathematical formulas determining beliefs, in a philosophical sense. Kruschke does touch on this briefly, mentioning basically that beliefs that cannot be influenced by data are essentially "out of bounds," but he does so in kind of a flippant way. I think even if we are talking about scientific beliefs, the idea of an analysis telling you what you <em>should</em> believe (and Kruschke does use the word "should") can be uncomfortable, and not entirely realistic.</p>
+
+<p>To clarify, in case you're new to Bayesian inference, one of the concepts behind Bayesian inference is that it gives a clear mathematical formulation for how beliefs should be changed (there's that "should" again), given the prior beliefs and the data. For example, a detective might be able to express her beliefs about suspects in terms of relative probabilities. So maybe if a woman was murdered, there could be a relatively high prior belief that it was the jealous ex-husband, and relatively low prior belief that it was the woman's 2-year-old daughter. If the detective finds the daughter's fingerprints on the murder weapon, it may only slightly affect her (nearly zero) belief that the daughter did it, where finding the husband's fingerprints may make a big difference. The point is that Bayesian inference gives a mathematical framework for actually computing how beliefs should be updated. But given what people often mean when they talk about "beliefs," the idea of a mathematical system telling you how you should change your beliefs given some data might be uncomfortable.</p>
+
+<p>Of course, once you get a little farther, the Bayesian concept of "belief" is pretty circumscribed and clear, and it doesn't quite mean what most people mean by "belief," but I could see this point in the book being a good place for some discussion along these lines in a class. Especially because it's such a different kind of approach compared to the null-hypothesis significance testing (NHST) way of thinking about things.  If NHST is new to you, too, the NHST way of thinking about things is more that you approach a set of data and ask "what are the odds that this data occurred this way purely by chance?"  And if you decide that the odds are sufficiently low (by convention in many fields, less than 5%, or 1-in-20 odds), then you draw the conclusion that the "null hypothesis" (the hypothesis that whatever you're looking at happened just by chance) is probably false. This comes up more directly later in the book, but that's the gist, if all this stats stuff is new to you.</p>
+
+<p>But back to the three goals as Kruschke presents them: (1) estimation of parameter values, (2) prediction of data values, and (3) model comparison.  Depending on the context of who's reading this book, I could see the benefit of some more examples of these things, but the presentation in the text is nice and clear.  Kruschke makes an interesting point about Bayesian analysis "intrinsically adjust[ing] for model complexity" (p. 14), but the significance of this is likely to be lost on anyone not familiar with model comparison in other (e.g., NHST) methods. In terms of the audience of the book, I think these points will be much more interesting and meaningful to anyone who's actually done data analysis before, and they may fly right by someone who's relatively new to it.</p>
+
+<p>Finally, Kruschke includes a short intro to the <a href="http://www.r-project.org/">R software and programming language</a>. There's not really a great way to introduce R in 7 pages, but Kruschke does a decent job of giving the minimum needed to help people get the ball rolling.  Again, here's another spot where his <a href="http://www.indiana.edu/~kruschke/DoingBayesianDataAnalysis/">website</a> outpaces the book already, because the website makes the excellent recommendation of using <a href="http://www.rstudio.org/">RStudio</a>, instead of the (IMHO) inferior  <a href="http://www.sciviews.org/Tinn-R/">Tinn-R</a>. No knock against the fine folks who put together Tinn-R.  This is just one of those things that makes it hard to write static books about R.  RStudio is a pretty new player in the GUI game, but it's quickly become the favorite for general users for a lot of good reasons.  In any case, Kruschke will not make you an expert at R. But he gives you enough to run through the code in the book, cookbook-style. I suspect for anyone needing to work with real data, some additional resources or expertise in R will be needed to go from raw data to Bayesian analysis. <strong>R pet peeve alert:</strong> throughout the book, Kruschke uses the style of using <code>=</code> instead of <code>&lt;-</code> for assignment. This may help many people coming from other programming languages, but it's a little non-idiomatic for R.  But this is a pretty inconsequential pet peeve, and since the book is about Bayesian analysis, not R coding style, I think overall this is not a bad choice.</p>
+
+<p>In summary, it's a good chapter and covers a bunch of introductory bases.  Depending on who's reading the book, and what the goals are (class textbook vs. self-study), a good amount of supplementary material or discussion could be useful, or it could be fine to just skim this chapter to get on to the meatier stuff.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Naive Bayesian]]></title>
