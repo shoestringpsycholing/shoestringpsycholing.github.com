@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: reproducibility | Shoestring Psycholing]]></title>
+  <link href="http://shoestringpsycholing.github.com/blog/categories/reproducibility/atom.xml" rel="self"/>
+  <link href="http://shoestringpsycholing.github.com/"/>
+  <updated>2012-11-04T20:29:13-05:00</updated>
+  <id>http://shoestringpsycholing.github.com/</id>
+  <author>
+    <name><![CDATA[Scott Jackson]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Reproducibility of new methods]]></title>
+    <link href="http://shoestringpsycholing.github.com/blog/2012/11/04/reproducibility-of-new-methods/"/>
+    <updated>2012-11-04T19:56:00-05:00</updated>
+    <id>http://shoestringpsycholing.github.com/blog/2012/11/04/reproducibility-of-new-methods</id>
+    <content type="html"><![CDATA[<p>One of the main themes I'd like to talk about in this blog is the notion of <em>reproducibility</em> in research. I'll leave more in-depth discussion of the fundamental ideas for other posts; today I just want to comment on something that occurred to me while working on a paper re-submission, and I think it's also really relevant to the ongoing Bayesian stats posts as well. The issue is: <strong>new methods are inherently less reproducible</strong>.  Let me explain.</p>
+
+<p><a href="http://www.youtube.com/watch?v=GZYhDMCOyww">No, there is too much. Let me sum up.</a></p>
+
+<p>These days, mixed-effects models are rapidly overtaking the traditional ANOVA in some parts of the field. If the <a href="http://www.indiana.edu/~kruschke/AnOpenLetter.htm">Bayesians have their way</a> (see also <a href="http://shoestringpsycholing.github.com/blog/2012/11/02/naive-bayesian/">this post</a>), then Bayesian data analysis may make a similar sweep through my fields in another few years. But what happens when you write a paper using these shiny new methods, and either (a) your reviewers or (b) much of the audience for the paper (or both) don't understand the methods? Maybe you even include the <a href="http://www.r-project.org/">R code</a> for your analysis.  On the one hand, your analysis could be easily reproduced by anyone in the world, since R can be run for free on virtually any computer platform.  On the other hand, though, other people may find it impossible to <em>really</em> reproduce your analysis, since they don't understand it.</p>
+
+<p>The problem is that this can cause trust to break down. Maybe the reviewers/readers decide to trust to because you seem smart and seem to know what you're doing. But in my experience, we are not trained to give people the benefit of the doubt, especially when reviewing articles for publication. The main question seems to be "why are they using this 'fancy' new method, when my old method (e.g., ANOVA) seems to work just fine?"  And even if an answer for why the new method is superior can be supplied, if it's not adequately explained, then it can't really be replicated or fully understood.</p>
+
+<p>So what makes a method <em>really</em> reproducible?  Not just the means, but the understanding. Just as I don't expect a typical middle-schooler or even college student to be able to <em>really</em> replicate or reproduce most published analyses or results in psycholinguistics (even though they may be technically capable of re-running someone's R code), I don't expect that most psycholinguists (including myself at present) could reproduce a complex Bayesian analysis.</p>
+
+<p>I'll leave the subtleties of this for another day, but I think it's an interesting and important issue, which I have not seen discussed explicitly, but of which I have seen (and felt!) very concrete examples.  So here's a thought: what if the future of truly reproducible research is not just "including code and data," but also including tutorials or other means to <em>educate</em> readers and reviewers? How far could or should this be pushed?</p>
+]]></content>
+  </entry>
+  
+</feed>
