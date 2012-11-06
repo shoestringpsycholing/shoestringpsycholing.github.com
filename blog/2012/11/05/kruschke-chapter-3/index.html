@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Kruschke Chapter 3 - Shoestring Psycholing</title>
+  <meta name="author" content="Scott Jackson">
+
+  
+  <meta name="description" content="This is the first really substantial chapter; the first two were really just a warm-up. Kruschke presents this chapter as a kind of intro to &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://shoestringpsycholing.github.com/blog/2012/11/05/kruschke-chapter-3/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Shoestring Psycholing" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Shoestring Psycholing</a></h1>
+  
+    <h2>A language science blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:shoestringpsycholing.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Kruschke Chapter 3</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-05T22:26:00-05:00" pubdate data-updated="true">Nov 5<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>This is the first really substantial chapter; the first two were really just a warm-up. Kruschke presents this chapter as a kind of intro to probability, but (naturally) he makes some very specific choices about what to approach and how to approach it.  A lot of it comes across as kind of foreshadowing, which makes it a little hard to follow or grasp the point of at times. Ultimately, I think this chapter should go pretty quick the first read-through, to prime some ideas, but the ideas probably won&#8217;t really start to sink in until they get applied later.</p>
+
+<p>Another overall comment: Kruschke points this out at some point himself, but the fact is that throughout this chapter, he&#8217;s really talking about two kinds (or contexts) of probability. One is as a mathematical expression of belief, which, I assume, is pretty much a given for any kind of Bayesian analysis.  The other is the parameter (&theta;) of interest that one is trying to estimate.  I mean, in all the coin-flipping examples, there is the probability of heads, which is just a parameter of the data-generating process.  In a different kind of data or analysis, it might be something else, not probability (I&#8217;m guessing that when we get to Bayesian regression, the parameter will be something like a regression coefficient, which is not a probability). And then there&#8217;s the probability (or belief) in a parameter value (<em>p</em>(&theta;)), which is always going to be expressed as probability (e.g., for regression, there should be probabilities/beliefs for different coefficient values).  As intuitive and appealing as the coin-flipping examples are, I find this double-sided discussion of probability to be kind of confusing.</p>
+
+<p>So, on to the details of the chapter. Kruschke focuses on the simple case of predicting coin flips and deciding whether the coin is fair.  This has the advantage of not only being conceptually intuitive, but also numerically convenient, allowing for a variety of analytic approaches that don&#8217;t require the heavier-duty computational tools of MCMC, and I&#8217;m sure this was a choice Kruschke made by design.</p>
+
+<p>But illustrating my quibble above, he starts with a discussion about how the fairness of the coin (the parameter &theta;) is a probability, and this can be simulated as a long-run relative frequency, or derived mathematically, and then he switches abruptly to a brief discussion about probability as a expression of subjective belief, even discussing how one might heuristically estimate one&#8217;s own internal numerical belief in something. I find this back-and-forth discussion a little disorienting, and paradoxically, it feels like he goes into too much detail and not enough detail. The discussion of &#8220;calibrating&#8221; one&#8217;s subjective belief seems to invite more questions and confusions than are necessary to make the simple point that in Bayesian analysis, &#8220;belief&#8221; is represented mathematically by probabilities. But it&#8217;s not quite in-depth enough to foster a deep understanding or exploration of the ideas.</p>
+
+<p>I think if I were using this for a course, I would want to <em>either</em> (a) spend more time on fleshing out the ideas in this chapter, and take care to very explicitly pull apart the concepts of probability-as-parameter vs. probability-as-belief, or (b) speed through or defer sections of the chapter entirely, jump straight into some analysis, and refer back to sections in this chapter to help present the basic ideas behind the analysis.</p>
+
+<p>Working through the rest of the chapter, I feel like he&#8217;s foreshadowing the steps from Chapters 5 through 7, from a purely analytic approach, to a grid approximation, to MCMC sampling.  He touches on a number of interesting points, including some nice discussions of:</p>
+
+<ul>
+<li>probability distributions (<em>mass</em> for discrete outcomes and <em>density</em> for continuous)</li>
+<li>the normal probability distribution</li>
+<li>the relationships between mean, variance, standard deviations, and medians</li>
+<li>Highest Density Intervals (which, in my NHST conceptual background, are like Bayesian confidence intervals)</li>
+<li>two-way probabilities, marginal probabilities, and conditional probabilities. This is where he starts to lead towards the crux of Bayes&#8217;s rule.</li>
+</ul>
+
+
+<p>But all these things feel like sort of incomplete foreshadowing of what&#8217;s to come.  Priming the pump, as it were, but I personally have a hard time retaining stuff when I don&#8217;t see the point of it until later.  So again, I think in practice I would recommend zipping through and then revisiting this chapter once you&#8217;ve gotten into the applications later.</p>
+
+<p>The other main way I can think to describe Kruschke&#8217;s writing so far is that it is a very uneven flow of information.  There are stretches of very informal, easy-to-read text that glide by, and then I hit a sentence or two that quickly assert or review some equation or other point that is very dense, and I feel like I have to read it over several times and work through it in my head to make sure I&#8217;m understanding.  This is not really a criticism, just a description of my personal experience in reading.</p>
+
+<p>These relatively minor worries and hand-wringings aside, I think this is a nice, concise, readable chapter.  I think he does a good job of discussing some basic concepts in probability in an extremely approachable way, in order to set up a better understanding of what&#8217;s to come. It&#8217;s certainly not an exhaustive treatment, but it&#8217;s useful enough that I&#8217;d recommend a good reading of it, even for peole coming to the book with a decent stats background. But I really do think that most of the good points may be a little lost or unappreciated until some of the later topics in the book are broached.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Scott Jackson</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-05T22:26:00-05:00" pubdate data-updated="true">Nov 5<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bayesian/'>Bayesian</a>, <a class='category' href='/blog/categories/kruschke/'>Kruschke</a>, <a class='category' href='/blog/categories/statistics/'>statistics</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://shoestringpsycholing.github.com/blog/2012/11/05/kruschke-chapter-3/" data-via="" data-counturl="http://shoestringpsycholing.github.com/blog/2012/11/05/kruschke-chapter-3/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="large"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/11/04/reproducibility-of-new-methods/" title="Previous Post: Reproducibility of new methods">&laquo; Reproducibility of new methods</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/11/05/kruschke-chapter-3/">Kruschke Chapter 3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/04/reproducibility-of-new-methods/">Reproducibility of new methods</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/03/kruschke-chapter-2/">Kruschke Chapter 2</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/02/naive-bayesian/">Naive Bayesian</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/01/nablopomo-and-more-r/">NaBloPoMo and More Starting R</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/shoestringpsycholing">@shoestringpsycholing</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'shoestringpsycholing',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Scott Jackson -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'shoestringpsycholing';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://shoestringpsycholing.github.com/blog/2012/11/05/kruschke-chapter-3/';
+        var disqus_url = 'http://shoestringpsycholing.github.com/blog/2012/11/05/kruschke-chapter-3/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
