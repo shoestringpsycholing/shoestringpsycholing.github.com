@@ -4,7 +4,7 @@
   <title><![CDATA[Category: reproducibility | Shoestring Psycholing]]></title>
   <link href="http://shoestringpsycholing.github.com/blog/categories/reproducibility/atom.xml" rel="self"/>
   <link href="http://shoestringpsycholing.github.com/"/>
-  <updated>2012-11-17T23:35:16-05:00</updated>
+  <updated>2012-11-18T07:58:16-05:00</updated>
   <id>http://shoestringpsycholing.github.com/</id>
   <author>
     <name><![CDATA[Scott Jackson]]></name>
@@ -18,7 +18,7 @@
     <link href="http://shoestringpsycholing.github.com/blog/2012/11/13/really-reproducible-research/"/>
     <updated>2012-11-13T17:46:00-05:00</updated>
     <id>http://shoestringpsycholing.github.com/blog/2012/11/13/really-reproducible-research</id>
-    <content type="html"><![CDATA[<p>I think a <em>lot</em> about the related notions of <em>reproducibility</em> and <em>replicability</em> in reseach. I intend for these to be major reoccurring themes. Today I saw a big special issue of <a href="http://pps.sagepub.com/"><em>Perspectives on Psychological Science</em></a> on the topic of reproducibility, so I thought it would be good to break up the Bayesian stuff with a short rant about reproducibility.</p>
+    <content type="html"><![CDATA[<p>I think a <em>lot</em> about the related notions of <em>reproducibility</em> and <em>replicability</em> in research. I intend for these to be major reoccurring themes. Today I saw a big special issue of <a href="http://pps.sagepub.com/"><em>Perspectives on Psychological Science</em></a> on the topic of reproducibility, so I thought it would be good to break up the Bayesian stuff with a short rant about reproducibility.</p>
 
 <p>First, I'd like to propose a distinction between replicability and reproducibility. Replicability is about <em>results</em> and reproducibility is about <em>methods</em>. These are not independent, though, more like two sides of the same coin. If your results are replicable, that means that someone else can basically find the same pattern. This is a basic, fundamental goal of science. If someone finds that standing on your head while practicing a foreign language leads to better retention of new vocabulary, great. But if no one else can produce that result, then it calls the initial result into question.</p>
 
