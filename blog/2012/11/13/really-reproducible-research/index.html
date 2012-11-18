@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Reproducibility of new methods - Shoestring Psycholing</title>
+  <title>Really reproducible research - Shoestring Psycholing</title>
   <meta name="author" content="Scott Jackson">
 
   
-  <meta name="description" content="One of the main themes I&#8217;d like to talk about in this blog is the notion of reproducibility in research. I&#8217;ll leave more in-depth &hellip;">
+  <meta name="description" content="I think a lot about the related notions of reproducibility and replicability in reseach. I intend for these to be major reoccurring themes. Today I &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://shoestringpsycholing.github.com/blog/2012/11/04/reproducibility-of-new-methods/">
+  <link rel="canonical" href="http://shoestringpsycholing.github.com/blog/2012/11/13/really-reproducible-research/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Reproducibility of New Methods</h1>
+      <h1 class="entry-title">Really Reproducible Research</h1>
     
     
       <p class="meta">
@@ -84,24 +84,26 @@
   
 
 
-<time datetime="2012-11-04T19:56:00-05:00" pubdate data-updated="true">Nov 4<span>th</span>, 2012</time>
+<time datetime="2012-11-13T17:46:00-05:00" pubdate data-updated="true">Nov 13<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>One of the main themes I&#8217;d like to talk about in this blog is the notion of <em>reproducibility</em> in research. I&#8217;ll leave more in-depth discussion of the fundamental ideas for other posts; today I just want to comment on something that occurred to me while working on a paper re-submission, and I think it&#8217;s also really relevant to the ongoing Bayesian stats posts as well. The issue is: <strong>new methods are inherently less reproducible</strong>.  Let me explain.</p>
+<div class="entry-content"><p>I think a <em>lot</em> about the related notions of <em>reproducibility</em> and <em>replicability</em> in reseach. I intend for these to be major reoccurring themes. Today I saw a big special issue of <a href="http://pps.sagepub.com/"><em>Perspectives on Psychological Science</em></a> on the topic of reproducibility, so I thought it would be good to break up the Bayesian stuff with a short rant about reproducibility.</p>
 
-<p><a href="http://www.youtube.com/watch?v=GZYhDMCOyww">No, there is too much. Let me sum up.</a></p>
+<p>First, I&#8217;d like to propose a distinction between replicability and reproducibility. Replicability is about <em>results</em> and reproducibility is about <em>methods</em>. These are not independent, though, more like two sides of the same coin. If your results are replicable, that means that someone else can basically find the same pattern. This is a basic, fundamental goal of science. If someone finds that standing on your head while practicing a foreign language leads to better retention of new vocabulary, great. But if no one else can produce that result, then it calls the initial result into question.</p>
 
-<p>These days, mixed-effects models are rapidly overtaking the traditional ANOVA in some parts of the field. If the <a href="http://www.indiana.edu/~kruschke/AnOpenLetter.htm">Bayesians have their way</a> (see also <a href="http://shoestringpsycholing.github.com/blog/2012/11/02/naive-bayesian/">this post</a>), then Bayesian data analysis may make a similar sweep through my fields in another few years. But what happens when you write a paper using these shiny new methods, and either (a) your reviewers or (b) much of the audience for the paper (or both) don&#8217;t understand the methods? Maybe you even include the <a href="http://www.r-project.org/">R code</a> for your analysis.  On the one hand, your analysis could be easily reproduced by anyone in the world, since R can be run for free on virtually any computer platform.  On the other hand, though, other people may find it impossible to <em>really</em> reproduce your analysis, since they don&#8217;t understand it.</p>
+<p>This is a pretty big issue these days. The special issue I mention above is just one of the many signs. There&#8217;s been a lot of recent discussion about how the publishing system in the social sciences (psychology has been getting the most attention, but I think this is true in virtually every field I&#8217;m acquainted with) actually discourages replication. Sensational results end up getting into more &#8220;important&#8221; journals, and from a purely statistical point of view, sensational results really ought to be rare things. The result is over-publication of results that may not hold up well when people try to replicate them. And then there&#8217;s the problem that there&#8217;s no viable venue to published &#8220;failed&#8221; studies, which do not show any effects. I&#8217;ll make separate posts for each of these topics at some point.  The point here is that those of us who like to call ourselves &#8220;scientists&#8221; should hold ourselves to a better standard of replicability that the current publishing system encourages. Otherwise, we are just flooding the market with results that no one can really trust, and how can one formulate effective or accurate theories when trying to explain false results?</p>
 
-<p>The problem is that this can cause trust to break down. Maybe the reviewers/readers decide to trust to because you seem smart and seem to know what you&#8217;re doing. But in my experience, we are not trained to give people the benefit of the doubt, especially when reviewing articles for publication. The main question seems to be &#8220;why are they using this &#8216;fancy&#8217; new method, when my old method (e.g., ANOVA) seems to work just fine?&#8221;  And even if an answer for why the new method is superior can be supplied, if it&#8217;s not adequately explained, then it can&#8217;t really be replicated or fully understood.</p>
+<p>But how do you get replication?  That&#8217;s where reproducible methods come in.  What if I run an experiment, get some interesting results, and then someone from a competing theoretical point of view says they tried to replicate, but can&#8217;t, therefore casting doubt on my results?  Having truly <em>reproducible</em> methods is my safeguard. This means that my methods are transparent enough that other people can perform the experiment in a similar enough way, or that if someone tries to replicate and can&#8217;t, they can compare their methods to mine, to see what might be different. There are some current standards that people try to keep in how they report their methods, to facilitate this, but I think we&#8217;re still really a long way from true reproducibility. The key morpheme here is the <em>-able</em> part of <em>reproducible</em>. That is, if it&#8217;s extremely difficult to reproduce methods, that is less reproducible. It can often be difficult to reproduce even your own methods, because there are so many small decision points along the way, and there is often considerable work at each step.</p>
 
-<p>So what makes a method <em>really</em> reproducible?  Not just the means, but the understanding. Just as I don&#8217;t expect a typical middle-schooler or even college student to be able to <em>really</em> replicate or reproduce most published analyses or results in psycholinguistics (even though they may be technically capable of re-running someone&#8217;s R code), I don&#8217;t expect that most psycholinguists (including myself at present) could reproduce a complex Bayesian analysis.</p>
+<p>The good news is that there has been a recent rise in tools to make reproducible research easier, and to improve on the <em>-able</em> part, especially in reproducing statistical analysis. But I believe that we need to extend beyond reproducible stats. Sharing your data and your <a href="http://www.r-project.org/">R code</a> that you used for your analysis is a great first step, but that&#8217;s all it is: a first step.</p>
 
-<p>I&#8217;ll leave the subtleties of this for another day, but I think it&#8217;s an interesting and important issue, which I have not seen discussed explicitly, but of which I have seen (and felt!) very concrete examples.  So here&#8217;s a thought: what if the future of truly reproducible research is not just &#8220;including code and data,&#8221; but also including tutorials or other means to <em>educate</em> readers and reviewers? How far could or should this be pushed?</p>
+<p>So ultimately, improving reproducible methods is one of the most important parts of addressing the replication problem. Even if we &#8220;fix&#8221; the publishing system so that failed replications are more visible, without better means to understand (1) how to replicate someone&#8217;s work and (2) what potential differences between studies could be explaining replication failures, we&#8217;ll still be in the dark when it comes to actually evaluating reproducibility.</p>
+
+<p>If this is an interesting issue to you, stay tuned to this blog, as I plan to work through some of the concepts involved, as well as some of the practical means to actually achieve better reproducibility.</p>
 </div>
 
 
@@ -124,12 +126,12 @@
   
 
 
-<time datetime="2012-11-04T19:56:00-05:00" pubdate data-updated="true">Nov 4<span>th</span>, 2012</time>
+<time datetime="2012-11-13T17:46:00-05:00" pubdate data-updated="true">Nov 13<span>th</span>, 2012</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/bayesian/'>Bayesian</a>, <a class='category' href='/blog/categories/mixed-effects/'>mixed-effects</a>, <a class='category' href='/blog/categories/reproducibility/'>reproducibility</a>, <a class='category' href='/blog/categories/statistics/'>statistics</a>
+    <a class='category' href='/blog/categories/reproducibility/'>reproducibility</a>
   
 </span>
 
@@ -138,7 +140,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://shoestringpsycholing.github.com/blog/2012/11/04/reproducibility-of-new-methods/" data-via="" data-counturl="http://shoestringpsycholing.github.com/blog/2012/11/04/reproducibility-of-new-methods/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://shoestringpsycholing.github.com/blog/2012/11/13/really-reproducible-research/" data-via="" data-counturl="http://shoestringpsycholing.github.com/blog/2012/11/13/really-reproducible-research/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="large"></div>
@@ -151,10 +153,10 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/11/03/kruschke-chapter-2/" title="Previous Post: Kruschke Chapter 2">&laquo; Kruschke Chapter 2</a>
+        <a class="basic-alignment left" href="/blog/2012/11/07/kruschke-chapter-4/" title="Previous Post: Kruschke Chapter 4">&laquo; Kruschke Chapter 4</a>
       
       
-        <a class="basic-alignment right" href="/blog/2012/11/05/kruschke-chapter-3/" title="Next Post: Kruschke Chapter 3">Kruschke Chapter 3 &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2012/11/17/kruschke-chapter-5/" title="Next Post: Kruschke Chapter 5, Part 1">Kruschke Chapter 5, Part 1 &raquo;</a>
       
     </p>
   </footer>
@@ -250,8 +252,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://shoestringpsycholing.github.com/blog/2012/11/04/reproducibility-of-new-methods/';
-        var disqus_url = 'http://shoestringpsycholing.github.com/blog/2012/11/04/reproducibility-of-new-methods/';
+        var disqus_identifier = 'http://shoestringpsycholing.github.com/blog/2012/11/13/really-reproducible-research/';
+        var disqus_url = 'http://shoestringpsycholing.github.com/blog/2012/11/13/really-reproducible-research/';
         var disqus_script = 'embed.js';
       
     (function () {

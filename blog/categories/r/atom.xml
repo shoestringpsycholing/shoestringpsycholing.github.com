@@ -4,7 +4,7 @@
   <title><![CDATA[Category: R | Shoestring Psycholing]]></title>
   <link href="http://shoestringpsycholing.github.com/blog/categories/r/atom.xml" rel="self"/>
   <link href="http://shoestringpsycholing.github.com/"/>
-  <updated>2012-11-07T15:07:28-05:00</updated>
+  <updated>2012-11-17T23:35:16-05:00</updated>
   <id>http://shoestringpsycholing.github.com/</id>
   <author>
     <name><![CDATA[Scott Jackson]]></name>
@@ -12,6 +12,37 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Kruschke Chapter 5, Part 1]]></title>
+    <link href="http://shoestringpsycholing.github.com/blog/2012/11/17/kruschke-chapter-5/"/>
+    <updated>2012-11-17T14:04:00-05:00</updated>
+    <id>http://shoestringpsycholing.github.com/blog/2012/11/17/kruschke-chapter-5</id>
+    <content type="html"><![CDATA[<p>So Chapter 5 is a big one.  I'm going to end up breaking it across several posts.  It's a big one for a few reasons. It's the first chapter in Part 2 of the book, representing the first "real" Bayesian analysis. In other words, we're finally getting to the point where we will actually apply Bayesian analysis to some data! In the interest of making these blog posts maximally useful for myself (and maybe some readers), I'm going to go through some additional data sets of my own, parallel to the examples Kruschke uses.</p>
+
+<p>The other thing I'm going to try to do, which will end up stretching out these posts a bit, is to re-work some of the code that Kruschke supplies.  In a nutshell, I feel like Kruschke's code is probably aimed pretty well at students, who may want to be able to complete the exercises in the book, but who may or may not (a) know much about R, or (b) want to be able to apply the functions to more general situations (i.e., other data). I think in order for the code to be more useful to me personally, I'd like to re-work it a bit.  I've started a <a href="https://github.com/shoestringpsycholing/kruschke_remix">github repo for the Kruschke book here</a> (see also the links on the side of the blog).</p>
+
+<p>In this post, I'll give an overview of the conceptual issues, and we'll get to the code and actual analysis in following posts.</p>
+
+<p>The point I have droned on about previously still holds in this chapter: the chapter is worth a re-read or two, especially after one gets a few more chapters into the book. In my initial read, it was a little hard to see the point of going through some of the mathematical derivations and equations, especially since I have a hunch that this kind of process is going to be quickly supplanted by the MCMC methods later. The best analogy I can think of that might resonate with people from linguistics or psycholinguistics is that it's a little like introducing some "old school" theoretical constructs in syntax or phonology, which will only be replaced by methods/theories later in the course. It's kind of a thin analogy, though, because the methods in this chapter of Kruschke are not invalid or outdated, but they do not seem to me to be representative of how Bayesian analysis is done in most actual cases for which you might want to do Bayesian analysis.</p>
+
+<p>For example, he goes through a discussion about how the beta distribution is chosen based on its convenient mathematical properties. This seems totally irrelevant at first, since most of the time in actual analysis, you won't be stuck trying to find mathematically convenient ways of specifying priors in order to avoid MCMC, since you'll probably be doing MCMC anyway!</p>
+
+<p>So what's the point? I think Kruschke has some very good pedagogical aims in mind, though in my first reading, I didn't think he made them clear enough. To me, the real reason to follow Kruschke through all the math is to be able to appreciate the points he makes in two short paragraphs on p. 84.  The first is:</p>
+
+<blockquote><p>If the prior distribution is beta(&theta; | <em>a</em>, <em>b</em>) and the data have <em>z</em> heads in <em>N</em> flips, then the posterior distribution is beta(&theta; | <em>z</em> + <em>a</em>, <em>N</em> - <em>z</em> + <em>b</em>). The simplicity of that updating rule is one of the beauties of the mathematical approach to Bayesian inference.</p></blockquote>
+
+<p>If you follow the math to this point, I think the importance of this really sinks in. Kruschke is trying to illustrate how straightforward and non-mysterious the process of going from prior (belief) to posterior (updated belief), when the math involved allows for straightforward computation. The same point is illustrated in the immediately following paragraphs about the prior and posterior means. I think one of the biggest "mysteries" to people just starting to learn about Bayesian data analysis (including myself) is the relationship between the "results" (i.e., the posterior) and the prior. I mean, I think we're used to thinking about the outcome of a statistical analysis as the results, and the data are just what you need in order to find out what the results are. In the NHST framework I was brought up in, the "hard" part is just making sure you're applying the right stats to give you the "correct" results. This Bayesian thing seems so much more squishy and amorphous because of the influence of the priors, or rather the lack of understanding about how the priors can influence the "results." But I think this is really misplacing what's difficult about Bayesian analysis, and I think this pedagogical move by Kruschke is a nice one, as an attempt to de-mystify the relationship between prior and posterior. When the math is simple, like it is in this case in Chapter 5, it's quite simple to see that the move from prior to posterior is extremely transparent, and if it didn't work like it does, it would seem completely wrong. Still, I think it took me at least two or three readings to appreciate this, and get beyond the annoyance of "why is Kruschke going through all this math, when this is a useless skill one we get to MCMC?"</p>
+
+<p>Kruschke introduces the idea of a <em>region of practical equivalence</em> (ROPE) in this chapter, but like many other things, I think it raises more questions than it answers, and is best seen as just a first pass at the idea. He promises that Chapter 12 will work out a lot of these issues.</p>
+
+<p>In reading the "Predicting Data" section (5.3.2, starting on p. 87), something occurred to me. Namely, that the process of predicting from prior data is absolutely opposite the intuitive <a href="http://en.wikipedia.org/wiki/Gambler%27s_fallacy">gambler's fallacy</a>. I could see this as a useful point of discussion in a class setting, especially if some of the students are still grappling with some basic ideas in statistics. The gambler's fallacy is this idea that previous data affects future data, so if you flip a coin and it turns up heads 10 times in a row, then somehow it's more likely to turn up tails on the next flip. This is an extremely appealing intuition (for reasons that I think are still up for debate in the cognitive science literature), and it's easy to fall victim to this kind of thinking, but it's simply false.</p>
+
+<p>What's interesting to me is that not only is it false in Bayesian inference, but it's going the wrong way entirely. In Bayesian inference, you essentially start with some belief that the coin is fair, but if you then flip the coin and you get 10 heads in a row (and no tails), then your posterior would be updated essentially to believe that the coin was not quite fair, and it would increase the probability of you predicting another heads.  Of course, the degree to which you would predict another heads would depend on how strong your prior was. If you had a very strong belief that the coin was fair, it may only change a tiny amount. But still, the change is in the <em>opposite</em> direction of the gambler's fallacy. That is, if you see a run of heads, the "gambler" inside you may tell you that you should bet tails on the next flip, but a Bayesian would suggest that maybe the coin isn't fair after all. I just think this is an interesting difference between a common (but false) intuition about how probabilities work, and how Bayesian belief-updating works, and puts a different spin on this common "Stats 101" kind of example.</p>
+
+<p>The section on model comparison raises a number of interesting issues, so I'll leave it to next time. All in all, this chapter is unfolding much like the previous ones: deceptively easy to follow on a first pass, but the more important pedagogical points may not sink in until another reading or two, and maybe then only after you get farther into the book and have time to absorb things more. The downside of this is that you might have trouble seeing the point to some of the more detailed mathematical excursions. (And by the way "detailed math" is relative: the math is really quite straightforward, but to many typical social scientists, it will seem like a lot in places, speaking as one myself.)</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Kruschke Chapter 2]]></title>

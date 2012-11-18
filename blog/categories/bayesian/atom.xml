@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Bayesian | Shoestring Psycholing]]></title>
   <link href="http://shoestringpsycholing.github.com/blog/categories/bayesian/atom.xml" rel="self"/>
   <link href="http://shoestringpsycholing.github.com/"/>
-  <updated>2012-11-07T15:07:28-05:00</updated>
+  <updated>2012-11-17T23:35:16-05:00</updated>
   <id>http://shoestringpsycholing.github.com/</id>
   <author>
     <name><![CDATA[Scott Jackson]]></name>
@@ -12,6 +12,37 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Kruschke Chapter 5, Part 1]]></title>
+    <link href="http://shoestringpsycholing.github.com/blog/2012/11/17/kruschke-chapter-5/"/>
+    <updated>2012-11-17T14:04:00-05:00</updated>
+    <id>http://shoestringpsycholing.github.com/blog/2012/11/17/kruschke-chapter-5</id>
+    <content type="html"><![CDATA[<p>So Chapter 5 is a big one.  I'm going to end up breaking it across several posts.  It's a big one for a few reasons. It's the first chapter in Part 2 of the book, representing the first "real" Bayesian analysis. In other words, we're finally getting to the point where we will actually apply Bayesian analysis to some data! In the interest of making these blog posts maximally useful for myself (and maybe some readers), I'm going to go through some additional data sets of my own, parallel to the examples Kruschke uses.</p>
+
+<p>The other thing I'm going to try to do, which will end up stretching out these posts a bit, is to re-work some of the code that Kruschke supplies.  In a nutshell, I feel like Kruschke's code is probably aimed pretty well at students, who may want to be able to complete the exercises in the book, but who may or may not (a) know much about R, or (b) want to be able to apply the functions to more general situations (i.e., other data). I think in order for the code to be more useful to me personally, I'd like to re-work it a bit.  I've started a <a href="https://github.com/shoestringpsycholing/kruschke_remix">github repo for the Kruschke book here</a> (see also the links on the side of the blog).</p>
+
+<p>In this post, I'll give an overview of the conceptual issues, and we'll get to the code and actual analysis in following posts.</p>
+
+<p>The point I have droned on about previously still holds in this chapter: the chapter is worth a re-read or two, especially after one gets a few more chapters into the book. In my initial read, it was a little hard to see the point of going through some of the mathematical derivations and equations, especially since I have a hunch that this kind of process is going to be quickly supplanted by the MCMC methods later. The best analogy I can think of that might resonate with people from linguistics or psycholinguistics is that it's a little like introducing some "old school" theoretical constructs in syntax or phonology, which will only be replaced by methods/theories later in the course. It's kind of a thin analogy, though, because the methods in this chapter of Kruschke are not invalid or outdated, but they do not seem to me to be representative of how Bayesian analysis is done in most actual cases for which you might want to do Bayesian analysis.</p>
+
+<p>For example, he goes through a discussion about how the beta distribution is chosen based on its convenient mathematical properties. This seems totally irrelevant at first, since most of the time in actual analysis, you won't be stuck trying to find mathematically convenient ways of specifying priors in order to avoid MCMC, since you'll probably be doing MCMC anyway!</p>
+
+<p>So what's the point? I think Kruschke has some very good pedagogical aims in mind, though in my first reading, I didn't think he made them clear enough. To me, the real reason to follow Kruschke through all the math is to be able to appreciate the points he makes in two short paragraphs on p. 84.  The first is:</p>
+
+<blockquote><p>If the prior distribution is beta(&theta; | <em>a</em>, <em>b</em>) and the data have <em>z</em> heads in <em>N</em> flips, then the posterior distribution is beta(&theta; | <em>z</em> + <em>a</em>, <em>N</em> - <em>z</em> + <em>b</em>). The simplicity of that updating rule is one of the beauties of the mathematical approach to Bayesian inference.</p></blockquote>
+
+<p>If you follow the math to this point, I think the importance of this really sinks in. Kruschke is trying to illustrate how straightforward and non-mysterious the process of going from prior (belief) to posterior (updated belief), when the math involved allows for straightforward computation. The same point is illustrated in the immediately following paragraphs about the prior and posterior means. I think one of the biggest "mysteries" to people just starting to learn about Bayesian data analysis (including myself) is the relationship between the "results" (i.e., the posterior) and the prior. I mean, I think we're used to thinking about the outcome of a statistical analysis as the results, and the data are just what you need in order to find out what the results are. In the NHST framework I was brought up in, the "hard" part is just making sure you're applying the right stats to give you the "correct" results. This Bayesian thing seems so much more squishy and amorphous because of the influence of the priors, or rather the lack of understanding about how the priors can influence the "results." But I think this is really misplacing what's difficult about Bayesian analysis, and I think this pedagogical move by Kruschke is a nice one, as an attempt to de-mystify the relationship between prior and posterior. When the math is simple, like it is in this case in Chapter 5, it's quite simple to see that the move from prior to posterior is extremely transparent, and if it didn't work like it does, it would seem completely wrong. Still, I think it took me at least two or three readings to appreciate this, and get beyond the annoyance of "why is Kruschke going through all this math, when this is a useless skill one we get to MCMC?"</p>
+
+<p>Kruschke introduces the idea of a <em>region of practical equivalence</em> (ROPE) in this chapter, but like many other things, I think it raises more questions than it answers, and is best seen as just a first pass at the idea. He promises that Chapter 12 will work out a lot of these issues.</p>
+
+<p>In reading the "Predicting Data" section (5.3.2, starting on p. 87), something occurred to me. Namely, that the process of predicting from prior data is absolutely opposite the intuitive <a href="http://en.wikipedia.org/wiki/Gambler%27s_fallacy">gambler's fallacy</a>. I could see this as a useful point of discussion in a class setting, especially if some of the students are still grappling with some basic ideas in statistics. The gambler's fallacy is this idea that previous data affects future data, so if you flip a coin and it turns up heads 10 times in a row, then somehow it's more likely to turn up tails on the next flip. This is an extremely appealing intuition (for reasons that I think are still up for debate in the cognitive science literature), and it's easy to fall victim to this kind of thinking, but it's simply false.</p>
+
+<p>What's interesting to me is that not only is it false in Bayesian inference, but it's going the wrong way entirely. In Bayesian inference, you essentially start with some belief that the coin is fair, but if you then flip the coin and you get 10 heads in a row (and no tails), then your posterior would be updated essentially to believe that the coin was not quite fair, and it would increase the probability of you predicting another heads.  Of course, the degree to which you would predict another heads would depend on how strong your prior was. If you had a very strong belief that the coin was fair, it may only change a tiny amount. But still, the change is in the <em>opposite</em> direction of the gambler's fallacy. That is, if you see a run of heads, the "gambler" inside you may tell you that you should bet tails on the next flip, but a Bayesian would suggest that maybe the coin isn't fair after all. I just think this is an interesting difference between a common (but false) intuition about how probabilities work, and how Bayesian belief-updating works, and puts a different spin on this common "Stats 101" kind of example.</p>
+
+<p>The section on model comparison raises a number of interesting issues, so I'll leave it to next time. All in all, this chapter is unfolding much like the previous ones: deceptively easy to follow on a first pass, but the more important pedagogical points may not sink in until another reading or two, and maybe then only after you get farther into the book and have time to absorb things more. The downside of this is that you might have trouble seeing the point to some of the more detailed mathematical excursions. (And by the way "detailed math" is relative: the math is really quite straightforward, but to many typical social scientists, it will seem like a lot in places, speaking as one myself.)</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Kruschke Chapter 4]]></title>
@@ -119,39 +150,6 @@
 <p>Finally, Kruschke includes a short intro to the <a href="http://www.r-project.org/">R software and programming language</a>. There's not really a great way to introduce R in 7 pages, but Kruschke does a decent job of giving the minimum needed to help people get the ball rolling.  Again, here's another spot where his <a href="http://www.indiana.edu/~kruschke/DoingBayesianDataAnalysis/">website</a> outpaces the book already, because the website makes the excellent recommendation of using <a href="http://www.rstudio.org/">RStudio</a>, instead of the (IMHO) inferior  <a href="http://www.sciviews.org/Tinn-R/">Tinn-R</a>. No knock against the fine folks who put together Tinn-R.  This is just one of those things that makes it hard to write static books about R.  RStudio is a pretty new player in the GUI game, but it's quickly become the favorite for general users for a lot of good reasons.  In any case, Kruschke will not make you an expert at R. But he gives you enough to run through the code in the book, cookbook-style. I suspect for anyone needing to work with real data, some additional resources or expertise in R will be needed to go from raw data to Bayesian analysis. <strong>R pet peeve alert:</strong> throughout the book, Kruschke uses the style of using <code>=</code> instead of <code>&lt;-</code> for assignment. This may help many people coming from other programming languages, but it's a little non-idiomatic for R.  But this is a pretty inconsequential pet peeve, and since the book is about Bayesian analysis, not R coding style, I think overall this is not a bad choice.</p>
 
 <p>In summary, it's a good chapter and covers a bunch of introductory bases.  Depending on who's reading the book, and what the goals are (class textbook vs. self-study), a good amount of supplementary material or discussion could be useful, or it could be fine to just skim this chapter to get on to the meatier stuff.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Naive Bayesian]]></title>
-    <link href="http://shoestringpsycholing.github.com/blog/2012/11/02/naive-bayesian/"/>
-    <updated>2012-11-02T07:04:00-04:00</updated>
-    <id>http://shoestringpsycholing.github.com/blog/2012/11/02/naive-bayesian</id>
-    <content type="html"><![CDATA[<h2>Huh?</h2>
-
-<p>A big part of my day-to-day involves data analysis, usually statistical data analysis. The stats scene has been in some flux lately, at least in the fields I work in, and interestingly, I think a lot of that has resulted, directly or indirectly, from the availability of the <a href="http://www.r-project.org/">R statistical language/package</a>. Long story short, it has increased accessibility to methods that are not all that new in the scheme of things, but which have not been terribly accessible.  More on all that another day.</p>
-
-<p>Today, the topic is <a href="http://en.wikipedia.org/wiki/Thomas_Bayes">Bayesian</a> stats. The word "Bayesian" is a bit of a buzz-word for a wide range of different topics in computational and statistical work, but despite this, it's a really important modern approach to data and analysis.  What exactly is it, and what's the big deal?  Damned if I know, but in an ongoing series of posts, I intend to find out a lot more, and share my thoughts here.</p>
-
-<p>So here's the idea:  starting virtually from scratch, I'm going to walk through a recent <a href="http://www.indiana.edu/~kruschke/DoingBayesianDataAnalysis/">book</a> by <a href="http://www.indiana.edu/~kruschke/">John Kruschke</a>, and give my own knee-jerk reactions, as a kind of extended review of the book, and the usefulness of Bayesian methods for language scientists (and maybe others). Kruschke himself is a very um... <em>outspoken</em> advocate of Bayesian analysis (see this <a href="http://www.indiana.edu/~kruschke/AnOpenLetter.htm">"Open Letter"</a>), and while I'm generally pretty sympathetic and find most of these arguments pretty convincing, I'll try to take a skeptical stance when going through the book.</p>
-
-<p>My own stats background is pretty hodge-podgy, but I can hold my own in comparison to most folks in my field. My hope is that by going through the book in this way, I'll get more out of the book myself, and it might help other folks decide whether looking into Bayesian stats could be worth their time, too.  Big props go to Amber Springer for getting a local reading group started on this book. I wasn't able to attend as much as I'd have liked to, but going to a couple of meetings really got the ball rolling for me, and I appreciate it!</p>
-
-<h2>The Big Deal, in a nutshell</h2>
-
-<p>If all this is utterly mysterious and the word "Bayesian" might as well be "Martian," here's the basic gist of why I'm spending time on this. "Traditional" stats in the fields I work in are more or less descended from seminal work by <a href="http://en.wikipedia.org/wiki/Ronald_Fisher">Ronald Fisher</a> and others, and can also be referred to as "Null Hypothesis Significance Testing." If you've ever looked for a "p-value" to tell you if your experiment "worked," this is the framework you're used to. It boils down to a system of making inferences based on data, because that's ultimately what we want, to look at data and have it tell us something so we can make inferential conclusions.  Like looking at language learning outcome measures and using those to tell you whether Teaching Method A was more effective than Teaching Method B. Or whatever.</p>
-
-<p>The point made by folks like Kruschke is quite simply that the NHST system of making inferences is broken, and we need to switch to Bayesian methods, which involves a different system of making inferences from data. There has been quite the war within the field of statistics, with both sides (NHST and Bayesian) attacking the other program as obviously wrong and utterly misguided. My impression is that this polemic has faded a little, and other folks, like <a href="http://andrewgelman.com/">Andrew Gelman</a>, are not quite as divisive, but they often claim that Bayesian methods have distinct advantages over NHST methods. Wanting to understand what those advantages might be, and whether they could help with the sometimes very sticky data analysis situations I find myself in, are my main motivations.</p>
-
-<p>That, and trying to understand what <a href="http://www.nhsilbert.net/">Noah Silbert</a> is going on about half the time.</p>
-
-<p>So without further ado, I'm just going to launch into each chapter, throwing out my reactions and thoughts.</p>
-
-<h2>Chapter 1</h2>
-
-<p>This is a very short chapter, but a nice one to have.  It walks you through the structure of the book, and tries to assuage your fears that this book might be too much for you. In terms of prerequisites, Kruschke says that you don't really need any programming experience, and as long as you have a "dim knowledge of basic calculus," you should be fine.  I'm pretty sure my R skills will be up to snuff, but I will be a good test for his claims about calculus.  My knowledge (specifically, my memory of calculus from my high school course um... 18(!) years ago) is about as dim as it gets.  This chapter also gets you an intro to Kruschke's writing style, which is pretty goofy.  I mean that in a good way, though.  It's very conversational, and peppered with plenty of corny humor.  I imagine Kruschke's students groaning a lot (maybe on the inside, if they're respectful) in class, but staying awake because of it, and I suspect this will play out similarly in the book. I think this is probably a good thing, but we'll see.</p>
-
-<p>One note, I didn't do an exhaustive search, but Kruschke gives HTTP addresses for both the Elsevier site and his personal site, and it looks like his personal site is where you should go to get programs, etc.  It's a little more scattered, visually, but his site is much more complete, and looks like it has a bunch of updated versions of programs, exercises, etc., where the Elsevier site has the more "basic" version of the code.</p>
 ]]></content>
   </entry>
   
