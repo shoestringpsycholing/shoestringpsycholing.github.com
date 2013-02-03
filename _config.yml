@@ -4,10 +4,10 @@
 
 url: http://shoestringpsycholing.github.com
 title: Shoestring Psycholing
-subtitle :A blog about language learning, language science, and reproducible research
-author: Scott
+subtitle: A language science blog
+author: Scott Jackson
 simple_search: http://google.com/search
-description: A blog about language learning, language science, and reproducible research
+description: 
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -34,7 +34,7 @@ plugins: plugins
 code_dir: downloads/code
 category_dir: blog/categories
 markdown: rdiscount
-pygments: false # default python pygments have been replaced by pygments.rb
+pygments: true # default python pygments have been replaced by pygments.rb
 
 paginate: 10          # Posts per page on the blog index
 pagination_dir: blog  # Directory base for pagination URLs eg. /blog/page/2/
@@ -49,7 +49,7 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/twitter.ht
 
 # Each layout uses the default asides, but they can have their own asides instead. Simply uncomment the lines below
 # and add an array with the asides you want to use.
-# blog_index_asides:
+blog_index_asides: [custom/asides/about.html, asides/recent_posts.html, asides/github.html, custom/asides/blogroll.html]
 # post_asides:
 # page_asides:
 
@@ -58,8 +58,8 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/twitter.ht
 # ----------------------- #
 
 # Github repositories
-github_user:
-github_repo_count: 0
+github_user: shoestringpsycholing
+github_repo_count: 5
 github_show_profile_link: true
 github_skip_forks: true
 
@@ -72,8 +72,8 @@ twitter_show_follower_count: false
 twitter_tweet_button: true
 
 # Google +1
-google_plus_one: false
-google_plus_one_size: medium
+google_plus_one: true
+google_plus_one_size: large
 
 # Google Plus Profile
 # Hidden: No visible button, just add author information to search results
@@ -89,7 +89,7 @@ delicious_user:
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name:
+disqus_short_name: shoestringpsycholing
 disqus_show_comment_count: false
 
 # Google Analytics

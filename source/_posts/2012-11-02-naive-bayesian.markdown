@@ -1,0 +1,36 @@
+---
+layout: post
+title: "Naive Bayesian"
+date: 2012-11-02 07:04
+comments: true
+categories: R Kruschke Bayesian statistics
+---
+
+Huh?
+---------
+
+A big part of my day-to-day involves data analysis, usually statistical data analysis. The stats scene has been in some flux lately, at least in the fields I work in, and interestingly, I think a lot of that has resulted, directly or indirectly, from the availability of the [R statistical language/package](http://www.r-project.org/). Long story short, it has increased accessibility to methods that are not all that new in the scheme of things, but which have not been terribly accessible.  More on all that another day.
+
+Today, the topic is [Bayesian](http://en.wikipedia.org/wiki/Thomas_Bayes) stats. The word "Bayesian" is a bit of a buzz-word for a wide range of different topics in computational and statistical work, but despite this, it's a really important modern approach to data and analysis.  What exactly is it, and what's the big deal?  Damned if I know, but in an ongoing series of posts, I intend to find out a lot more, and share my thoughts here. 
+
+So here's the idea:  starting virtually from scratch, I'm going to walk through a recent [book](http://www.indiana.edu/~kruschke/DoingBayesianDataAnalysis/) by [John Kruschke](http://www.indiana.edu/~kruschke/), and give my own knee-jerk reactions, as a kind of extended review of the book, and the usefulness of Bayesian methods for language scientists (and maybe others). Kruschke himself is a very um... *outspoken* advocate of Bayesian analysis (see this ["Open Letter"](http://www.indiana.edu/~kruschke/AnOpenLetter.htm)), and while I'm generally pretty sympathetic and find most of these arguments pretty convincing, I'll try to take a skeptical stance when going through the book. 
+
+My own stats background is pretty hodge-podgy, but I can hold my own in comparison to most folks in my field. My hope is that by going through the book in this way, I'll get more out of the book myself, and it might help other folks decide whether looking into Bayesian stats could be worth their time, too.  Big props go to Amber Springer for getting a local reading group started on this book. I wasn't able to attend as much as I'd have liked to, but going to a couple of meetings really got the ball rolling for me, and I appreciate it!
+
+The Big Deal, in a nutshell
+----------
+
+If all this is utterly mysterious and the word "Bayesian" might as well be "Martian," here's the basic gist of why I'm spending time on this. "Traditional" stats in the fields I work in are more or less descended from seminal work by [Ronald Fisher](http://en.wikipedia.org/wiki/Ronald_Fisher) and others, and can also be referred to as "Null Hypothesis Significance Testing." If you've ever looked for a "p-value" to tell you if your experiment "worked," this is the framework you're used to. It boils down to a system of making inferences based on data, because that's ultimately what we want, to look at data and have it tell us something so we can make inferential conclusions.  Like looking at language learning outcome measures and using those to tell you whether Teaching Method A was more effective than Teaching Method B. Or whatever.  
+
+The point made by folks like Kruschke is quite simply that the NHST system of making inferences is broken, and we need to switch to Bayesian methods, which involves a different system of making inferences from data. There has been quite the war within the field of statistics, with both sides (NHST and Bayesian) attacking the other program as obviously wrong and utterly misguided. My impression is that this polemic has faded a little, and other folks, like [Andrew Gelman](http://andrewgelman.com/), are not quite as divisive, but they often claim that Bayesian methods have distinct advantages over NHST methods. Wanting to understand what those advantages might be, and whether they could help with the sometimes very sticky data analysis situations I find myself in, are my main motivations.
+
+That, and trying to understand what [Noah Silbert](http://www.nhsilbert.net/) is going on about half the time.
+
+So without further ado, I'm just going to launch into each chapter, throwing out my reactions and thoughts.
+
+Chapter 1
+-----------
+
+This is a very short chapter, but a nice one to have.  It walks you through the structure of the book, and tries to assuage your fears that this book might be too much for you. In terms of prerequisites, Kruschke says that you don't really need any programming experience, and as long as you have a "dim knowledge of basic calculus," you should be fine.  I'm pretty sure my R skills will be up to snuff, but I will be a good test for his claims about calculus.  My knowledge (specifically, my memory of calculus from my high school course um... 18(!) years ago) is about as dim as it gets.  This chapter also gets you an intro to Kruschke's writing style, which is pretty goofy.  I mean that in a good way, though.  It's very conversational, and peppered with plenty of corny humor.  I imagine Kruschke's students groaning a lot (maybe on the inside, if they're respectful) in class, but staying awake because of it, and I suspect this will play out similarly in the book. I think this is probably a good thing, but we'll see.
+
+One note, I didn't do an exhaustive search, but Kruschke gives HTTP addresses for both the Elsevier site and his personal site, and it looks like his personal site is where you should go to get programs, etc.  It's a little more scattered, visually, but his site is much more complete, and looks like it has a bunch of updated versions of programs, exercises, etc., where the Elsevier site has the more "basic" version of the code.

@@ -1,0 +1,18 @@
+---
+layout: post
+title: "Starting R"
+date: 2012-10-25 21:13
+comments: true
+categories: r teaching
+---
+[R](http://www.r-project.org/) is a wonderful thing. It's also managed to consume my life, for better or for worse. I've been learning and working with R for about 5 years now, since finishing my PhD, and it's had a profound impact on my work, in a good way.
+
+So naturally, I like to spread the love.  I've gotten a few friends hooked, and I like to help out other folks with what I've learned when I can.  Tonight I had a nice opportunity to give an intro tutorial to a group of grad students.  Boy, are my teaching chops rusty!
+
+It went okay, maybe, possibly.  I got slowed down by some of the classic blunders (no, not a "land war in Asia," but maybe almost as bad).  But it's an interesting issue, really.  There are literally dozens and dozens of "intros to R" that you can find on the web, in print, or both.  Why try to make another one?  What can be improved on?  Why is it so difficult?
+
+I had a nice plan.  Nice in my head, at least.  I'd get through a few of the basics, and then show off two really great things: the ease of merging data sets (for example, getting item and subject info merged into some raw data), and some of the nice ways to get some summary stats broken down by conditions.  Instead, we got tripped up by dumb things like "where's the file?" and "how do I change the working directory?".  "Dumb" in the sense of "dumb of me to not be better prepared for those," not that it's dumb to have those problems. Those problems are always the first ones to make people stumble and walk away, frustrated.
+
+Luckily, I have another couple of chances to redeem myself.  We'll see how it goes.
+
+If you want to follow along, you can check out my "startR" repo here on GitHub.  [Here's a link to it](https://github.com/shoestringpsycholing/startR), but there may also be a link off in the right hand bar of the blog.  Comments for improvements welcome!  I think my plan next time is to recap a little, but to try to walk through the workflow a little better.  I think one of the biggest initial hurdles is getting a sense of the R "ecology," for lack of a better term.
