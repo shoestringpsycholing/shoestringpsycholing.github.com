@@ -4,7 +4,7 @@
   <title><![CDATA[Shoestring Psycholing]]></title>
   <link href="http://shoestringpsycholing.github.com/atom.xml" rel="self"/>
   <link href="http://shoestringpsycholing.github.com/"/>
-  <updated>2012-11-18T07:58:16-05:00</updated>
+  <updated>2013-02-13T21:51:38-05:00</updated>
   <id>http://shoestringpsycholing.github.com/</id>
   <author>
     <name><![CDATA[Scott Jackson]]></name>
@@ -12,6 +12,38 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Back with some tips]]></title>
+    <link href="http://shoestringpsycholing.github.com/blog/2013/02/13/back-with-some-tips/"/>
+    <updated>2013-02-13T20:40:00-05:00</updated>
+    <id>http://shoestringpsycholing.github.com/blog/2013/02/13/back-with-some-tips</id>
+    <content type="html"><![CDATA[<p>Finally getting back to the blog after a long hiatus. I got a little hung up with putting together a good post for the next segment in the Kruschke/Bayesian saga, and I&#8217;ve been too busy with other things to have the time to put some polish on it.  So I&#8217;ve decided instead to try out the other route and just post frequently, without worrying too much about polish.  We&#8217;ll see how it goes.  I will pick back up with Kruschke, but I want to prioritize posting <em>some</em>thing frequently, instead of getting too perfectionist about it.</p>
+
+<p>One of the continuing themes I intend to post on is the use of various software tools, with a special focus on tools for <a href="http://shoestringpsycholing.github.com/blog/2012/11/13/really-reproducible-research/">reproducible research</a>.  So I&#8217;ll finish off today&#8217;s post with three random tips about two of my favorite pieces of software.</p>
+
+<h2>Eliminate duplicate rows in your data in R</h2>
+
+<p><a href="http://www.r-project.org/">R</a> is great.  I will post a lot about it. I use it a <em>lot</em>. But there&#8217;s still so much for me to learn.  One incredibly handy thing I didn&#8217;t realize was that it&#8217;s ridiculously easy to take a messy data set and eliminate duplicate rows.  So for example, imagine that you&#8217;re reading in a bunch of data, and for some reason, some rows are duplicated.  Maybe you merged several data sets at some other point in your processing, or maybe there is some redundancy or mistake in the data you&#8217;re reading in.  Well, good news, you can eliminate all those annoying duplicates (which would otherwise mess up your analysis with one simple line:</p>
+
+<pre><code>my.dataset &lt;- unique(my.dataset)
+</code></pre>
+
+<p>That&#8217;s it!  You&#8217;re welcome.  I have no idea how it took me over five years to learn this.</p>
+
+<h2>Drag and drop files into Emacs</h2>
+
+<p>Yes, I&#8217;m an <a href="http://www.gnu.org/software/emacs/">Emacs</a> user.  Still a total novice, but it&#8217;s now the place I do virtually all my work, unless someone forces me to deal with a manuscript in Word.  It&#8217;s a complete work environment, and I love it more all the time.  Nothing&#8217;s perfect, [insert gratutious Emacs joke here involving neckbeards or &#8220;Emacs pinky&#8221; or it being a decent operating system without a good text editor, etc.], but it&#8217;s hugely improved my productivity, and has made it possible for me to even contemplate being able to manage a workflow supporting reproducible research.</p>
+
+<p>But like I said, I&#8217;m still a complete novice.  I <em>just</em> learned that you can drag-and-drop files into Emacs to open them.  Like, you have Emacs open, and you&#8217;re looking through your files in a folder (yes, Emacs can browse file directories really well, too, but sometimes I need to be able to look at bunches of files in my GUI file system), and you can just grab a file from the folder and drag it over to Emacs and <em>pow</em>, it&#8217;s open.</p>
+
+<p>This just killed off the last remaining use I had for other text editors.  I have a copy of <a href="http://notepad-plus-plus.org/">Notepad++</a>, which is very good, don&#8217;t get me wrong, and I have an older copy of <a href="http://www.textpad.com/">TextPad</a>, which served me well when I was just getting started with Perl back in grad school, and sometimes when I&#8217;m rummaging through files and just need to peek at a text file quickly, I just right-click to open it in one of these other editors.  It was always just a few clicks or keystrokes too long to open it in Emacs to just peek.  But now that I can just drag it into Emacs, when I virtually laways have Emacs running already?  It&#8217;s over! This won&#8217;t replace the normal way to open files while working in Emacs for me, but it will replace the final use case I had for any other text editor.</p>
+
+<h2>Editing text from <code>dired</code> in Emacs</h2>
+
+<p>One more bit of Emacs happiness.  One of the reasons you get sucked into doing <em>everything</em> in Emacs is that you can interact with <em>everything</em> as if it were editable text.  Today was another example of how this has paid off for me.  I had to go through literally <em>thousands</em> of files from an old experiment to see if I was missing any, and if so which ones. It also dawned on me that I might have to do this multiple times.  Ugh.  But then I realized that I could just use Emacs&#8217; <code>dired</code> functionality to display the folder contents (i.e., all the file names) in Emacs.  I could then copy and paste (or in Emacs parlance, &#8220;kill&#8221; and &#8220;yank&#8221;) those filenames into a simple text file, and then use the great <a href="http://vimeo.com/1168225">rectangle editing in <code>cua-mode</code></a> to quickly delete all the stuff in front of the file names, and finally I could easily read these names into <code>R</code> and get a summary of exactly which subjects were missing exactly which items (based on the way the files were named).  Just lovely, and yes, I did have to repeat this a few more times, and it took zero effort to do so, and was about 1000x faster and a lot more accurate than doing it by hand.  I&#8217;m sure I could have done this in a bunch of different ways, but the ability to quickly pull up the directory contents in Emacs and treat it as Just Text really made my day.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Kruschke Chapter 5, Part 1]]></title>
@@ -32,7 +64,7 @@
 
 <blockquote><p>If the prior distribution is beta(&theta; | <em>a</em>, <em>b</em>) and the data have <em>z</em> heads in <em>N</em> flips, then the posterior distribution is beta(&theta; | <em>z</em> + <em>a</em>, <em>N</em> - <em>z</em> + <em>b</em>). The simplicity of that updating rule is one of the beauties of the mathematical approach to Bayesian inference.</p></blockquote>
 
-<p>If you follow the math to this point, I think the importance of this really sinks in. Kruschke is trying to illustrate how straightforward and non-mysterious the process of going from prior (belief) to posterior (updated belief), when the math involved allows for straightforward computation. The same point is illustrated in the immediately following paragraphs about the prior and posterior means. I think one of the biggest &#8220;mysteries&#8221; to people just starting to learn about Bayesian data analysis (including myself) is the relationship between the &#8220;results&#8221; (i.e., the posterior) and the prior. I mean, I think we&#8217;re used to thinking about the outcome of a statistical analysis as the results, and the data are just what you need in order to find out what the results are. In the NHST framework I was brought up in, the &#8220;hard&#8221; part is just making sure you&#8217;re applying the right stats to give you the &#8220;correct&#8221; results. This Bayesian thing seems so much more squishy and amorphous because of the influence of the priors, or rather the lack of understanding about how the priors can influence the &#8220;results.&#8221; But I think this is really misplacing what&#8217;s difficult about Bayesian analysis, and I think this pedagogical move by Kruschke is a nice one, as an attempt to de-mystify the relationship between prior and posterior. When the math is simple, like it is in this case in Chapter 5, it&#8217;s quite simple to see that the move from prior to posterior is extremely transparent, and if it didn&#8217;t work like it does, it would seem completely wrong. Still, I think it took me at least two or three readings to appreciate this, and get beyond the annoyance of &#8220;why is Kruschke going through all this math, when this is a useless skill one we get to MCMC?&#8221;</p>
+<p>If you follow the math to this point, I think the importance of this really sinks in. Kruschke is trying to illustrate how straightforward and non-mysterious the process of going from prior (belief) to posterior (updated belief) is, when the math involved allows for straightforward computation. The same point is illustrated in the immediately following paragraphs about the prior and posterior means. I think one of the biggest &#8220;mysteries&#8221; to people just starting to learn about Bayesian data analysis (including myself) is the relationship between the &#8220;results&#8221; (i.e., the posterior) and the prior. I mean, I think we&#8217;re used to thinking about the outcome of a statistical analysis as the results, and the data are just what you need in order to find out what the results are. In the NHST framework I was brought up in, the &#8220;hard&#8221; part is just making sure you&#8217;re applying the right stats to give you the &#8220;correct&#8221; results. This Bayesian thing seems so much more squishy and amorphous because of the influence of the priors, or rather the lack of understanding about how the priors can influence the &#8220;results.&#8221; But I think this is really misplacing what&#8217;s difficult about Bayesian analysis, and I think this pedagogical move by Kruschke is a nice one, as an attempt to de-mystify the relationship between prior and posterior. When the math is simple, like it is in this case in Chapter 5, it&#8217;s quite simple to see that the move from prior to posterior is extremely transparent, and if it didn&#8217;t work like it does, it would seem completely wrong. Still, I think it took me at least two or three readings to appreciate this, and get beyond the annoyance of &#8220;why is Kruschke going through all this math, when this is a useless skill one we get to MCMC?&#8221;</p>
 
 <p>Kruschke introduces the idea of a <em>region of practical equivalence</em> (ROPE) in this chapter, but like many other things, I think it raises more questions than it answers, and is best seen as just a first pass at the idea. He promises that Chapter 12 will work out a lot of these issues.</p>
 
