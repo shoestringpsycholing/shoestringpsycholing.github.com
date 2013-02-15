@@ -4,7 +4,7 @@
   <title><![CDATA[Category: teaching | Shoestring Psycholing]]></title>
   <link href="http://shoestringpsycholing.github.com/blog/categories/teaching/atom.xml" rel="self"/>
   <link href="http://shoestringpsycholing.github.com/"/>
-  <updated>2013-02-14T21:01:34-05:00</updated>
+  <updated>2013-02-15T09:11:52-05:00</updated>
   <id>http://shoestringpsycholing.github.com/</id>
   <author>
     <name><![CDATA[Scott Jackson]]></name>
@@ -19,6 +19,9 @@
     <updated>2012-11-01T20:22:00-04:00</updated>
     <id>http://shoestringpsycholing.github.com/blog/2012/11/01/nablopomo-and-more-r</id>
     <content type="html"><![CDATA[<p>I'm using <a href="http://www.blogher.com/blogher-topics/blogging-social-media/nablopomo">NaBloPoMo</a> as an excuse to kick-start this blog into a little more action.  Let's see if I can keep it up the whole month...</p>
+
+<!--more-->
+
 
 <p>Today was the second session of an <a href="http://shoestringpsycholing.github.com/blog/2012/10/25/starting-r/">R tutorial for beginners</a>.  This one went a bit more smoothly, I think.  I'll update my work-in-progress <a href="https://github.com/shoestringpsycholing/startR">startR</a> repo, if you're interested in the script.  I've done a few of these tutorial sessions now (for different audiences), and this one was the first time I really used an R script as a "script" in the more general sense of "scripted presentation."  In the past, I've had a kind of outline of things I want to cover, and I've usually run code, etc. to make sure things would work as expected beforehand, but when I'm actually in the middle of a tutorial, things inevitably go a little awry.  For me, usually in the form of annoying typos, in forgetting something or getting a little sidetracked, or sometimes even blanking on a particular function (last session I tried using <code>getwd()</code> and <code>setwd()</code>, but I rarely use those, and I was just sure they were <code>get.wd()</code> and <code>set.wd()</code>, and it totally threw me for a loop).</p>
 
@@ -36,6 +39,9 @@
     <content type="html"><![CDATA[<p><a href="http://www.r-project.org/">R</a> is a wonderful thing. It's also managed to consume my life, for better or for worse. I've been learning and working with R for about 5 years now, since finishing my PhD, and it's had a profound impact on my work, in a good way.</p>
 
 <p>So naturally, I like to spread the love.  I've gotten a few friends hooked, and I like to help out other folks with what I've learned when I can.  Tonight I had a nice opportunity to give an intro tutorial to a group of grad students.  Boy, are my teaching chops rusty!</p>
+
+<!--more-->
+
 
 <p>It went okay, maybe, possibly.  I got slowed down by some of the classic blunders (no, not a "land war in Asia," but maybe almost as bad).  But it's an interesting issue, really.  There are literally dozens and dozens of "intros to R" that you can find on the web, in print, or both.  Why try to make another one?  What can be improved on?  Why is it so difficult?</p>
 

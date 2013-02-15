@@ -96,21 +96,12 @@
 
   <div class="entry-content"><p>So way back in <a href="http://shoestringpsycholing.github.com/blog/2012/11/17/kruschke-chapter-5/">November</a>, I promised the next post would elaborate a bit on model comparison. This part of the chapter, and the accompanying exercises, blew my mind a little.</p>
 
-<h2>Bayesian priors are part of the model</h2>
-
-<p>I think one of the hardest things to get a handle on, coming from &#8220;traditional&#8221; NHST stats is the concept of priors.  Not just the concept, but how the heck you&#8217;re supposed to <em>use</em> them.  Up to this point, Kruschke&#8217;s presented them in very consistent, intuitive way.  Priors are a mathematical expression of your beliefs &#8220;prior&#8221; to the consideration of a particular set of data.  In the ongoing example in the book, this may be your belief about how fair a coin is before you start flipping.  In a more real research context, priors are often discussed (and Kruschke presents this idea, too) as characterizing &#8220;what we know already&#8221; before an experiment.</p>
-
-<p>Extrapolating a bit, maybe you&#8217;re doing a lexical decision priming experiment, where reaction times are usually in the 300-500 millisecond range, then you can be pretty sure you won&#8217;t see priming effects of more than 100-200 milliseconds or so at the outer limit.  Maybe this is a lame example, but pick any real experiment or data set, and unless the experimental paradigm is completely new, you probably have some information from previous experiments about what generally you might find.</p>
-
-<p>But I think where non-Baysians start to get nervous is when they realize that the posteriors (which seem like &#8220;results&#8221;) depend in part on the priors.  So if you can make up the priors, can&#8217;t you use that to manipulate your results?  And if priors represent prior &#8220;beliefs,&#8221; isn&#8217;t it hard to argue about what someone&#8217;s beliefs are?  What if the experimenter&#8217;s beliefs are different from my (the reader&#8217;s) beliefs?  I think most of these worries are missing the point, but I&#8217;m still too novice to understand why, really.  But Kruschke&#8217;s discussion of model comparison, and in particular the exercise 5.6, has given me a different way to think about it.  Not sure if I&#8217;m right yet, but it feels right.</p>
-
-<p>The way I understand it is that priors aren&#8217;t some squishy thing that are &#8220;off-limits&#8221; for discussion. They are part of the model of data being constructed, and therefore can be compared using model comparison. When I think of &#8220;model comparison&#8221; in a regression sense, what I think of is comparing different regression models (i.e., different sets of predictor variables), and checking fit statistics to see which model provides a better fit to the data.  Maybe a model with an interaction effect is better than one without it, so you take that as evidence that there is a &#8220;significant&#8221; interaction. In Bayesian model comparison, this might play out as comparing different sets of priors, because it&#8217;s the <em>priors</em> where things are set like the range of possible (or likely) values that a parameter might take.  Back to the coin-flipping example, you could compare a model in which the prior is a strong belief in a fair coin to a model in which the prior is a weak belief in fairness (i.e., a wide spread in possible values for the fairness of the coin).</p>
-
-<p>To put it another way, <strong>pitting different priors against each other looks like a way to explicitly test two competing hypotheses.</strong>  Maybe I&#8217;m missing something, but this is a totally different spin on priors than I had understood up to this point, and I think it makes sense.  If you want to stick to Kruschke&#8217;s phrasing of &#8220;beliefs,&#8221; then what you can do is compare different sets of beliefs.  There doesn&#8217;t have to be one &#8220;most appropriate&#8221; set of beliefs before you analyze your data.</p>
-
-<p>In the next post (on Kruschke&#8217;s book), I&#8217;ll try to finally look at some data and go through a very simple Bayesian analysis, parallel to what Kruschke does in the book.  Hopefully then some of these abstract discussion will start to make a little more sense.</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/02/14/kruschke-chapter-5-part-2/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -148,28 +139,12 @@
 
 <p>One of the continuing themes I intend to post on is the use of various software tools, with a special focus on tools for <a href="http://shoestringpsycholing.github.com/blog/2012/11/13/really-reproducible-research/">reproducible research</a>.  So I&#8217;ll finish off today&#8217;s post with three random tips about two of my favorite pieces of software.</p>
 
-<h2>Eliminate duplicate rows in your data in R</h2>
-
-<p><a href="http://www.r-project.org/">R</a> is great.  I will post a lot about it. I use it a <em>lot</em>. But there&#8217;s still so much for me to learn.  One incredibly handy thing I didn&#8217;t realize was that it&#8217;s ridiculously easy to take a messy data set and eliminate duplicate rows.  So for example, imagine that you&#8217;re reading in a bunch of data, and for some reason, some rows are duplicated.  Maybe you merged several data sets at some other point in your processing, or maybe there is some redundancy or mistake in the data you&#8217;re reading in.  Well, good news, you can eliminate all those annoying duplicates (which would otherwise mess up your analysis with one simple line:</p>
-
-<pre><code>my.dataset &lt;- unique(my.dataset)
-</code></pre>
-
-<p>That&#8217;s it!  You&#8217;re welcome.  I have no idea how it took me over five years to learn this.</p>
-
-<h2>Drag and drop files into Emacs</h2>
-
-<p>Yes, I&#8217;m an <a href="http://www.gnu.org/software/emacs/">Emacs</a> user.  Still a total novice, but it&#8217;s now the place I do virtually all my work, unless someone forces me to deal with a manuscript in Word.  It&#8217;s a complete work environment, and I love it more all the time.  Nothing&#8217;s perfect, [insert gratutious Emacs joke here involving neckbeards or &#8220;Emacs pinky&#8221; or it being a decent operating system without a good text editor, etc.], but it&#8217;s hugely improved my productivity, and has made it possible for me to even contemplate being able to manage a workflow supporting reproducible research.</p>
-
-<p>But like I said, I&#8217;m still a complete novice.  I <em>just</em> learned that you can drag-and-drop files into Emacs to open them.  Like, you have Emacs open, and you&#8217;re looking through your files in a folder (yes, Emacs can browse file directories really well, too, but sometimes I need to be able to look at bunches of files in my GUI file system), and you can just grab a file from the folder and drag it over to Emacs and <em>pow</em>, it&#8217;s open.</p>
-
-<p>This just killed off the last remaining use I had for other text editors.  I have a copy of <a href="http://notepad-plus-plus.org/">Notepad++</a>, which is very good, don&#8217;t get me wrong, and I have an older copy of <a href="http://www.textpad.com/">TextPad</a>, which served me well when I was just getting started with Perl back in grad school, and sometimes when I&#8217;m rummaging through files and just need to peek at a text file quickly, I just right-click to open it in one of these other editors.  It was always just a few clicks or keystrokes too long to open it in Emacs to just peek.  But now that I can just drag it into Emacs, when I virtually laways have Emacs running already?  It&#8217;s over! This won&#8217;t replace the normal way to open files while working in Emacs for me, but it will replace the final use case I had for any other text editor.</p>
-
-<h2>Editing text from <code>dired</code> in Emacs</h2>
-
-<p>One more bit of Emacs happiness.  One of the reasons you get sucked into doing <em>everything</em> in Emacs is that you can interact with <em>everything</em> as if it were editable text.  Today was another example of how this has paid off for me.  I had to go through literally <em>thousands</em> of files from an old experiment to see if I was missing any, and if so which ones. It also dawned on me that I might have to do this multiple times.  Ugh.  But then I realized that I could just use Emacs&#8217; <code>dired</code> functionality to display the folder contents (i.e., all the file names) in Emacs.  I could then copy and paste (or in Emacs parlance, &#8220;kill&#8221; and &#8220;yank&#8221;) those filenames into a simple text file, and then use the great <a href="http://vimeo.com/1168225">rectangle editing in <code>cua-mode</code></a> to quickly delete all the stuff in front of the file names, and finally I could easily read these names into <code>R</code> and get a summary of exactly which subjects were missing exactly which items (based on the way the files were named).  Just lovely, and yes, I did have to repeat this a few more times, and it took zero effort to do so, and was about 1000x faster and a lot more accurate than doing it by hand.  I&#8217;m sure I could have done this in a bunch of different ways, but the ability to quickly pull up the directory contents in Emacs and treat it as Just Text really made my day.</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/02/13/back-with-some-tips/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -209,25 +184,12 @@
 
 <p>In this post, I&#8217;ll give an overview of the conceptual issues, and we&#8217;ll get to the code and actual analysis in following posts.</p>
 
-<p>The point I have droned on about previously still holds in this chapter: the chapter is worth a re-read or two, especially after one gets a few more chapters into the book. In my initial read, it was a little hard to see the point of going through some of the mathematical derivations and equations, especially since I have a hunch that this kind of process is going to be quickly supplanted by the MCMC methods later. The best analogy I can think of that might resonate with people from linguistics or psycholinguistics is that it&#8217;s a little like introducing some &#8220;old school&#8221; theoretical constructs in syntax or phonology, which will only be replaced by methods/theories later in the course. It&#8217;s kind of a thin analogy, though, because the methods in this chapter of Kruschke are not invalid or outdated, but they do not seem to me to be representative of how Bayesian analysis is done in most actual cases for which you might want to do Bayesian analysis.</p>
-
-<p>For example, he goes through a discussion about how the beta distribution is chosen based on its convenient mathematical properties. This seems totally irrelevant at first, since most of the time in actual analysis, you won&#8217;t be stuck trying to find mathematically convenient ways of specifying priors in order to avoid MCMC, since you&#8217;ll probably be doing MCMC anyway!</p>
-
-<p>So what&#8217;s the point? I think Kruschke has some very good pedagogical aims in mind, though in my first reading, I didn&#8217;t think he made them clear enough. To me, the real reason to follow Kruschke through all the math is to be able to appreciate the points he makes in two short paragraphs on p. 84.  The first is:</p>
-
-<blockquote><p>If the prior distribution is beta(&theta; | <em>a</em>, <em>b</em>) and the data have <em>z</em> heads in <em>N</em> flips, then the posterior distribution is beta(&theta; | <em>z</em> + <em>a</em>, <em>N</em> - <em>z</em> + <em>b</em>). The simplicity of that updating rule is one of the beauties of the mathematical approach to Bayesian inference.</p></blockquote>
-
-<p>If you follow the math to this point, I think the importance of this really sinks in. Kruschke is trying to illustrate how straightforward and non-mysterious the process of going from prior (belief) to posterior (updated belief) is, when the math involved allows for straightforward computation. The same point is illustrated in the immediately following paragraphs about the prior and posterior means. I think one of the biggest &#8220;mysteries&#8221; to people just starting to learn about Bayesian data analysis (including myself) is the relationship between the &#8220;results&#8221; (i.e., the posterior) and the prior. I mean, I think we&#8217;re used to thinking about the outcome of a statistical analysis as the results, and the data are just what you need in order to find out what the results are. In the NHST framework I was brought up in, the &#8220;hard&#8221; part is just making sure you&#8217;re applying the right stats to give you the &#8220;correct&#8221; results. This Bayesian thing seems so much more squishy and amorphous because of the influence of the priors, or rather the lack of understanding about how the priors can influence the &#8220;results.&#8221; But I think this is really misplacing what&#8217;s difficult about Bayesian analysis, and I think this pedagogical move by Kruschke is a nice one, as an attempt to de-mystify the relationship between prior and posterior. When the math is simple, like it is in this case in Chapter 5, it&#8217;s quite simple to see that the move from prior to posterior is extremely transparent, and if it didn&#8217;t work like it does, it would seem completely wrong. Still, I think it took me at least two or three readings to appreciate this, and get beyond the annoyance of &#8220;why is Kruschke going through all this math, when this is a useless skill one we get to MCMC?&#8221;</p>
-
-<p>Kruschke introduces the idea of a <em>region of practical equivalence</em> (ROPE) in this chapter, but like many other things, I think it raises more questions than it answers, and is best seen as just a first pass at the idea. He promises that Chapter 12 will work out a lot of these issues.</p>
-
-<p>In reading the &#8220;Predicting Data&#8221; section (5.3.2, starting on p. 87), something occurred to me. Namely, that the process of predicting from prior data is absolutely opposite the intuitive <a href="http://en.wikipedia.org/wiki/Gambler%27s_fallacy">gambler&#8217;s fallacy</a>. I could see this as a useful point of discussion in a class setting, especially if some of the students are still grappling with some basic ideas in statistics. The gambler&#8217;s fallacy is this idea that previous data affects future data, so if you flip a coin and it turns up heads 10 times in a row, then somehow it&#8217;s more likely to turn up tails on the next flip. This is an extremely appealing intuition (for reasons that I think are still up for debate in the cognitive science literature), and it&#8217;s easy to fall victim to this kind of thinking, but it&#8217;s simply false.</p>
-
-<p>What&#8217;s interesting to me is that not only is it false in Bayesian inference, but it&#8217;s going the wrong way entirely. In Bayesian inference, you essentially start with some belief that the coin is fair, but if you then flip the coin and you get 10 heads in a row (and no tails), then your posterior would be updated essentially to believe that the coin was not quite fair, and it would increase the probability of you predicting another heads.  Of course, the degree to which you would predict another heads would depend on how strong your prior was. If you had a very strong belief that the coin was fair, it may only change a tiny amount. But still, the change is in the <em>opposite</em> direction of the gambler&#8217;s fallacy. That is, if you see a run of heads, the &#8220;gambler&#8221; inside you may tell you that you should bet tails on the next flip, but a Bayesian would suggest that maybe the coin isn&#8217;t fair after all. I just think this is an interesting difference between a common (but false) intuition about how probabilities work, and how Bayesian belief-updating works, and puts a different spin on this common &#8220;Stats 101&#8221; kind of example.</p>
-
-<p>The section on model comparison raises a number of interesting issues, so I&#8217;ll leave it to next time. All in all, this chapter is unfolding much like the previous ones: deceptively easy to follow on a first pass, but the more important pedagogical points may not sink in until another reading or two, and maybe then only after you get farther into the book and have time to absorb things more. The downside of this is that you might have trouble seeing the point to some of the more detailed mathematical excursions. (And by the way &#8220;detailed math&#8221; is relative: the math is really quite straightforward, but to many typical social scientists, it will seem like a lot in places, speaking as one myself.)</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/11/17/kruschke-chapter-5/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -263,19 +225,12 @@
 
   <div class="entry-content"><p>I think a <em>lot</em> about the related notions of <em>reproducibility</em> and <em>replicability</em> in research. I intend for these to be major reoccurring themes. Today I saw a big special issue of <a href="http://pps.sagepub.com/"><em>Perspectives on Psychological Science</em></a> on the topic of reproducibility, so I thought it would be good to break up the Bayesian stuff with a short rant about reproducibility.</p>
 
-<p>First, I&#8217;d like to propose a distinction between replicability and reproducibility. Replicability is about <em>results</em> and reproducibility is about <em>methods</em>. These are not independent, though, more like two sides of the same coin. If your results are replicable, that means that someone else can basically find the same pattern. This is a basic, fundamental goal of science. If someone finds that standing on your head while practicing a foreign language leads to better retention of new vocabulary, great. But if no one else can produce that result, then it calls the initial result into question.</p>
-
-<p>This is a pretty big issue these days. The special issue I mention above is just one of the many signs. There&#8217;s been a lot of recent discussion about how the publishing system in the social sciences (psychology has been getting the most attention, but I think this is true in virtually every field I&#8217;m acquainted with) actually discourages replication. Sensational results end up getting into more &#8220;important&#8221; journals, and from a purely statistical point of view, sensational results really ought to be rare things. The result is over-publication of results that may not hold up well when people try to replicate them. And then there&#8217;s the problem that there&#8217;s no viable venue to published &#8220;failed&#8221; studies, which do not show any effects. I&#8217;ll make separate posts for each of these topics at some point.  The point here is that those of us who like to call ourselves &#8220;scientists&#8221; should hold ourselves to a better standard of replicability that the current publishing system encourages. Otherwise, we are just flooding the market with results that no one can really trust, and how can one formulate effective or accurate theories when trying to explain false results?</p>
-
-<p>But how do you get replication?  That&#8217;s where reproducible methods come in.  What if I run an experiment, get some interesting results, and then someone from a competing theoretical point of view says they tried to replicate, but can&#8217;t, therefore casting doubt on my results?  Having truly <em>reproducible</em> methods is my safeguard. This means that my methods are transparent enough that other people can perform the experiment in a similar enough way, or that if someone tries to replicate and can&#8217;t, they can compare their methods to mine, to see what might be different. There are some current standards that people try to keep in how they report their methods, to facilitate this, but I think we&#8217;re still really a long way from true reproducibility. The key morpheme here is the <em>-able</em> part of <em>reproducible</em>. That is, if it&#8217;s extremely difficult to reproduce methods, that is less reproducible. It can often be difficult to reproduce even your own methods, because there are so many small decision points along the way, and there is often considerable work at each step.</p>
-
-<p>The good news is that there has been a recent rise in tools to make reproducible research easier, and to improve on the <em>-able</em> part, especially in reproducing statistical analysis. But I believe that we need to extend beyond reproducible stats. Sharing your data and your <a href="http://www.r-project.org/">R code</a> that you used for your analysis is a great first step, but that&#8217;s all it is: a first step.</p>
-
-<p>So ultimately, improving reproducible methods is one of the most important parts of addressing the replication problem. Even if we &#8220;fix&#8221; the publishing system so that failed replications are more visible, without better means to understand (1) how to replicate someone&#8217;s work and (2) what potential differences between studies could be explaining replication failures, we&#8217;ll still be in the dark when it comes to actually evaluating reproducibility.</p>
-
-<p>If this is an interesting issue to you, stay tuned to this blog, as I plan to work through some of the concepts involved, as well as some of the practical means to actually achieve better reproducibility.</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/11/13/really-reproducible-research/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -315,27 +270,12 @@
 
 <p>The gist of Bayes&#8217; Rule is that it sets up a relationship between conditional probabilities, allowing you to calculate something you want to know, from quantities that you already have (or can estimate).  Back to the idea of beliefs as probabilities, Bayesian inference boils down to the idea of calculating beliefs (probability of some parameter) given data, which is a conditional probability, like calculating the probability of rain (a parameter) given clouds (data).  And the point and magic of Bayes&#8217; Rule is that this can be calculated as a function of other probabilities, which we can get easier access to directly.</p>
 
-<p>Of course, &#8220;easier&#8221; is relative, and that&#8217;s where all the computational stuff starts coming into play.  But in this chapter, Kruschke sticks to the coin-flipping and playing-card examples, because the probabilities involved there can be calculated pretty easily.</p>
-
-<p>But again <a href="http://shoestringpsycholing.github.com/blog/2012/11/05/kruschke-chapter-3/">like in the previous chapter</a>, I feel like sometimes I needed to suspend my thoughts for a little to follow how Kruschke lays out things, because it took me a while to get the connection between what he starts off talking about as examples, and things that I see as valuable.  I&#8217;m coming to this book from a fair amount of experience with a bunch of NHST tools, even &#8220;fancy&#8221; ones like mixed-effects models, and there have been times in these initial chapters where I was having trouble seeing the relevance to what I wanted to do, which was try to understand how Bayesian stats are an alternative to the NHST way of doing things.  When he finally gets to talking about belief in a model, or belief in a model parameter, I could start recognizing those things as goals, but it was hard to follow the lead-up.  So again &#8212; and I&#8217;m starting to sound like a broken record &#8212; depending on the audience, a bit of a back-and-forth re-reading of some of these initial chapters will probably be beneficial, in order to connect his very nice, clear description of concepts to the more complex things that you will inevitably care more about. To put it a little more negatively, at this point in the book, if you&#8217;re coming in with any expertise in other statistical methods, you may feel impatient, and it may be hard to work through these chapters without a clear view of how they connect to what you actually want to do. My two cents is that it&#8217;s worth the effort to suffer the suspense, though maybe a quick initial read, followed by a more careful return later would work best. The rest of this chapter is pretty straightforward with examples, but I think this chapter in particular should be re-read after getting farther, because it lays the foundations for the fundamental insights of Bayesian inference (at least, as I understand it so far).</p>
-
-<p>On p. 62, section 4.2.2.1, he gets around to being very explicit about a point I had earlier regarding confusion between different kinds of probability.  He does finally point out that &theta;, i.e., the parameter that you actually care about testing with your data, is not always a probability, even though it has been in his examples of coin-flipping.  This is a point that I think an instructor could and should build in earlier, or at least watch out for, so that students don&#8217;t get the two completely confounded.</p>
-
-<p>I like that Kruschke revisits the three goals of inference that he set up earlier, now clothing them in Bayesian terms.  This is excellent, though again, worthy of re-reading later.  I&#8217;ve heard noise about Bayes factors not being all that when it comes to model comparison, although that&#8217;s what Kruschke presents.  &#8220;I&#8217;ve heard noise&#8221; is about as good as I can say now, though, so that will be something to watch out for in the future, maybe.</p>
-
-<p>I&#8217;d like to end this post by paraphrasing and trying to re-express a point that Kruschke makes towards the end of the chapter, and one that I think the whole first seven chapters or so are all building towards.  I&#8217;m hoping by paraphrasing, that I can solidify my own understanding.</p>
-
-<p>The general point is to understand why complex computational methods (or at least complex to me) are needed for Bayesian analysis, when Bayes&#8217; Rule seems to be rather simple and elegant.  Coming at Bayesian analysis from the outside, I&#8217;ve had mixed impressions. One that it&#8217;s about a different philosophical take on how to draw inferences from data, which to me makes a good deal of sense.  The other is that there&#8217;s a lot of tricky computational and mathematical aspects of it, which makes it seem more esoteric or difficult or even problematic for practical use.  And I never understood how or why these things were connected. So my understanding from this chapter of Kruschke is that it all comes down to the &#8220;evidence,&#8221; to use the Bayesian term, that is, the denominator of Bayes&#8217; Rule.  To paraphrase Bayes&#8217; Rule in terms of a model parameter (I have a regression coefficient in mind, for example), what we care about is the probability of a model parameter being a particular value given some data (the posterior). This is the whole &#8220;updated belief given the data&#8221; idea.  But to get that, we need a prior belief, a likelihood, and evidence (again, all with the Bayesian sense of these words). The prior belief makes sense conceptually to me, and I can at least imagine how one might come up with such a thing. The likelihood is the probability of the data occurring given the model and parameters, and I can imagine that one can do that without too much difficulty, basically with a probability density.</p>
-
-<p>So far, I have a pretty decent grip on this, I think.  From my NHST training, I&#8217;m comfortable thinking about data being the result of grabbing some numbers out of a bag.  What we are trying to understand is the properties of &#8220;the bag&#8221; (i.e., the world, the mind, etc.), but we can&#8217;t know everything in the bag, so we grab enough numbers to see if we can learn something about how the contents are structured.  The NHST way of doing things is to formulate a distribution of what the numbers would look like if the bag had no structure and everything was just random &#8212; the null hypothesis &#8212; and then we can say, with this boring imaginary bag, it would be very unlikely (like say, less that 5% probability) that we would get numbers like the ones we&#8217;ve drawn.  Therefore, the bag must be structured in some way.  The way I understand it, Bayesian likelihood is like saying &#8220;okay, imagine the bag has this property, what would random pulls from the bag look like,&#8221; and that&#8217;s the probability density of the data given that parameter.  While a little more involved than the NHST null hypothesis, because it&#8217;s not always just a &#8220;null hypothesis bag,&#8221; it&#8217;s not all that different, and I can imagine being able to come up with these values.</p>
-
-<p>So the real trick, computationally, at least, seems to be the evidence. The evidence is the probability of the data happening across all possible parameter values. In the majority of cases I can think of that are of practical interest to a researcher, parameter values are pretty much always continuous, and therefore it&#8217;s impossible or impractical to actually calculate this value.  That&#8217;s where all the &#8220;fancy&#8221; computational and mathematical techniques like MCMC sampling come into play, as providing ways of estimating this quantity in a reasonable way.  And what makes it difficult is that because there&#8217;s a random element to this, sometimes the algorithms and computations can go astray, and that&#8217;s where a lot of active work is being done, to refine and improve the techniques for actually calculating the value of the evidence.</p>
-
-<p>At least, this is how I&#8217;m seeing things now.  All you Bayesians out there, if I&#8217;m screwing it up, please enlighten me!</p>
-
-<p>EDIT: I wrote the above the first time I went through the chapter, and I&#8217;m leaving it as-is, in case you&#8217;re reading the book along with me.  But I&#8217;m a little off base here. Hopefully I&#8217;ll get it sorted out better later.  As a sneak preview, there&#8217;s not really anything about the &#8220;evidence&#8221; that&#8217;s a problem, but it is an issue of efficient sampling from a large space, so I&#8217;m sorta partly right. But this is more or less confirming my general point from above: while this chapter is well-written and (at least to a complete novice) seems to articulate the core of Bayesian inference in an accessible way, my guess is that most people would benefit from re-visiting it, once they&#8217;ve gotten their hands dirtier with actually doing Bayesian analysis, in the next few chapters.</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/11/07/kruschke-chapter-4/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -371,32 +311,12 @@
 
   <div class="entry-content"><p>This is the first really substantial chapter; the first two were really just a warm-up. Kruschke presents this chapter as a kind of intro to probability, but (naturally) he makes some very specific choices about what to approach and how to approach it.  A lot of it comes across as kind of foreshadowing, which makes it a little hard to follow or grasp the point of at times. Ultimately, I think this chapter should go pretty quick the first read-through, to prime some ideas, but the ideas probably won&#8217;t really start to sink in until they get applied later.</p>
 
-<p>Another overall comment: Kruschke points this out at some point himself, but the fact is that throughout this chapter, he&#8217;s really talking about two kinds (or contexts) of probability. One is as a mathematical expression of belief, which, I assume, is pretty much a given for any kind of Bayesian analysis.  The other is the parameter (&theta;) of interest that one is trying to estimate.  I mean, in all the coin-flipping examples, there is the probability of heads, which is just a parameter of the data-generating process.  In a different kind of data or analysis, it might be something else, not probability (I&#8217;m guessing that when we get to Bayesian regression, the parameter will be something like a regression coefficient, which is not a probability). And then there&#8217;s the probability (or belief) in a parameter value (<em>p</em>(&theta;)), which is always going to be expressed as probability (e.g., for regression, there should be probabilities/beliefs for different coefficient values).  As intuitive and appealing as the coin-flipping examples are, I find this double-sided discussion of probability to be kind of confusing.</p>
-
-<p>So, on to the details of the chapter. Kruschke focuses on the simple case of predicting coin flips and deciding whether the coin is fair.  This has the advantage of not only being conceptually intuitive, but also numerically convenient, allowing for a variety of analytic approaches that don&#8217;t require the heavier-duty computational tools of MCMC, and I&#8217;m sure this was a choice Kruschke made by design.</p>
-
-<p>But illustrating my quibble above, he starts with a discussion about how the fairness of the coin (the parameter &theta;) is a probability, and this can be simulated as a long-run relative frequency, or derived mathematically, and then he switches abruptly to a brief discussion about probability as a expression of subjective belief, even discussing how one might heuristically estimate one&#8217;s own internal numerical belief in something. I find this back-and-forth discussion a little disorienting, and paradoxically, it feels like he goes into too much detail and not enough detail. The discussion of &#8220;calibrating&#8221; one&#8217;s subjective belief seems to invite more questions and confusions than are necessary to make the simple point that in Bayesian analysis, &#8220;belief&#8221; is represented mathematically by probabilities. But it&#8217;s not quite in-depth enough to foster a deep understanding or exploration of the ideas.</p>
-
-<p>I think if I were using this for a course, I would want to <em>either</em> (a) spend more time on fleshing out the ideas in this chapter, and take care to very explicitly pull apart the concepts of probability-as-parameter vs. probability-as-belief, or (b) speed through or defer sections of the chapter entirely, jump straight into some analysis, and refer back to sections in this chapter to help present the basic ideas behind the analysis.</p>
-
-<p>Working through the rest of the chapter, I feel like he&#8217;s foreshadowing the steps from Chapters 5 through 7, from a purely analytic approach, to a grid approximation, to MCMC sampling.  He touches on a number of interesting points, including some nice discussions of:</p>
-
-<ul>
-<li>probability distributions (<em>mass</em> for discrete outcomes and <em>density</em> for continuous)</li>
-<li>the normal probability distribution</li>
-<li>the relationships between mean, variance, standard deviations, and medians</li>
-<li>Highest Density Intervals (which, in my NHST conceptual background, are like Bayesian confidence intervals)</li>
-<li>two-way probabilities, marginal probabilities, and conditional probabilities. This is where he starts to lead towards the crux of Bayes&#8217;s rule.</li>
-</ul>
-
-
-<p>But all these things feel like sort of incomplete foreshadowing of what&#8217;s to come.  Priming the pump, as it were, but I personally have a hard time retaining stuff when I don&#8217;t see the point of it until later.  So again, I think in practice I would recommend zipping through and then revisiting this chapter once you&#8217;ve gotten into the applications later.</p>
-
-<p>The other main way I can think to describe Kruschke&#8217;s writing so far is that it is a very uneven flow of information.  There are stretches of very informal, easy-to-read text that glide by, and then I hit a sentence or two that quickly assert or review some equation or other point that is very dense, and I feel like I have to read it over several times and work through it in my head to make sure I&#8217;m understanding.  This is not really a criticism, just a description of my personal experience in reading.</p>
-
-<p>These relatively minor worries and hand-wringings aside, I think this is a nice, concise, readable chapter.  I think he does a good job of discussing some basic concepts in probability in an extremely approachable way, in order to set up a better understanding of what&#8217;s to come. It&#8217;s certainly not an exhaustive treatment, but it&#8217;s useful enough that I&#8217;d recommend a good reading of it, even for peole coming to the book with a decent stats background. But I really do think that most of the good points may be a little lost or unappreciated until some of the later topics in the book are broached.</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/11/05/kruschke-chapter-3/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -434,15 +354,12 @@
 
 <p><a href="http://www.youtube.com/watch?v=GZYhDMCOyww">No, there is too much. Let me sum up.</a></p>
 
-<p>These days, mixed-effects models are rapidly overtaking the traditional ANOVA in some parts of the field. If the <a href="http://www.indiana.edu/~kruschke/AnOpenLetter.htm">Bayesians have their way</a> (see also <a href="http://shoestringpsycholing.github.com/blog/2012/11/02/naive-bayesian/">this post</a>), then Bayesian data analysis may make a similar sweep through my fields in another few years. But what happens when you write a paper using these shiny new methods, and either (a) your reviewers or (b) much of the audience for the paper (or both) don&#8217;t understand the methods? Maybe you even include the <a href="http://www.r-project.org/">R code</a> for your analysis.  On the one hand, your analysis could be easily reproduced by anyone in the world, since R can be run for free on virtually any computer platform.  On the other hand, though, other people may find it impossible to <em>really</em> reproduce your analysis, since they don&#8217;t understand it.</p>
-
-<p>The problem is that this can cause trust to break down. Maybe the reviewers/readers decide to trust to because you seem smart and seem to know what you&#8217;re doing. But in my experience, we are not trained to give people the benefit of the doubt, especially when reviewing articles for publication. The main question seems to be &#8220;why are they using this &#8216;fancy&#8217; new method, when my old method (e.g., ANOVA) seems to work just fine?&#8221;  And even if an answer for why the new method is superior can be supplied, if it&#8217;s not adequately explained, then it can&#8217;t really be replicated or fully understood.</p>
-
-<p>So what makes a method <em>really</em> reproducible?  Not just the means, but the understanding. Just as I don&#8217;t expect a typical middle-schooler or even college student to be able to <em>really</em> replicate or reproduce most published analyses or results in psycholinguistics (even though they may be technically capable of re-running someone&#8217;s R code), I don&#8217;t expect that most psycholinguists (including myself at present) could reproduce a complex Bayesian analysis.</p>
-
-<p>I&#8217;ll leave the subtleties of this for another day, but I think it&#8217;s an interesting and important issue, which I have not seen discussed explicitly, but of which I have seen (and felt!) very concrete examples.  So here&#8217;s a thought: what if the future of truly reproducible research is not just &#8220;including code and data,&#8221; but also including tutorials or other means to <em>educate</em> readers and reviewers? How far could or should this be pushed?</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/11/04/reproducibility-of-new-methods/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -480,19 +397,12 @@
 
 <p>In this chapter, Kruschke does a nice job of succinctly laying out the primary goals of statistical inferencing, and gives a pretty clear, intuitive description of what prior and posterior beliefs are about. To paraphrase in a nutshell, prior beliefs represent our beliefs (including level of uncertainty in those beliefs) before data collection or observation, and posterior beliefs reflect what we believe after taking data into account.</p>
 
-<p>This chapter strikes me as a nice place to do some discussions in a class about what the goals of statistics are, the idea of updating beliefs via statistics, etc.  For example, I can easily see some people being uneasy about the idea of mathematical formulas determining beliefs, in a philosophical sense. Kruschke does touch on this briefly, mentioning basically that beliefs that cannot be influenced by data are essentially &#8220;out of bounds,&#8221; but he does so in kind of a flippant way. I think even if we are talking about scientific beliefs, the idea of an analysis telling you what you <em>should</em> believe (and Kruschke does use the word &#8220;should&#8221;) can be uncomfortable, and not entirely realistic.</p>
-
-<p>To clarify, in case you&#8217;re new to Bayesian inference, one of the concepts behind Bayesian inference is that it gives a clear mathematical formulation for how beliefs should be changed (there&#8217;s that &#8220;should&#8221; again), given the prior beliefs and the data. For example, a detective might be able to express her beliefs about suspects in terms of relative probabilities. So maybe if a woman was murdered, there could be a relatively high prior belief that it was the jealous ex-husband, and relatively low prior belief that it was the woman&#8217;s 2-year-old daughter. If the detective finds the daughter&#8217;s fingerprints on the murder weapon, it may only slightly affect her (nearly zero) belief that the daughter did it, where finding the husband&#8217;s fingerprints may make a big difference. The point is that Bayesian inference gives a mathematical framework for actually computing how beliefs should be updated. But given what people often mean when they talk about &#8220;beliefs,&#8221; the idea of a mathematical system telling you how you should change your beliefs given some data might be uncomfortable.</p>
-
-<p>Of course, once you get a little farther, the Bayesian concept of &#8220;belief&#8221; is pretty circumscribed and clear, and it doesn&#8217;t quite mean what most people mean by &#8220;belief,&#8221; but I could see this point in the book being a good place for some discussion along these lines in a class. Especially because it&#8217;s such a different kind of approach compared to the null-hypothesis significance testing (NHST) way of thinking about things.  If NHST is new to you, too, the NHST way of thinking about things is more that you approach a set of data and ask &#8220;what are the odds that this data occurred this way purely by chance?&#8221;  And if you decide that the odds are sufficiently low (by convention in many fields, less than 5%, or 1-in-20 odds), then you draw the conclusion that the &#8220;null hypothesis&#8221; (the hypothesis that whatever you&#8217;re looking at happened just by chance) is probably false. This comes up more directly later in the book, but that&#8217;s the gist, if all this stats stuff is new to you.</p>
-
-<p>But back to the three goals as Kruschke presents them: (1) estimation of parameter values, (2) prediction of data values, and (3) model comparison.  Depending on the context of who&#8217;s reading this book, I could see the benefit of some more examples of these things, but the presentation in the text is nice and clear.  Kruschke makes an interesting point about Bayesian analysis &#8220;intrinsically adjust[ing] for model complexity&#8221; (p. 14), but the significance of this is likely to be lost on anyone not familiar with model comparison in other (e.g., NHST) methods. In terms of the audience of the book, I think these points will be much more interesting and meaningful to anyone who&#8217;s actually done data analysis before, and they may fly right by someone who&#8217;s relatively new to it.</p>
-
-<p>Finally, Kruschke includes a short intro to the <a href="http://www.r-project.org/">R software and programming language</a>. There&#8217;s not really a great way to introduce R in 7 pages, but Kruschke does a decent job of giving the minimum needed to help people get the ball rolling.  Again, here&#8217;s another spot where his <a href="http://www.indiana.edu/~kruschke/DoingBayesianDataAnalysis/">website</a> outpaces the book already, because the website makes the excellent recommendation of using <a href="http://www.rstudio.org/">RStudio</a>, instead of the (IMHO) inferior  <a href="http://www.sciviews.org/Tinn-R/">Tinn-R</a>. No knock against the fine folks who put together Tinn-R.  This is just one of those things that makes it hard to write static books about R.  RStudio is a pretty new player in the GUI game, but it&#8217;s quickly become the favorite for general users for a lot of good reasons.  In any case, Kruschke will not make you an expert at R. But he gives you enough to run through the code in the book, cookbook-style. I suspect for anyone needing to work with real data, some additional resources or expertise in R will be needed to go from raw data to Bayesian analysis. <strong>R pet peeve alert:</strong> throughout the book, Kruschke uses the style of using <code>=</code> instead of <code>&lt;-</code> for assignment. This may help many people coming from other programming languages, but it&#8217;s a little non-idiomatic for R.  But this is a pretty inconsequential pet peeve, and since the book is about Bayesian analysis, not R coding style, I think overall this is not a bad choice.</p>
-
-<p>In summary, it&#8217;s a good chapter and covers a bunch of introductory bases.  Depending on who&#8217;s reading the book, and what the goals are (class textbook vs. self-study), a good amount of supplementary material or discussion could be useful, or it could be fine to just skim this chapter to get on to the meatier stuff.</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/11/03/kruschke-chapter-2/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -532,27 +442,12 @@
 
 <p>Today, the topic is <a href="http://en.wikipedia.org/wiki/Thomas_Bayes">Bayesian</a> stats. The word &#8220;Bayesian&#8221; is a bit of a buzz-word for a wide range of different topics in computational and statistical work, but despite this, it&#8217;s a really important modern approach to data and analysis.  What exactly is it, and what&#8217;s the big deal?  Damned if I know, but in an ongoing series of posts, I intend to find out a lot more, and share my thoughts here.</p>
 
-<p>So here&#8217;s the idea:  starting virtually from scratch, I&#8217;m going to walk through a recent <a href="http://www.indiana.edu/~kruschke/DoingBayesianDataAnalysis/">book</a> by <a href="http://www.indiana.edu/~kruschke/">John Kruschke</a>, and give my own knee-jerk reactions, as a kind of extended review of the book, and the usefulness of Bayesian methods for language scientists (and maybe others). Kruschke himself is a very um&#8230; <em>outspoken</em> advocate of Bayesian analysis (see this <a href="http://www.indiana.edu/~kruschke/AnOpenLetter.htm">&#8220;Open Letter&#8221;</a>), and while I&#8217;m generally pretty sympathetic and find most of these arguments pretty convincing, I&#8217;ll try to take a skeptical stance when going through the book.</p>
-
-<p>My own stats background is pretty hodge-podgy, but I can hold my own in comparison to most folks in my field. My hope is that by going through the book in this way, I&#8217;ll get more out of the book myself, and it might help other folks decide whether looking into Bayesian stats could be worth their time, too.  Big props go to Amber Springer for getting a local reading group started on this book. I wasn&#8217;t able to attend as much as I&#8217;d have liked to, but going to a couple of meetings really got the ball rolling for me, and I appreciate it!</p>
-
-<h2>The Big Deal, in a nutshell</h2>
-
-<p>If all this is utterly mysterious and the word &#8220;Bayesian&#8221; might as well be &#8220;Martian,&#8221; here&#8217;s the basic gist of why I&#8217;m spending time on this. &#8220;Traditional&#8221; stats in the fields I work in are more or less descended from seminal work by <a href="http://en.wikipedia.org/wiki/Ronald_Fisher">Ronald Fisher</a> and others, and can also be referred to as &#8220;Null Hypothesis Significance Testing.&#8221; If you&#8217;ve ever looked for a &#8220;p-value&#8221; to tell you if your experiment &#8220;worked,&#8221; this is the framework you&#8217;re used to. It boils down to a system of making inferences based on data, because that&#8217;s ultimately what we want, to look at data and have it tell us something so we can make inferential conclusions.  Like looking at language learning outcome measures and using those to tell you whether Teaching Method A was more effective than Teaching Method B. Or whatever.</p>
-
-<p>The point made by folks like Kruschke is quite simply that the NHST system of making inferences is broken, and we need to switch to Bayesian methods, which involves a different system of making inferences from data. There has been quite the war within the field of statistics, with both sides (NHST and Bayesian) attacking the other program as obviously wrong and utterly misguided. My impression is that this polemic has faded a little, and other folks, like <a href="http://andrewgelman.com/">Andrew Gelman</a>, are not quite as divisive, but they often claim that Bayesian methods have distinct advantages over NHST methods. Wanting to understand what those advantages might be, and whether they could help with the sometimes very sticky data analysis situations I find myself in, are my main motivations.</p>
-
-<p>That, and trying to understand what <a href="http://www.nhsilbert.net/">Noah Silbert</a> is going on about half the time.</p>
-
-<p>So without further ado, I&#8217;m just going to launch into each chapter, throwing out my reactions and thoughts.</p>
-
-<h2>Chapter 1</h2>
-
-<p>This is a very short chapter, but a nice one to have.  It walks you through the structure of the book, and tries to assuage your fears that this book might be too much for you. In terms of prerequisites, Kruschke says that you don&#8217;t really need any programming experience, and as long as you have a &#8220;dim knowledge of basic calculus,&#8221; you should be fine.  I&#8217;m pretty sure my R skills will be up to snuff, but I will be a good test for his claims about calculus.  My knowledge (specifically, my memory of calculus from my high school course um&#8230; 18(!) years ago) is about as dim as it gets.  This chapter also gets you an intro to Kruschke&#8217;s writing style, which is pretty goofy.  I mean that in a good way, though.  It&#8217;s very conversational, and peppered with plenty of corny humor.  I imagine Kruschke&#8217;s students groaning a lot (maybe on the inside, if they&#8217;re respectful) in class, but staying awake because of it, and I suspect this will play out similarly in the book. I think this is probably a good thing, but we&#8217;ll see.</p>
-
-<p>One note, I didn&#8217;t do an exhaustive search, but Kruschke gives HTTP addresses for both the Elsevier site and his personal site, and it looks like his personal site is where you should go to get programs, etc.  It&#8217;s a little more scattered, visually, but his site is much more complete, and looks like it has a bunch of updated versions of programs, exercises, etc., where the Elsevier site has the more &#8220;basic&#8221; version of the code.</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/11/02/naive-bayesian/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -588,13 +483,12 @@
 
   <div class="entry-content"><p>I&#8217;m using <a href="http://www.blogher.com/blogher-topics/blogging-social-media/nablopomo">NaBloPoMo</a> as an excuse to kick-start this blog into a little more action.  Let&#8217;s see if I can keep it up the whole month&#8230;</p>
 
-<p>Today was the second session of an <a href="http://shoestringpsycholing.github.com/blog/2012/10/25/starting-r/">R tutorial for beginners</a>.  This one went a bit more smoothly, I think.  I&#8217;ll update my work-in-progress <a href="https://github.com/shoestringpsycholing/startR">startR</a> repo, if you&#8217;re interested in the script.  I&#8217;ve done a few of these tutorial sessions now (for different audiences), and this one was the first time I really used an R script as a &#8220;script&#8221; in the more general sense of &#8220;scripted presentation.&#8221;  In the past, I&#8217;ve had a kind of outline of things I want to cover, and I&#8217;ve usually run code, etc. to make sure things would work as expected beforehand, but when I&#8217;m actually in the middle of a tutorial, things inevitably go a little awry.  For me, usually in the form of annoying typos, in forgetting something or getting a little sidetracked, or sometimes even blanking on a particular function (last session I tried using <code>getwd()</code> and <code>setwd()</code>, but I rarely use those, and I was just sure they were <code>get.wd()</code> and <code>set.wd()</code>, and it totally threw me for a loop).</p>
-
-<p>So this time I literally typed out every single thing in advance, in &#8220;walk-through&#8221; style, into a <code>.R</code> script, even things you&#8217;d normally never put in a script, like <code>head()</code> or <code>summary()</code>, and I think it really helped.  Not only did it save time and frustration by saving me from my inevitable typos, it helped me stay on track, and reminded me of all the little points I wanted to make, and the sequence in which I planned to make them.</p>
-
-<p>I didn&#8217;t get a whole lot of immediate feedback, but people seemed to be following a little better, and in general the reaction seemed more positive. Of course, even the most effective demo or lecture is only the very beginning of the learning process.  But I think a clear demo, set up to be run as an actual walk-through, is a pretty efficient way to present a fair amount of code without getting people lost in the process of having to fix your own mistakes on the fly. And I think when you&#8217;re presenting to a group of more than just a couple of people (I think there were at least 20 or so tonight), a clear demo is about the best you can hope for.</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/11/01/nablopomo-and-more-r/">Read on &rarr;</a>
+    </footer>
   
 
 

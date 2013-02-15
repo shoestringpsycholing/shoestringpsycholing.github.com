@@ -4,7 +4,7 @@
   <title><![CDATA[Shoestring Psycholing]]></title>
   <link href="http://shoestringpsycholing.github.com/atom.xml" rel="self"/>
   <link href="http://shoestringpsycholing.github.com/"/>
-  <updated>2013-02-14T21:01:34-05:00</updated>
+  <updated>2013-02-15T09:11:52-05:00</updated>
   <id>http://shoestringpsycholing.github.com/</id>
   <author>
     <name><![CDATA[Scott Jackson]]></name>
@@ -19,6 +19,9 @@
     <updated>2013-02-14T20:10:00-05:00</updated>
     <id>http://shoestringpsycholing.github.com/blog/2013/02/14/kruschke-chapter-5-part-2</id>
     <content type="html"><![CDATA[<p>So way back in <a href="http://shoestringpsycholing.github.com/blog/2012/11/17/kruschke-chapter-5/">November</a>, I promised the next post would elaborate a bit on model comparison. This part of the chapter, and the accompanying exercises, blew my mind a little.</p>
+
+<!--more-->
+
 
 <h2>Bayesian priors are part of the model</h2>
 
@@ -44,6 +47,9 @@
     <content type="html"><![CDATA[<p>Finally getting back to the blog after a long hiatus. I got a little hung up with putting together a good post for the next segment in the Kruschke/Bayesian saga, and I&#8217;ve been too busy with other things to have the time to put some polish on it.  So I&#8217;ve decided instead to try out the other route and just post frequently, without worrying too much about polish.  We&#8217;ll see how it goes.  I will pick back up with Kruschke, but I want to prioritize posting <em>some</em>thing frequently, instead of getting too perfectionist about it.</p>
 
 <p>One of the continuing themes I intend to post on is the use of various software tools, with a special focus on tools for <a href="http://shoestringpsycholing.github.com/blog/2012/11/13/really-reproducible-research/">reproducible research</a>.  So I&#8217;ll finish off today&#8217;s post with three random tips about two of my favorite pieces of software.</p>
+
+<!--more-->
+
 
 <h2>Eliminate duplicate rows in your data in R</h2>
 
@@ -79,6 +85,9 @@
 
 <p>In this post, I&#8217;ll give an overview of the conceptual issues, and we&#8217;ll get to the code and actual analysis in following posts.</p>
 
+<!--more-->
+
+
 <p>The point I have droned on about previously still holds in this chapter: the chapter is worth a re-read or two, especially after one gets a few more chapters into the book. In my initial read, it was a little hard to see the point of going through some of the mathematical derivations and equations, especially since I have a hunch that this kind of process is going to be quickly supplanted by the MCMC methods later. The best analogy I can think of that might resonate with people from linguistics or psycholinguistics is that it&#8217;s a little like introducing some &#8220;old school&#8221; theoretical constructs in syntax or phonology, which will only be replaced by methods/theories later in the course. It&#8217;s kind of a thin analogy, though, because the methods in this chapter of Kruschke are not invalid or outdated, but they do not seem to me to be representative of how Bayesian analysis is done in most actual cases for which you might want to do Bayesian analysis.</p>
 
 <p>For example, he goes through a discussion about how the beta distribution is chosen based on its convenient mathematical properties. This seems totally irrelevant at first, since most of the time in actual analysis, you won&#8217;t be stuck trying to find mathematically convenient ways of specifying priors in order to avoid MCMC, since you&#8217;ll probably be doing MCMC anyway!</p>
@@ -106,6 +115,9 @@
     <id>http://shoestringpsycholing.github.com/blog/2012/11/13/really-reproducible-research</id>
     <content type="html"><![CDATA[<p>I think a <em>lot</em> about the related notions of <em>reproducibility</em> and <em>replicability</em> in research. I intend for these to be major reoccurring themes. Today I saw a big special issue of <a href="http://pps.sagepub.com/"><em>Perspectives on Psychological Science</em></a> on the topic of reproducibility, so I thought it would be good to break up the Bayesian stuff with a short rant about reproducibility.</p>
 
+<!--more-->
+
+
 <p>First, I&#8217;d like to propose a distinction between replicability and reproducibility. Replicability is about <em>results</em> and reproducibility is about <em>methods</em>. These are not independent, though, more like two sides of the same coin. If your results are replicable, that means that someone else can basically find the same pattern. This is a basic, fundamental goal of science. If someone finds that standing on your head while practicing a foreign language leads to better retention of new vocabulary, great. But if no one else can produce that result, then it calls the initial result into question.</p>
 
 <p>This is a pretty big issue these days. The special issue I mention above is just one of the many signs. There&#8217;s been a lot of recent discussion about how the publishing system in the social sciences (psychology has been getting the most attention, but I think this is true in virtually every field I&#8217;m acquainted with) actually discourages replication. Sensational results end up getting into more &#8220;important&#8221; journals, and from a purely statistical point of view, sensational results really ought to be rare things. The result is over-publication of results that may not hold up well when people try to replicate them. And then there&#8217;s the problem that there&#8217;s no viable venue to published &#8220;failed&#8221; studies, which do not show any effects. I&#8217;ll make separate posts for each of these topics at some point.  The point here is that those of us who like to call ourselves &#8220;scientists&#8221; should hold ourselves to a better standard of replicability that the current publishing system encourages. Otherwise, we are just flooding the market with results that no one can really trust, and how can one formulate effective or accurate theories when trying to explain false results?</p>
@@ -130,6 +142,9 @@
 <p>I really like the initial examples he starts off with.  For whatever reason, equations are a lot of hard work for me, even though I like them, and it&#8217;s hard for me to understand them deeply enough to have an intuitive feel for what they are saying.  The rain/clouds example is way more accessible, and the playing card probabilities are a nice enough &#8220;toy&#8221; example that actual numbers can be calculated, so overall I think he&#8217;s done a great job in choosing examples.</p>
 
 <p>The gist of Bayes&#8217; Rule is that it sets up a relationship between conditional probabilities, allowing you to calculate something you want to know, from quantities that you already have (or can estimate).  Back to the idea of beliefs as probabilities, Bayesian inference boils down to the idea of calculating beliefs (probability of some parameter) given data, which is a conditional probability, like calculating the probability of rain (a parameter) given clouds (data).  And the point and magic of Bayes&#8217; Rule is that this can be calculated as a function of other probabilities, which we can get easier access to directly.</p>
+
+<!--more-->
+
 
 <p>Of course, &#8220;easier&#8221; is relative, and that&#8217;s where all the computational stuff starts coming into play.  But in this chapter, Kruschke sticks to the coin-flipping and playing-card examples, because the probabilities involved there can be calculated pretty easily.</p>
 
@@ -159,6 +174,9 @@
     <updated>2012-11-05T22:26:00-05:00</updated>
     <id>http://shoestringpsycholing.github.com/blog/2012/11/05/kruschke-chapter-3</id>
     <content type="html"><![CDATA[<p>This is the first really substantial chapter; the first two were really just a warm-up. Kruschke presents this chapter as a kind of intro to probability, but (naturally) he makes some very specific choices about what to approach and how to approach it.  A lot of it comes across as kind of foreshadowing, which makes it a little hard to follow or grasp the point of at times. Ultimately, I think this chapter should go pretty quick the first read-through, to prime some ideas, but the ideas probably won&#8217;t really start to sink in until they get applied later.</p>
+
+<!--more-->
+
 
 <p>Another overall comment: Kruschke points this out at some point himself, but the fact is that throughout this chapter, he&#8217;s really talking about two kinds (or contexts) of probability. One is as a mathematical expression of belief, which, I assume, is pretty much a given for any kind of Bayesian analysis.  The other is the parameter (&theta;) of interest that one is trying to estimate.  I mean, in all the coin-flipping examples, there is the probability of heads, which is just a parameter of the data-generating process.  In a different kind of data or analysis, it might be something else, not probability (I&#8217;m guessing that when we get to Bayesian regression, the parameter will be something like a regression coefficient, which is not a probability). And then there&#8217;s the probability (or belief) in a parameter value (<em>p</em>(&theta;)), which is always going to be expressed as probability (e.g., for regression, there should be probabilities/beliefs for different coefficient values).  As intuitive and appealing as the coin-flipping examples are, I find this double-sided discussion of probability to be kind of confusing.</p>
 
@@ -196,6 +214,9 @@
 
 <p><a href="http://www.youtube.com/watch?v=GZYhDMCOyww">No, there is too much. Let me sum up.</a></p>
 
+<!--more-->
+
+
 <p>These days, mixed-effects models are rapidly overtaking the traditional ANOVA in some parts of the field. If the <a href="http://www.indiana.edu/~kruschke/AnOpenLetter.htm">Bayesians have their way</a> (see also <a href="http://shoestringpsycholing.github.com/blog/2012/11/02/naive-bayesian/">this post</a>), then Bayesian data analysis may make a similar sweep through my fields in another few years. But what happens when you write a paper using these shiny new methods, and either (a) your reviewers or (b) much of the audience for the paper (or both) don&#8217;t understand the methods? Maybe you even include the <a href="http://www.r-project.org/">R code</a> for your analysis.  On the one hand, your analysis could be easily reproduced by anyone in the world, since R can be run for free on virtually any computer platform.  On the other hand, though, other people may find it impossible to <em>really</em> reproduce your analysis, since they don&#8217;t understand it.</p>
 
 <p>The problem is that this can cause trust to break down. Maybe the reviewers/readers decide to trust to because you seem smart and seem to know what you&#8217;re doing. But in my experience, we are not trained to give people the benefit of the doubt, especially when reviewing articles for publication. The main question seems to be &#8220;why are they using this &#8216;fancy&#8217; new method, when my old method (e.g., ANOVA) seems to work just fine?&#8221;  And even if an answer for why the new method is superior can be supplied, if it&#8217;s not adequately explained, then it can&#8217;t really be replicated or fully understood.</p>
@@ -214,6 +235,9 @@
     <content type="html"><![CDATA[<p>(<a href="http://shoestringpsycholing.github.com/blog/2012/11/02/naive-bayesian">Here&#8217;s a link to the intro and Chapter 1 discussion</a>)</p>
 
 <p>In this chapter, Kruschke does a nice job of succinctly laying out the primary goals of statistical inferencing, and gives a pretty clear, intuitive description of what prior and posterior beliefs are about. To paraphrase in a nutshell, prior beliefs represent our beliefs (including level of uncertainty in those beliefs) before data collection or observation, and posterior beliefs reflect what we believe after taking data into account.</p>
+
+<!--more-->
+
 
 <p>This chapter strikes me as a nice place to do some discussions in a class about what the goals of statistics are, the idea of updating beliefs via statistics, etc.  For example, I can easily see some people being uneasy about the idea of mathematical formulas determining beliefs, in a philosophical sense. Kruschke does touch on this briefly, mentioning basically that beliefs that cannot be influenced by data are essentially &#8220;out of bounds,&#8221; but he does so in kind of a flippant way. I think even if we are talking about scientific beliefs, the idea of an analysis telling you what you <em>should</em> believe (and Kruschke does use the word &#8220;should&#8221;) can be uncomfortable, and not entirely realistic.</p>
 
@@ -239,6 +263,9 @@
 <p>A big part of my day-to-day involves data analysis, usually statistical data analysis. The stats scene has been in some flux lately, at least in the fields I work in, and interestingly, I think a lot of that has resulted, directly or indirectly, from the availability of the <a href="http://www.r-project.org/">R statistical language/package</a>. Long story short, it has increased accessibility to methods that are not all that new in the scheme of things, but which have not been terribly accessible.  More on all that another day.</p>
 
 <p>Today, the topic is <a href="http://en.wikipedia.org/wiki/Thomas_Bayes">Bayesian</a> stats. The word &#8220;Bayesian&#8221; is a bit of a buzz-word for a wide range of different topics in computational and statistical work, but despite this, it&#8217;s a really important modern approach to data and analysis.  What exactly is it, and what&#8217;s the big deal?  Damned if I know, but in an ongoing series of posts, I intend to find out a lot more, and share my thoughts here.</p>
+
+<!--more-->
+
 
 <p>So here&#8217;s the idea:  starting virtually from scratch, I&#8217;m going to walk through a recent <a href="http://www.indiana.edu/~kruschke/DoingBayesianDataAnalysis/">book</a> by <a href="http://www.indiana.edu/~kruschke/">John Kruschke</a>, and give my own knee-jerk reactions, as a kind of extended review of the book, and the usefulness of Bayesian methods for language scientists (and maybe others). Kruschke himself is a very um&#8230; <em>outspoken</em> advocate of Bayesian analysis (see this <a href="http://www.indiana.edu/~kruschke/AnOpenLetter.htm">&#8220;Open Letter&#8221;</a>), and while I&#8217;m generally pretty sympathetic and find most of these arguments pretty convincing, I&#8217;ll try to take a skeptical stance when going through the book.</p>
 
@@ -269,6 +296,9 @@
     <id>http://shoestringpsycholing.github.com/blog/2012/11/01/nablopomo-and-more-r</id>
     <content type="html"><![CDATA[<p>I&#8217;m using <a href="http://www.blogher.com/blogher-topics/blogging-social-media/nablopomo">NaBloPoMo</a> as an excuse to kick-start this blog into a little more action.  Let&#8217;s see if I can keep it up the whole month&#8230;</p>
 
+<!--more-->
+
+
 <p>Today was the second session of an <a href="http://shoestringpsycholing.github.com/blog/2012/10/25/starting-r/">R tutorial for beginners</a>.  This one went a bit more smoothly, I think.  I&#8217;ll update my work-in-progress <a href="https://github.com/shoestringpsycholing/startR">startR</a> repo, if you&#8217;re interested in the script.  I&#8217;ve done a few of these tutorial sessions now (for different audiences), and this one was the first time I really used an R script as a &#8220;script&#8221; in the more general sense of &#8220;scripted presentation.&#8221;  In the past, I&#8217;ve had a kind of outline of things I want to cover, and I&#8217;ve usually run code, etc. to make sure things would work as expected beforehand, but when I&#8217;m actually in the middle of a tutorial, things inevitably go a little awry.  For me, usually in the form of annoying typos, in forgetting something or getting a little sidetracked, or sometimes even blanking on a particular function (last session I tried using <code>getwd()</code> and <code>setwd()</code>, but I rarely use those, and I was just sure they were <code>get.wd()</code> and <code>set.wd()</code>, and it totally threw me for a loop).</p>
 
 <p>So this time I literally typed out every single thing in advance, in &#8220;walk-through&#8221; style, into a <code>.R</code> script, even things you&#8217;d normally never put in a script, like <code>head()</code> or <code>summary()</code>, and I think it really helped.  Not only did it save time and frustration by saving me from my inevitable typos, it helped me stay on track, and reminded me of all the little points I wanted to make, and the sequence in which I planned to make them.</p>
@@ -285,6 +315,9 @@
     <content type="html"><![CDATA[<p><a href="http://www.r-project.org/">R</a> is a wonderful thing. It&#8217;s also managed to consume my life, for better or for worse. I&#8217;ve been learning and working with R for about 5 years now, since finishing my PhD, and it&#8217;s had a profound impact on my work, in a good way.</p>
 
 <p>So naturally, I like to spread the love.  I&#8217;ve gotten a few friends hooked, and I like to help out other folks with what I&#8217;ve learned when I can.  Tonight I had a nice opportunity to give an intro tutorial to a group of grad students.  Boy, are my teaching chops rusty!</p>
+
+<!--more-->
+
 
 <p>It went okay, maybe, possibly.  I got slowed down by some of the classic blunders (no, not a &#8220;land war in Asia,&#8221; but maybe almost as bad).  But it&#8217;s an interesting issue, really.  There are literally dozens and dozens of &#8220;intros to R&#8221; that you can find on the web, in print, or both.  Why try to make another one?  What can be improved on?  Why is it so difficult?</p>
 

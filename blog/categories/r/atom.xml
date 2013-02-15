@@ -4,7 +4,7 @@
   <title><![CDATA[Category: R | Shoestring Psycholing]]></title>
   <link href="http://shoestringpsycholing.github.com/blog/categories/r/atom.xml" rel="self"/>
   <link href="http://shoestringpsycholing.github.com/"/>
-  <updated>2013-02-14T21:01:34-05:00</updated>
+  <updated>2013-02-15T09:11:52-05:00</updated>
   <id>http://shoestringpsycholing.github.com/</id>
   <author>
     <name><![CDATA[Scott Jackson]]></name>
@@ -21,6 +21,9 @@
     <content type="html"><![CDATA[<p>Finally getting back to the blog after a long hiatus. I got a little hung up with putting together a good post for the next segment in the Kruschke/Bayesian saga, and I've been too busy with other things to have the time to put some polish on it.  So I've decided instead to try out the other route and just post frequently, without worrying too much about polish.  We'll see how it goes.  I will pick back up with Kruschke, but I want to prioritize posting <em>some</em>thing frequently, instead of getting too perfectionist about it.</p>
 
 <p>One of the continuing themes I intend to post on is the use of various software tools, with a special focus on tools for <a href="http://shoestringpsycholing.github.com/blog/2012/11/13/really-reproducible-research/">reproducible research</a>.  So I'll finish off today's post with three random tips about two of my favorite pieces of software.</p>
+
+<!--more-->
+
 
 <h2>Eliminate duplicate rows in your data in R</h2>
 
@@ -56,6 +59,9 @@
 
 <p>In this post, I'll give an overview of the conceptual issues, and we'll get to the code and actual analysis in following posts.</p>
 
+<!--more-->
+
+
 <p>The point I have droned on about previously still holds in this chapter: the chapter is worth a re-read or two, especially after one gets a few more chapters into the book. In my initial read, it was a little hard to see the point of going through some of the mathematical derivations and equations, especially since I have a hunch that this kind of process is going to be quickly supplanted by the MCMC methods later. The best analogy I can think of that might resonate with people from linguistics or psycholinguistics is that it's a little like introducing some "old school" theoretical constructs in syntax or phonology, which will only be replaced by methods/theories later in the course. It's kind of a thin analogy, though, because the methods in this chapter of Kruschke are not invalid or outdated, but they do not seem to me to be representative of how Bayesian analysis is done in most actual cases for which you might want to do Bayesian analysis.</p>
 
 <p>For example, he goes through a discussion about how the beta distribution is chosen based on its convenient mathematical properties. This seems totally irrelevant at first, since most of the time in actual analysis, you won't be stuck trying to find mathematically convenient ways of specifying priors in order to avoid MCMC, since you'll probably be doing MCMC anyway!</p>
@@ -85,6 +91,9 @@
 
 <p>In this chapter, Kruschke does a nice job of succinctly laying out the primary goals of statistical inferencing, and gives a pretty clear, intuitive description of what prior and posterior beliefs are about. To paraphrase in a nutshell, prior beliefs represent our beliefs (including level of uncertainty in those beliefs) before data collection or observation, and posterior beliefs reflect what we believe after taking data into account.</p>
 
+<!--more-->
+
+
 <p>This chapter strikes me as a nice place to do some discussions in a class about what the goals of statistics are, the idea of updating beliefs via statistics, etc.  For example, I can easily see some people being uneasy about the idea of mathematical formulas determining beliefs, in a philosophical sense. Kruschke does touch on this briefly, mentioning basically that beliefs that cannot be influenced by data are essentially "out of bounds," but he does so in kind of a flippant way. I think even if we are talking about scientific beliefs, the idea of an analysis telling you what you <em>should</em> believe (and Kruschke does use the word "should") can be uncomfortable, and not entirely realistic.</p>
 
 <p>To clarify, in case you're new to Bayesian inference, one of the concepts behind Bayesian inference is that it gives a clear mathematical formulation for how beliefs should be changed (there's that "should" again), given the prior beliefs and the data. For example, a detective might be able to express her beliefs about suspects in terms of relative probabilities. So maybe if a woman was murdered, there could be a relatively high prior belief that it was the jealous ex-husband, and relatively low prior belief that it was the woman's 2-year-old daughter. If the detective finds the daughter's fingerprints on the murder weapon, it may only slightly affect her (nearly zero) belief that the daughter did it, where finding the husband's fingerprints may make a big difference. The point is that Bayesian inference gives a mathematical framework for actually computing how beliefs should be updated. But given what people often mean when they talk about "beliefs," the idea of a mathematical system telling you how you should change your beliefs given some data might be uncomfortable.</p>
@@ -109,6 +118,9 @@
 <p>A big part of my day-to-day involves data analysis, usually statistical data analysis. The stats scene has been in some flux lately, at least in the fields I work in, and interestingly, I think a lot of that has resulted, directly or indirectly, from the availability of the <a href="http://www.r-project.org/">R statistical language/package</a>. Long story short, it has increased accessibility to methods that are not all that new in the scheme of things, but which have not been terribly accessible.  More on all that another day.</p>
 
 <p>Today, the topic is <a href="http://en.wikipedia.org/wiki/Thomas_Bayes">Bayesian</a> stats. The word "Bayesian" is a bit of a buzz-word for a wide range of different topics in computational and statistical work, but despite this, it's a really important modern approach to data and analysis.  What exactly is it, and what's the big deal?  Damned if I know, but in an ongoing series of posts, I intend to find out a lot more, and share my thoughts here.</p>
+
+<!--more-->
+
 
 <p>So here's the idea:  starting virtually from scratch, I'm going to walk through a recent <a href="http://www.indiana.edu/~kruschke/DoingBayesianDataAnalysis/">book</a> by <a href="http://www.indiana.edu/~kruschke/">John Kruschke</a>, and give my own knee-jerk reactions, as a kind of extended review of the book, and the usefulness of Bayesian methods for language scientists (and maybe others). Kruschke himself is a very um... <em>outspoken</em> advocate of Bayesian analysis (see this <a href="http://www.indiana.edu/~kruschke/AnOpenLetter.htm">"Open Letter"</a>), and while I'm generally pretty sympathetic and find most of these arguments pretty convincing, I'll try to take a skeptical stance when going through the book.</p>
 
@@ -138,6 +150,9 @@
     <updated>2012-11-01T20:22:00-04:00</updated>
     <id>http://shoestringpsycholing.github.com/blog/2012/11/01/nablopomo-and-more-r</id>
     <content type="html"><![CDATA[<p>I'm using <a href="http://www.blogher.com/blogher-topics/blogging-social-media/nablopomo">NaBloPoMo</a> as an excuse to kick-start this blog into a little more action.  Let's see if I can keep it up the whole month...</p>
+
+<!--more-->
+
 
 <p>Today was the second session of an <a href="http://shoestringpsycholing.github.com/blog/2012/10/25/starting-r/">R tutorial for beginners</a>.  This one went a bit more smoothly, I think.  I'll update my work-in-progress <a href="https://github.com/shoestringpsycholing/startR">startR</a> repo, if you're interested in the script.  I've done a few of these tutorial sessions now (for different audiences), and this one was the first time I really used an R script as a "script" in the more general sense of "scripted presentation."  In the past, I've had a kind of outline of things I want to cover, and I've usually run code, etc. to make sure things would work as expected beforehand, but when I'm actually in the middle of a tutorial, things inevitably go a little awry.  For me, usually in the form of annoying typos, in forgetting something or getting a little sidetracked, or sometimes even blanking on a particular function (last session I tried using <code>getwd()</code> and <code>setwd()</code>, but I rarely use those, and I was just sure they were <code>get.wd()</code> and <code>set.wd()</code>, and it totally threw me for a loop).</p>
 

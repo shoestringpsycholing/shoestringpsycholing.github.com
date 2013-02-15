@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Emacs | Shoestring Psycholing]]></title>
   <link href="http://shoestringpsycholing.github.com/blog/categories/emacs/atom.xml" rel="self"/>
   <link href="http://shoestringpsycholing.github.com/"/>
-  <updated>2013-02-14T21:01:34-05:00</updated>
+  <updated>2013-02-15T09:11:52-05:00</updated>
   <id>http://shoestringpsycholing.github.com/</id>
   <author>
     <name><![CDATA[Scott Jackson]]></name>
@@ -21,6 +21,9 @@
     <content type="html"><![CDATA[<p>Finally getting back to the blog after a long hiatus. I got a little hung up with putting together a good post for the next segment in the Kruschke/Bayesian saga, and I've been too busy with other things to have the time to put some polish on it.  So I've decided instead to try out the other route and just post frequently, without worrying too much about polish.  We'll see how it goes.  I will pick back up with Kruschke, but I want to prioritize posting <em>some</em>thing frequently, instead of getting too perfectionist about it.</p>
 
 <p>One of the continuing themes I intend to post on is the use of various software tools, with a special focus on tools for <a href="http://shoestringpsycholing.github.com/blog/2012/11/13/really-reproducible-research/">reproducible research</a>.  So I'll finish off today's post with three random tips about two of my favorite pieces of software.</p>
+
+<!--more-->
+
 
 <h2>Eliminate duplicate rows in your data in R</h2>
 

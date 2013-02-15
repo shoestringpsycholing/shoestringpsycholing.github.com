@@ -4,7 +4,7 @@
   <title><![CDATA[Category: mixed-effects | Shoestring Psycholing]]></title>
   <link href="http://shoestringpsycholing.github.com/blog/categories/mixed-effects/atom.xml" rel="self"/>
   <link href="http://shoestringpsycholing.github.com/"/>
-  <updated>2013-02-14T21:01:34-05:00</updated>
+  <updated>2013-02-15T09:11:52-05:00</updated>
   <id>http://shoestringpsycholing.github.com/</id>
   <author>
     <name><![CDATA[Scott Jackson]]></name>
@@ -21,6 +21,9 @@
     <content type="html"><![CDATA[<p>One of the main themes I'd like to talk about in this blog is the notion of <em>reproducibility</em> in research. I'll leave more in-depth discussion of the fundamental ideas for other posts; today I just want to comment on something that occurred to me while working on a paper re-submission, and I think it's also really relevant to the ongoing Bayesian stats posts as well. The issue is: <strong>new methods are inherently less reproducible</strong>.  Let me explain.</p>
 
 <p><a href="http://www.youtube.com/watch?v=GZYhDMCOyww">No, there is too much. Let me sum up.</a></p>
+
+<!--more-->
+
 
 <p>These days, mixed-effects models are rapidly overtaking the traditional ANOVA in some parts of the field. If the <a href="http://www.indiana.edu/~kruschke/AnOpenLetter.htm">Bayesians have their way</a> (see also <a href="http://shoestringpsycholing.github.com/blog/2012/11/02/naive-bayesian/">this post</a>), then Bayesian data analysis may make a similar sweep through my fields in another few years. But what happens when you write a paper using these shiny new methods, and either (a) your reviewers or (b) much of the audience for the paper (or both) don't understand the methods? Maybe you even include the <a href="http://www.r-project.org/">R code</a> for your analysis.  On the one hand, your analysis could be easily reproduced by anyone in the world, since R can be run for free on virtually any computer platform.  On the other hand, though, other people may find it impossible to <em>really</em> reproduce your analysis, since they don't understand it.</p>
 

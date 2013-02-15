@@ -4,7 +4,7 @@
   <title><![CDATA[Category: statistics | Shoestring Psycholing]]></title>
   <link href="http://shoestringpsycholing.github.com/blog/categories/statistics/atom.xml" rel="self"/>
   <link href="http://shoestringpsycholing.github.com/"/>
-  <updated>2013-02-14T21:01:34-05:00</updated>
+  <updated>2013-02-15T09:11:52-05:00</updated>
   <id>http://shoestringpsycholing.github.com/</id>
   <author>
     <name><![CDATA[Scott Jackson]]></name>
@@ -19,6 +19,9 @@
     <updated>2013-02-14T20:10:00-05:00</updated>
     <id>http://shoestringpsycholing.github.com/blog/2013/02/14/kruschke-chapter-5-part-2</id>
     <content type="html"><![CDATA[<p>So way back in <a href="http://shoestringpsycholing.github.com/blog/2012/11/17/kruschke-chapter-5/">November</a>, I promised the next post would elaborate a bit on model comparison. This part of the chapter, and the accompanying exercises, blew my mind a little.</p>
+
+<!--more-->
+
 
 <h2>Bayesian priors are part of the model</h2>
 
@@ -46,6 +49,9 @@
 <p>The other thing I'm going to try to do, which will end up stretching out these posts a bit, is to re-work some of the code that Kruschke supplies.  In a nutshell, I feel like Kruschke's code is probably aimed pretty well at students, who may want to be able to complete the exercises in the book, but who may or may not (a) know much about R, or (b) want to be able to apply the functions to more general situations (i.e., other data). I think in order for the code to be more useful to me personally, I'd like to re-work it a bit.  I've started a <a href="https://github.com/shoestringpsycholing/kruschke_remix">github repo for the Kruschke book here</a> (see also the links on the side of the blog).</p>
 
 <p>In this post, I'll give an overview of the conceptual issues, and we'll get to the code and actual analysis in following posts.</p>
+
+<!--more-->
+
 
 <p>The point I have droned on about previously still holds in this chapter: the chapter is worth a re-read or two, especially after one gets a few more chapters into the book. In my initial read, it was a little hard to see the point of going through some of the mathematical derivations and equations, especially since I have a hunch that this kind of process is going to be quickly supplanted by the MCMC methods later. The best analogy I can think of that might resonate with people from linguistics or psycholinguistics is that it's a little like introducing some "old school" theoretical constructs in syntax or phonology, which will only be replaced by methods/theories later in the course. It's kind of a thin analogy, though, because the methods in this chapter of Kruschke are not invalid or outdated, but they do not seem to me to be representative of how Bayesian analysis is done in most actual cases for which you might want to do Bayesian analysis.</p>
 
@@ -78,6 +84,9 @@
 
 <p>The gist of Bayes' Rule is that it sets up a relationship between conditional probabilities, allowing you to calculate something you want to know, from quantities that you already have (or can estimate).  Back to the idea of beliefs as probabilities, Bayesian inference boils down to the idea of calculating beliefs (probability of some parameter) given data, which is a conditional probability, like calculating the probability of rain (a parameter) given clouds (data).  And the point and magic of Bayes' Rule is that this can be calculated as a function of other probabilities, which we can get easier access to directly.</p>
 
+<!--more-->
+
+
 <p>Of course, "easier" is relative, and that's where all the computational stuff starts coming into play.  But in this chapter, Kruschke sticks to the coin-flipping and playing-card examples, because the probabilities involved there can be calculated pretty easily.</p>
 
 <p>But again <a href="http://shoestringpsycholing.github.com/blog/2012/11/05/kruschke-chapter-3/">like in the previous chapter</a>, I feel like sometimes I needed to suspend my thoughts for a little to follow how Kruschke lays out things, because it took me a while to get the connection between what he starts off talking about as examples, and things that I see as valuable.  I'm coming to this book from a fair amount of experience with a bunch of NHST tools, even "fancy" ones like mixed-effects models, and there have been times in these initial chapters where I was having trouble seeing the relevance to what I wanted to do, which was try to understand how Bayesian stats are an alternative to the NHST way of doing things.  When he finally gets to talking about belief in a model, or belief in a model parameter, I could start recognizing those things as goals, but it was hard to follow the lead-up.  So again --- and I'm starting to sound like a broken record --- depending on the audience, a bit of a back-and-forth re-reading of some of these initial chapters will probably be beneficial, in order to connect his very nice, clear description of concepts to the more complex things that you will inevitably care more about. To put it a little more negatively, at this point in the book, if you're coming in with any expertise in other statistical methods, you may feel impatient, and it may be hard to work through these chapters without a clear view of how they connect to what you actually want to do. My two cents is that it's worth the effort to suffer the suspense, though maybe a quick initial read, followed by a more careful return later would work best. The rest of this chapter is pretty straightforward with examples, but I think this chapter in particular should be re-read after getting farther, because it lays the foundations for the fundamental insights of Bayesian inference (at least, as I understand it so far).</p>
@@ -106,6 +115,9 @@
     <updated>2012-11-05T22:26:00-05:00</updated>
     <id>http://shoestringpsycholing.github.com/blog/2012/11/05/kruschke-chapter-3</id>
     <content type="html"><![CDATA[<p>This is the first really substantial chapter; the first two were really just a warm-up. Kruschke presents this chapter as a kind of intro to probability, but (naturally) he makes some very specific choices about what to approach and how to approach it.  A lot of it comes across as kind of foreshadowing, which makes it a little hard to follow or grasp the point of at times. Ultimately, I think this chapter should go pretty quick the first read-through, to prime some ideas, but the ideas probably won't really start to sink in until they get applied later.</p>
+
+<!--more-->
+
 
 <p>Another overall comment: Kruschke points this out at some point himself, but the fact is that throughout this chapter, he's really talking about two kinds (or contexts) of probability. One is as a mathematical expression of belief, which, I assume, is pretty much a given for any kind of Bayesian analysis.  The other is the parameter (&theta;) of interest that one is trying to estimate.  I mean, in all the coin-flipping examples, there is the probability of heads, which is just a parameter of the data-generating process.  In a different kind of data or analysis, it might be something else, not probability (I'm guessing that when we get to Bayesian regression, the parameter will be something like a regression coefficient, which is not a probability). And then there's the probability (or belief) in a parameter value (<em>p</em>(&theta;)), which is always going to be expressed as probability (e.g., for regression, there should be probabilities/beliefs for different coefficient values).  As intuitive and appealing as the coin-flipping examples are, I find this double-sided discussion of probability to be kind of confusing.</p>
 
@@ -142,6 +154,9 @@
     <content type="html"><![CDATA[<p>One of the main themes I'd like to talk about in this blog is the notion of <em>reproducibility</em> in research. I'll leave more in-depth discussion of the fundamental ideas for other posts; today I just want to comment on something that occurred to me while working on a paper re-submission, and I think it's also really relevant to the ongoing Bayesian stats posts as well. The issue is: <strong>new methods are inherently less reproducible</strong>.  Let me explain.</p>
 
 <p><a href="http://www.youtube.com/watch?v=GZYhDMCOyww">No, there is too much. Let me sum up.</a></p>
+
+<!--more-->
+
 
 <p>These days, mixed-effects models are rapidly overtaking the traditional ANOVA in some parts of the field. If the <a href="http://www.indiana.edu/~kruschke/AnOpenLetter.htm">Bayesians have their way</a> (see also <a href="http://shoestringpsycholing.github.com/blog/2012/11/02/naive-bayesian/">this post</a>), then Bayesian data analysis may make a similar sweep through my fields in another few years. But what happens when you write a paper using these shiny new methods, and either (a) your reviewers or (b) much of the audience for the paper (or both) don't understand the methods? Maybe you even include the <a href="http://www.r-project.org/">R code</a> for your analysis.  On the one hand, your analysis could be easily reproduced by anyone in the world, since R can be run for free on virtually any computer platform.  On the other hand, though, other people may find it impossible to <em>really</em> reproduce your analysis, since they don't understand it.</p>
 
