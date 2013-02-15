@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Emacs | Shoestring Psycholing]]></title>
+  <link href="http://shoestringpsycholing.github.com/blog/categories/emacs/atom.xml" rel="self"/>
+  <link href="http://shoestringpsycholing.github.com/"/>
+  <updated>2013-02-14T21:01:34-05:00</updated>
+  <id>http://shoestringpsycholing.github.com/</id>
+  <author>
+    <name><![CDATA[Scott Jackson]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Back with some tips]]></title>
+    <link href="http://shoestringpsycholing.github.com/blog/2013/02/13/back-with-some-tips/"/>
+    <updated>2013-02-13T20:40:00-05:00</updated>
+    <id>http://shoestringpsycholing.github.com/blog/2013/02/13/back-with-some-tips</id>
+    <content type="html"><![CDATA[<p>Finally getting back to the blog after a long hiatus. I got a little hung up with putting together a good post for the next segment in the Kruschke/Bayesian saga, and I've been too busy with other things to have the time to put some polish on it.  So I've decided instead to try out the other route and just post frequently, without worrying too much about polish.  We'll see how it goes.  I will pick back up with Kruschke, but I want to prioritize posting <em>some</em>thing frequently, instead of getting too perfectionist about it.</p>
+
+<p>One of the continuing themes I intend to post on is the use of various software tools, with a special focus on tools for <a href="http://shoestringpsycholing.github.com/blog/2012/11/13/really-reproducible-research/">reproducible research</a>.  So I'll finish off today's post with three random tips about two of my favorite pieces of software.</p>
+
+<h2>Eliminate duplicate rows in your data in R</h2>
+
+<p><a href="http://www.r-project.org/">R</a> is great.  I will post a lot about it. I use it a <em>lot</em>. But there's still so much for me to learn.  One incredibly handy thing I didn't realize was that it's ridiculously easy to take a messy data set and eliminate duplicate rows.  So for example, imagine that you're reading in a bunch of data, and for some reason, some rows are duplicated.  Maybe you merged several data sets at some other point in your processing, or maybe there is some redundancy or mistake in the data you're reading in.  Well, good news, you can eliminate all those annoying duplicates (which would otherwise mess up your analysis with one simple line:</p>
+
+<pre><code>my.dataset &lt;- unique(my.dataset)
+</code></pre>
+
+<p>That's it!  You're welcome.  I have no idea how it took me over five years to learn this.</p>
+
+<h2>Drag and drop files into Emacs</h2>
+
+<p>Yes, I'm an <a href="http://www.gnu.org/software/emacs/">Emacs</a> user.  Still a total novice, but it's now the place I do virtually all my work, unless someone forces me to deal with a manuscript in Word.  It's a complete work environment, and I love it more all the time.  Nothing's perfect, [insert gratutious Emacs joke here involving neckbeards or "Emacs pinky" or it being a decent operating system without a good text editor, etc.], but it's hugely improved my productivity, and has made it possible for me to even contemplate being able to manage a workflow supporting reproducible research.</p>
+
+<p>But like I said, I'm still a complete novice.  I <em>just</em> learned that you can drag-and-drop files into Emacs to open them.  Like, you have Emacs open, and you're looking through your files in a folder (yes, Emacs can browse file directories really well, too, but sometimes I need to be able to look at bunches of files in my GUI file system), and you can just grab a file from the folder and drag it over to Emacs and <em>pow</em>, it's open.</p>
+
+<p>This just killed off the last remaining use I had for other text editors.  I have a copy of <a href="http://notepad-plus-plus.org/">Notepad++</a>, which is very good, don't get me wrong, and I have an older copy of <a href="http://www.textpad.com/">TextPad</a>, which served me well when I was just getting started with Perl back in grad school, and sometimes when I'm rummaging through files and just need to peek at a text file quickly, I just right-click to open it in one of these other editors.  It was always just a few clicks or keystrokes too long to open it in Emacs to just peek.  But now that I can just drag it into Emacs, when I virtually laways have Emacs running already?  It's over! This won't replace the normal way to open files while working in Emacs for me, but it will replace the final use case I had for any other text editor.</p>
+
+<h2>Editing text from <code>dired</code> in Emacs</h2>
+
+<p>One more bit of Emacs happiness.  One of the reasons you get sucked into doing <em>everything</em> in Emacs is that you can interact with <em>everything</em> as if it were editable text.  Today was another example of how this has paid off for me.  I had to go through literally <em>thousands</em> of files from an old experiment to see if I was missing any, and if so which ones. It also dawned on me that I might have to do this multiple times.  Ugh.  But then I realized that I could just use Emacs' <code>dired</code> functionality to display the folder contents (i.e., all the file names) in Emacs.  I could then copy and paste (or in Emacs parlance, "kill" and "yank") those filenames into a simple text file, and then use the great <a href="http://vimeo.com/1168225">rectangle editing in <code>cua-mode</code></a> to quickly delete all the stuff in front of the file names, and finally I could easily read these names into <code>R</code> and get a summary of exactly which subjects were missing exactly which items (based on the way the files were named).  Just lovely, and yes, I did have to repeat this a few more times, and it took zero effort to do so, and was about 1000x faster and a lot more accurate than doing it by hand.  I'm sure I could have done this in a bunch of different ways, but the ability to quickly pull up the directory contents in Emacs and treat it as Just Text really made my day.</p>
+]]></content>
+  </entry>
+  
+</feed>

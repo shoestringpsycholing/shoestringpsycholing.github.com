@@ -4,7 +4,7 @@
   <title><![CDATA[Shoestring Psycholing]]></title>
   <link href="http://shoestringpsycholing.github.com/atom.xml" rel="self"/>
   <link href="http://shoestringpsycholing.github.com/"/>
-  <updated>2013-02-13T21:51:38-05:00</updated>
+  <updated>2013-02-14T21:01:34-05:00</updated>
   <id>http://shoestringpsycholing.github.com/</id>
   <author>
     <name><![CDATA[Scott Jackson]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Kruschke Chapter 5, Part 2]]></title>
+    <link href="http://shoestringpsycholing.github.com/blog/2013/02/14/kruschke-chapter-5-part-2/"/>
+    <updated>2013-02-14T20:10:00-05:00</updated>
+    <id>http://shoestringpsycholing.github.com/blog/2013/02/14/kruschke-chapter-5-part-2</id>
+    <content type="html"><![CDATA[<p>So way back in <a href="http://shoestringpsycholing.github.com/blog/2012/11/17/kruschke-chapter-5/">November</a>, I promised the next post would elaborate a bit on model comparison. This part of the chapter, and the accompanying exercises, blew my mind a little.</p>
+
+<h2>Bayesian priors are part of the model</h2>
+
+<p>I think one of the hardest things to get a handle on, coming from &#8220;traditional&#8221; NHST stats is the concept of priors.  Not just the concept, but how the heck you&#8217;re supposed to <em>use</em> them.  Up to this point, Kruschke&#8217;s presented them in very consistent, intuitive way.  Priors are a mathematical expression of your beliefs &#8220;prior&#8221; to the consideration of a particular set of data.  In the ongoing example in the book, this may be your belief about how fair a coin is before you start flipping.  In a more real research context, priors are often discussed (and Kruschke presents this idea, too) as characterizing &#8220;what we know already&#8221; before an experiment.</p>
+
+<p>Extrapolating a bit, maybe you&#8217;re doing a lexical decision priming experiment, where reaction times are usually in the 300-500 millisecond range, then you can be pretty sure you won&#8217;t see priming effects of more than 100-200 milliseconds or so at the outer limit.  Maybe this is a lame example, but pick any real experiment or data set, and unless the experimental paradigm is completely new, you probably have some information from previous experiments about what generally you might find.</p>
+
+<p>But I think where non-Baysians start to get nervous is when they realize that the posteriors (which seem like &#8220;results&#8221;) depend in part on the priors.  So if you can make up the priors, can&#8217;t you use that to manipulate your results?  And if priors represent prior &#8220;beliefs,&#8221; isn&#8217;t it hard to argue about what someone&#8217;s beliefs are?  What if the experimenter&#8217;s beliefs are different from my (the reader&#8217;s) beliefs?  I think most of these worries are missing the point, but I&#8217;m still too novice to understand why, really.  But Kruschke&#8217;s discussion of model comparison, and in particular the exercise 5.6, has given me a different way to think about it.  Not sure if I&#8217;m right yet, but it feels right.</p>
+
+<p>The way I understand it is that priors aren&#8217;t some squishy thing that are &#8220;off-limits&#8221; for discussion. They are part of the model of data being constructed, and therefore can be compared using model comparison. When I think of &#8220;model comparison&#8221; in a regression sense, what I think of is comparing different regression models (i.e., different sets of predictor variables), and checking fit statistics to see which model provides a better fit to the data.  Maybe a model with an interaction effect is better than one without it, so you take that as evidence that there is a &#8220;significant&#8221; interaction. In Bayesian model comparison, this might play out as comparing different sets of priors, because it&#8217;s the <em>priors</em> where things are set like the range of possible (or likely) values that a parameter might take.  Back to the coin-flipping example, you could compare a model in which the prior is a strong belief in a fair coin to a model in which the prior is a weak belief in fairness (i.e., a wide spread in possible values for the fairness of the coin).</p>
+
+<p>To put it another way, <strong>pitting different priors against each other looks like a way to explicitly test two competing hypotheses.</strong>  Maybe I&#8217;m missing something, but this is a totally different spin on priors than I had understood up to this point, and I think it makes sense.  If you want to stick to Kruschke&#8217;s phrasing of &#8220;beliefs,&#8221; then what you can do is compare different sets of beliefs.  There doesn&#8217;t have to be one &#8220;most appropriate&#8221; set of beliefs before you analyze your data.</p>
+
+<p>In the next post (on Kruschke&#8217;s book), I&#8217;ll try to finally look at some data and go through a very simple Bayesian analysis, parallel to what Kruschke does in the book.  Hopefully then some of these abstract discussion will start to make a little more sense.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Back with some tips]]></title>
