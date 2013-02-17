@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Kruschke Chapter 5, Part 3 - Shoestring Psycholing</title>
+  <meta name="author" content="Scott Jackson">
+
+  
+  <meta name="description" content="Finally, it&#8217;s time for some actual examples of (very very simple) Bayesian analysis. The last part of the chapter gives a summary of &#8220;how &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://shoestringpsycholing.github.com/blog/2013/02/16/kruschke-chapter-5-part-3/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Shoestring Psycholing" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Shoestring Psycholing</a></h1>
+  
+    <h2>A language science blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:shoestringpsycholing.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Kruschke Chapter 5, Part 3</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-16T12:57:00-05:00" pubdate data-updated="true">Feb 16<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><em>Finally</em>, it&#8217;s time for some actual examples of (very very simple) Bayesian analysis. The last part of the chapter gives a summary of &#8220;how to do Bayesian analysis,&#8221; and Kruschke walks through the skeleton of steps that you need to do in order to use the code and concepts developed up to this point to analyze some (binary categorical) data. If you are working through this book yourself, I highly recommend the exercises.  There is a lot of pedagogical value there, so much that I think this chapter would be incomplete if you skipped them. In this post, I will walk through some analyses with some additional data, comparing the Bayesian results to a traditional analysis, and illustrating a few points I find interesting.</p>
+
+<!--more-->
+
+
+<p>Kruschke provides a lot of code, here and throughout the book. However, while these code examples work well to get through the examples and exercises, they are not necessarily well-suited to trying out other things. For example, the <code>BernBeta</code> function in the <code>BernBeta.R</code> script crams a whole lot of stuff into it. In addition to plotting the prior, likelihood, and posterior probabilities, it returns the shape parameters of the posterior. But it prints out some values on the plots (like the HDI information and the value of <em>p</em>(<em>D</em>)) which you can&#8217;t access later.  So I tweaked the code of this function. I&#8217;ll take you through the details in another post.  Here, I just want to note that the easiest way to replicate what I show in this post is to <code>clone</code> (or just download) my <a href="https://github.com/shoestringpsycholing/kruschke_remix">kruschke_remix</a> repo on GitHub and inspect/run the code yourself, which is contained in a <code>.R</code> script in the &#8220;post_code&#8221; folder.</p>
+
+<p>The first thing is to load the functions and data we&#8217;ll need.  Note that I&#8217;m trying to keep Kruschke&#8217;s original code (which I stole directly from <a href="http://www.indiana.edu/~kruschke/DoingBayesianDataAnalysis/">his website</a>) in a separate folder in the repository from the &#8220;remix&#8221; code, which is first stolen, then tweaked. This is just to help keep track of which code is &#8220;original,&#8221; and which has been messed with by me.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>source("../code/Chapter5/bernbetaShPsy.R")
+</span><span class='line'>source("../kruschke_code/HDIofICDF.R")
+</span><span class='line'>std.err.perc &lt;- function(p, n) { sqrt(p*(1-p)/(n)) }
+</span><span class='line'>
+</span><span class='line'>learn &lt;- read.delim("../data/LangLearnPilot.txt")
+</span><span class='line'>learn.sub &lt;- droplevels(learn[learn$Apt == "match.CaseB" &
+</span><span class='line'>                              learn$Test == 3 &
+</span><span class='line'>                              learn$Condition == "CaseB", ])</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The lines loading the data are picking out a specific subset of data, just for the sake of illustration, so don&#8217;t worry about the details of what the data represents.  To simplify things, just assume that this data represents performance on a language test, and that each data point is an independent &#8220;correct&#8221; or &#8220;incorrect&#8221; (1 or 0) response, and since there are only two possible responses, guessing should get around 50% correct. And let&#8217;s assume that the research question here is whether performance in this task is greater than chance or not. This is analagous to Kruschke&#8217;s example of wanting to know whether this is a &#8220;fair coin&#8221; or not.</p>
+
+<p>One simple traditional way to analyze the data is to compute a standard error for the overall proportion correct, and use a confidence interval of 1.96 times the standard error. That&#8217;s what the next couple of lines of code represent (the function for computing the standard error was created in the block above).</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mu &lt;- mean(learn.sub$Score)
+</span><span class='line'>n &lt;- length(learn.sub$Score)
+</span><span class='line'>mu.ci &lt;- c(mu - 1.96 * std.err.perc(mu, n), mu + 1.96 * std.err.perc(mu, n))</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The overall accuracy is 41 correct out of 60 (a proportion of 0.683), and the 95% confidence interval goes from 0.566 to 0.801.  This basically means we can reject the hypothesis that the &#8220;true accuracy&#8221; is less than 0.566 or greater than 0.801 (56.6% or 80.1% accuracy), assuming the standard <em>p</em> &lt; .05 level of &#8220;significance.&#8221;  Since we are interested in whether performance was better than chance (better than 0.50), then we can reject the &#8220;null&#8221; hypothesis that performance was at chance, since a value of 0.50 would be outside the range of 0.566 through 0.801.</p>
+
+<p>So how does a Bayesian analysis differ?</p>
+
+<p>In this chapter, Kruschke has simplified things considerably by picking the mathematical properties of the probability distributions very carefully. Since we are modeling our priors as a beta distribution and the likelihood as the Bernoulli likelihood function, the math works out very nicely, and computing the posterior boils down to just combining the prior and likelihood distributions in a straightforward way.  All of this math derives transparently from Bayes&#8217; Rule, and Kruschke goes through it step by step, so I won&#8217;t reiterate the details here.</p>
+
+<p>But the basic idea is that we use <a href="http://shoestringpsycholing.github.com/blog/2012/11/07/kruschke-chapter-4/">Bayes&#8217; Rule</a> to compute the posterior distribution, and then find the Highest Density Interval (HDI) corresponding to 95% of the distribution. This has an analagous (though not exactly equivalent) interpretation as a confidence interval, because it&#8217;s telling use that the most credible values for the parameter &theta; (which is the &#8220;accuracy&#8221; parameter we are curious about) fall within this range. So let&#8217;s do the analysis, and see how it stacks up to the traditional confidence interval.</p>
+
+<p>Let&#8217;s start with a very simple prior, a shape of (1,1).  You can imagine that this is the prior that corresponds to recognizing that there are two possible answers, but you have no idea whatsoever about how responses are expected to pattern.  In other words, <em>any</em> value of accuracy is just as expected as any other. So by using this prior, we&#8217;re going into the analysis expecting that performance could be 0% accurate, 50% accurate, 100% accurate, or anywhere in between, and all possibilites are equally likely (or unlikely).</p>
+
+<p>The likelihood is a description of how likely the <em>data</em> is (i.e., how likely it is to get exactly 41 correct out of 60) for every possible value of the actual accuracy parameter.  So for example, even if you have a coin that is biased to flip heads, there&#8217;s still a chance it could flip more tails than heads.  Or, if you have a coin that&#8217;s perfectly &#8220;fair,&#8221; the odds are not terribly high that it will flip <em>exactly</em> 50%-50% for any given number of tosses. In terms of our current data, even if the participants have an &#8220;at chance&#8221; ability to answer the test questions (i.e., they&#8217;re just guessing randomly), there&#8217;s still a chance they could get 0% correct, 50% correct, 100% correct, or anything in between.  So the likelihood says &#8220;okay, if we assume &theta; is 0.50, then the probability of getting 41 out of 60 is such-and-such, if we assume &theta; is 0.51, then the probability of getting 41 out ot 60 is so-and-so, etc. etc.,&#8221; over the whole range of &theta; values from 0 to 1.</p>
+
+<p>Finally, our posterior tells us, &#8220;okay, now that you&#8217;ve observed this data of 41 correct out of 60, what should the new distribution of belief about &theta; (i.e., accuracy) be?&#8221;  The following code uses my revised version of Kruschke&#8217;s <code>BernBeta</code> function to compute the likelihood and posterior, then plots all three: prior, likelihood, and posterior densities, and annotates the plots with some details.  This is all mimicking Kruschke&#8217;s original code (in a slightly different way). As an added comparison, I&#8217;ve plotted our traditional 95% confidence interval with red vertical lines superimposed on the posterior.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bb.post1 &lt;- bern.beta(c(1, 1), learn.sub$Score)
+</span><span class='line'>plot(bb.post1)
+</span><span class='line'>abline(v = mu.ci, col = "red")</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/bbpost1.jpg"></p>
+
+<p>You can see that the values are <em>very</em> similar, though not identical, between the traditional 95% CI and the 95% HDI of the posterior (the red lines representing the CI are very close to the dotted lines representing the HDI). This should be fairly reassuring. And if we think about it, we should probably place a little more faith in the Bayesian HDI, because the CI is based on assumptions about asymptotic behavior, and we really only have 60 observations here.  Still, the Bayesian interval is <em>narrower</em> than the CI, so it&#8217;s not the case that the CI is less conservative.</p>
+
+<p>But what if we change the prior?  Let&#8217;s try a prior with a shape of (30, 30).  This is similar to saying &#8220;we&#8217;ve observed 50%-50% behavior from an earlier set of 60 observations&#8221; as a prior, which is going to give a preference for belief in accuracy close to 0.50.  The following code does this, and gives us some new plots.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bb.post2 &lt;- bern.beta(c(30, 30), learn.sub$Score)
+</span><span class='line'>plot(bb.post2)
+</span><span class='line'>abline(v = mu.ci, col = "red")</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/bbpost2.jpg"></p>
+
+<p>Okay, so let&#8217;s stop and notice a few things.  First, we see how this new prior differs from the totally flat prior in the previous model, since it is now peaked over 0.50.  You can see that values above 0.6 or so, or below 0.4 or so (on the x axis) are pretty low, meaning we have little reason to expect such values. Next, the likelihood is unchanged. This is because it&#8217;s still just the probability of the data (for each value of &theta;), and the data&#8217;s still the same. Then note that this change in the prior had a pretty big impact on our posterior!  It&#8217;s shifted way over, not at all aligned to the traditional 95% CI.  But it&#8217;s also interesting that the HDI still goes from 0.504 to 0.679.  So if all we cared about was whether 0.50 was within the HDI, we&#8217;d come to the same overall conclusion, that performance is credibly better than chance.</p>
+
+<p>But notice something else: the <em>actual</em> accuracy we observed was 0.683, and this is just <em>outside</em> the HDI of the second analysis!  In other words, given this prior belief we expressed in the second model, we should be pretty surprised to see the pattern of data that we actually collected. This is also captured by the difference in the evidences (remember &#8220;evidence&#8221; is a technical term that means &#8220;probability of data given the model&#8221;).  This is smaller in the second model (though not <em>that</em> much smaller).</p>
+
+<p>Now let&#8217;s try a prior that&#8217;s like saying &#8220;in a previous set of 60 observations, we saw 2/3rds accuracy.&#8221;</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bb.post3 &lt;- bern.beta(c(40, 20), learn.sub$Score)
+</span><span class='line'>plot(bb.post3)
+</span><span class='line'>abline(v = mu.ci, col = "red")</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/bbpost3.jpg"></p>
+
+<p>Now you can see that the prior is in a similar place to the likelihood, and the result is a posterior that&#8217;s narrower than what we saw in the first analysis.  This makes sense because it&#8217;s like replicating an earlier set of data pretty closely. That is, the prior is reflecting a belief that we could get by observing 40 out of 60 correct in an earlier experiment, so getting another 41 out of 60 correct is expected to decrease our uncertainty about the exact accuracy level for the test. And decreases in uncertainty mean narrower posteriors, representing a narrower range of credible values. Also notice that now the evidence is more than 10x greater in this model than the previous model (which had a prior peaked over 0.50). Since the priors are the only things that differ between those two models, this is basically saying that this prior peaked over 0.67 or so &#8220;fits&#8221; the data better than a prior peaked over 0.50.</p>
+
+<p>So now we have two different ways of articulating evidence for the belief that performance in our data is credibly higher than chance (higher that 0.50).  First, with a totally flat prior, which gives (perhaps unrealistically) equal likelihood that accuracy on the test could be 0% accurate, 100% accurate, or any value in between, our posterior HDI did <em>not</em> overlap 0.50, meaning that 0.50 is not a particularly believable value for accuracy. Thus we can conclude that performance is greater than chance. Second, we can compare a model that places highest belief in values close to 0.50 (close to chance) to a model that places highest belief around 0.67 (somewhat higher than chance), and see that the second model has a lot more support, given the data.  And thus we could argue that since the model with a prior higher than chance is better than a model around chance, it&#8217;s more credible that accuracy is above chance.</p>
+
+<p>Is there any difference to taking one of these approaches over the other to make an argument/inference? I&#8217;ll be interested to see how these different approaches play out in more involved analyses.  But I think in this case, since the choice of a strong prior is fairly arbitrary, it feels simpler to stick with the flat prior (the first model above) and use the HDI to say whether or not performance is above chance (above 0.50). The fact that this lines up closely to a traditional CI derived from the standard error of proportions seems to fit, as well, given the goals of this analysis.</p>
+
+<p>There are several more things I&#8217;d like to run through with this simple example, but I&#8217;ll save those for some later posts.  If any of this discussion raises questions for you, please let me know in the comments!</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Scott Jackson</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-16T12:57:00-05:00" pubdate data-updated="true">Feb 16<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bayesian/'>Bayesian</a>, <a class='category' href='/blog/categories/kruschke/'>Kruschke</a>, <a class='category' href='/blog/categories/r/'>R</a>, <a class='category' href='/blog/categories/statistics/'>statistics</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://shoestringpsycholing.github.com/blog/2013/02/16/kruschke-chapter-5-part-3/" data-via="" data-counturl="http://shoestringpsycholing.github.com/blog/2013/02/16/kruschke-chapter-5-part-3/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="large"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/02/14/kruschke-chapter-5-part-2/" title="Previous Post: Kruschke Chapter 5, Part 2">&laquo; Kruschke Chapter 5, Part 2</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/16/kruschke-chapter-5-part-3/">Kruschke Chapter 5, Part 3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/14/kruschke-chapter-5-part-2/">Kruschke Chapter 5, Part 2</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/back-with-some-tips/">Back with some tips</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/17/kruschke-chapter-5/">Kruschke Chapter 5, Part 1</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/13/really-reproducible-research/">Really reproducible research</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/shoestringpsycholing">@shoestringpsycholing</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'shoestringpsycholing',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Scott Jackson -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'shoestringpsycholing';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://shoestringpsycholing.github.com/blog/2013/02/16/kruschke-chapter-5-part-3/';
+        var disqus_url = 'http://shoestringpsycholing.github.com/blog/2013/02/16/kruschke-chapter-5-part-3/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
