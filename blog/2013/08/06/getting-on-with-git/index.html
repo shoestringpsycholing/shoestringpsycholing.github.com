@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>NaBloPoMo and More Starting R - Shoestring Psycholing</title>
+  <title>Getting on with git - Shoestring Psycholing</title>
   <meta name="author" content="Scott Jackson">
 
   
-  <meta name="description" content="I&#8217;m using NaBloPoMo as an excuse to kick-start this blog into a little more action. Let&#8217;s see if I can keep it up the whole month&#8230; &hellip;">
+  <meta name="description" content="Back from a long hiatus, aiming for shorter posts. Git really is great. I&#8217;ve been thinking about it for a long time, and I went through a &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://shoestringpsycholing.github.com/blog/2012/11/01/nablopomo-and-more-r/">
+  <link rel="canonical" href="http://shoestringpsycholing.github.com/blog/2013/08/06/getting-on-with-git/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">NaBloPoMo and More Starting R</h1>
+      <h1 class="entry-title">Getting on With Git</h1>
     
     
       <p class="meta">
@@ -84,23 +84,38 @@
   
 
 
-<time datetime="2012-11-01T20:22:00-04:00" pubdate data-updated="true">Nov 1<span>st</span>, 2012</time>
+<time datetime="2013-08-06T22:37:00-04:00" pubdate data-updated="true">Aug 6<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>I&#8217;m using <a href="http://www.blogher.com/blogher-topics/blogging-social-media/nablopomo">NaBloPoMo</a> as an excuse to kick-start this blog into a little more action.  Let&#8217;s see if I can keep it up the whole month&#8230;</p>
+<div class="entry-content"><p>Back from a long hiatus, aiming for shorter posts.</p>
+
+<p><a href="http://git-scm.com/">Git</a> really is great. I&#8217;ve been thinking about it for a long time, and I went through a period early this year in using it regularly while working on some personal projects, but then I stopped for a while, mostly because I went back to the office, where (I assumed) we didn&#8217;t have it.</p>
+
+<p>Git is a type of version control software.  For those of us who aren&#8217;t software developers by profession, this basically means that git is a kind of file management system that works like a combination &#8220;track changes,&#8221; &#8220;undo button,&#8221; and all-around time machine for an entire project.  I&#8217;m more and more a believer that some kind of good version control is realy the foundation of reproducible research.  More on that in other posts.</p>
 
 <!--more-->
 
 
-<p>Today was the second session of an <a href="http://shoestringpsycholing.github.com/blog/2012/10/25/starting-r/">R tutorial for beginners</a>.  This one went a bit more smoothly, I think.  I&#8217;ll update my work-in-progress <a href="https://github.com/shoestringpsycholing/startR">startR</a> repo, if you&#8217;re interested in the script.  I&#8217;ve done a few of these tutorial sessions now (for different audiences), and this one was the first time I really used an R script as a &#8220;script&#8221; in the more general sense of &#8220;scripted presentation.&#8221;  In the past, I&#8217;ve had a kind of outline of things I want to cover, and I&#8217;ve usually run code, etc. to make sure things would work as expected beforehand, but when I&#8217;m actually in the middle of a tutorial, things inevitably go a little awry.  For me, usually in the form of annoying typos, in forgetting something or getting a little sidetracked, or sometimes even blanking on a particular function (last session I tried using <code>getwd()</code> and <code>setwd()</code>, but I rarely use those, and I was just sure they were <code>get.wd()</code> and <code>set.wd()</code>, and it totally threw me for a loop).</p>
+<p>But finally it occurred to me that since git is used for Linux development, it would be a pretty common part of most Linux distributions (yeah, I&#8217;m a slow one sometimes), and lo! and behold! there it was, sitting on our Linux server at work all this time.  Of course by then I had fallen off the wagon, and it took me a while to get going again.</p>
 
-<p>So this time I literally typed out every single thing in advance, in &#8220;walk-through&#8221; style, into a <code>.R</code> script, even things you&#8217;d normally never put in a script, like <code>head()</code> or <code>summary()</code>, and I think it really helped.  Not only did it save time and frustration by saving me from my inevitable typos, it helped me stay on track, and reminded me of all the little points I wanted to make, and the sequence in which I planned to make them.</p>
+<p>But <em>NOW</em>&#8230; I&#8217;m starting to get religious about it again, and loving it.  And I took another step, getting some private repos on <a href="https://github.com">GitHub</a>, and actively using these to access my work in multiple locations.  So far it&#8217;s really worked beautifully.  Here are a few lovely moments:</p>
 
-<p>I didn&#8217;t get a whole lot of immediate feedback, but people seemed to be following a little better, and in general the reaction seemed more positive. Of course, even the most effective demo or lecture is only the very beginning of the learning process.  But I think a clear demo, set up to be run as an actual walk-through, is a pretty efficient way to present a fair amount of code without getting people lost in the process of having to fix your own mistakes on the fly. And I think when you&#8217;re presenting to a group of more than just a couple of people (I think there were at least 20 or so tonight), a clear demo is about the best you can hope for.</p>
+<ul>
+<li>I had a paper I was working on, and I wanted to try out two alternative analyses.  I created a &#8220;branch&#8221; for each of them, and using the magic of git, I could swap between them, without needing to create confusing, parallel sets of files.</li>
+<li>After coming back to this paper after months of being stalled, I decided which branch I wanted to move forward with, and with a simple <code>git merge</code> command, it merged seamlessly into my main branch, and I could just move on.</li>
+<li>I ran a little not-quite-one-hour tutorial session for some friends at work, and that was enough for many of them to be excited and feeling ready to start using it themselves. This could mean that git is the absolute most bang for the buck in terms of time invested and returns gained in reproducibility and security of one&#8217;s research.</li>
+<li>For the projects I&#8217;m working on at home and in the office, for which I can push things to GitHub, I never have to wonder about where the most recent version is.  Just a simple <code>git push</code> or <code>git pull</code>, and things are up to date.</li>
+<li>Working on a draft, I was editing various things, cutting some stuff, adding other stuff.  Finally, a few versions later I had something all ready to share with my co-author, when I realized that at some point, I had mistakenly deleted half of my opening paragraph.  All it took was a quick <code>git checkout</code> of a previous commit to pull up an older version with the intro still intact, copy that text in Emacs, <code>git checkout master</code> to revert back to the up-to-date version, and then paste in the text.  Easy, fast, beautiful.</li>
+</ul>
+
+
+<p>I&#8217;m a fan!</p>
+
+<p>If this sounds intriguing, check out <a href="https://github.com/shoestringpsycholing/rrr_tools/tree/master/git_tutorials">my (in progress) tutorials</a> on getting started with git (aimed at non-programmers, especially academic researchers).  Feedback welcome!</p>
 </div>
 
 
@@ -123,12 +138,12 @@
   
 
 
-<time datetime="2012-11-01T20:22:00-04:00" pubdate data-updated="true">Nov 1<span>st</span>, 2012</time>
+<time datetime="2013-08-06T22:37:00-04:00" pubdate data-updated="true">Aug 6<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/r/'>R</a>, <a class='category' href='/blog/categories/misc/'>misc</a>, <a class='category' href='/blog/categories/teaching/'>teaching</a>
+    <a class='category' href='/blog/categories/git/'>git</a>, <a class='category' href='/blog/categories/reproducible/'>reproducible</a>, <a class='category' href='/blog/categories/research-/'>research,</a>
   
 </span>
 
@@ -137,7 +152,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://shoestringpsycholing.github.com/blog/2012/11/01/nablopomo-and-more-r/" data-via="" data-counturl="http://shoestringpsycholing.github.com/blog/2012/11/01/nablopomo-and-more-r/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://shoestringpsycholing.github.com/blog/2013/08/06/getting-on-with-git/" data-via="" data-counturl="http://shoestringpsycholing.github.com/blog/2013/08/06/getting-on-with-git/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="large"></div>
@@ -150,10 +165,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/10/25/starting-r/" title="Previous Post: Starting R">&laquo; Starting R</a>
+        <a class="basic-alignment left" href="/blog/2013/02/16/kruschke-chapter-5-part-3/" title="Previous Post: Kruschke Chapter 5, Part 3">&laquo; Kruschke Chapter 5, Part 3</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/11/02/naive-bayesian/" title="Next Post: Naive Bayesian">Naive Bayesian &raquo;</a>
       
     </p>
   </footer>
@@ -249,8 +262,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://shoestringpsycholing.github.com/blog/2012/11/01/nablopomo-and-more-r/';
-        var disqus_url = 'http://shoestringpsycholing.github.com/blog/2012/11/01/nablopomo-and-more-r/';
+        var disqus_identifier = 'http://shoestringpsycholing.github.com/blog/2013/08/06/getting-on-with-git/';
+        var disqus_url = 'http://shoestringpsycholing.github.com/blog/2013/08/06/getting-on-with-git/';
         var disqus_script = 'embed.js';
       
     (function () {

@@ -4,7 +4,7 @@
   <title><![CDATA[Shoestring Psycholing]]></title>
   <link href="http://shoestringpsycholing.github.com/atom.xml" rel="self"/>
   <link href="http://shoestringpsycholing.github.com/"/>
-  <updated>2013-02-16T22:25:43-05:00</updated>
+  <updated>2013-08-06T23:15:10-04:00</updated>
   <id>http://shoestringpsycholing.github.com/</id>
   <author>
     <name><![CDATA[Scott Jackson]]></name>
@@ -12,6 +12,39 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Getting on with git]]></title>
+    <link href="http://shoestringpsycholing.github.com/blog/2013/08/06/getting-on-with-git/"/>
+    <updated>2013-08-06T22:37:00-04:00</updated>
+    <id>http://shoestringpsycholing.github.com/blog/2013/08/06/getting-on-with-git</id>
+    <content type="html"><![CDATA[<p>Back from a long hiatus, aiming for shorter posts.</p>
+
+<p><a href="http://git-scm.com/">Git</a> really is great. I&#8217;ve been thinking about it for a long time, and I went through a period early this year in using it regularly while working on some personal projects, but then I stopped for a while, mostly because I went back to the office, where (I assumed) we didn&#8217;t have it.</p>
+
+<p>Git is a type of version control software.  For those of us who aren&#8217;t software developers by profession, this basically means that git is a kind of file management system that works like a combination &#8220;track changes,&#8221; &#8220;undo button,&#8221; and all-around time machine for an entire project.  I&#8217;m more and more a believer that some kind of good version control is realy the foundation of reproducible research.  More on that in other posts.</p>
+
+<!--more-->
+
+
+<p>But finally it occurred to me that since git is used for Linux development, it would be a pretty common part of most Linux distributions (yeah, I&#8217;m a slow one sometimes), and lo! and behold! there it was, sitting on our Linux server at work all this time.  Of course by then I had fallen off the wagon, and it took me a while to get going again.</p>
+
+<p>But <em>NOW</em>&#8230; I&#8217;m starting to get religious about it again, and loving it.  And I took another step, getting some private repos on <a href="https://github.com">GitHub</a>, and actively using these to access my work in multiple locations.  So far it&#8217;s really worked beautifully.  Here are a few lovely moments:</p>
+
+<ul>
+<li>I had a paper I was working on, and I wanted to try out two alternative analyses.  I created a &#8220;branch&#8221; for each of them, and using the magic of git, I could swap between them, without needing to create confusing, parallel sets of files.</li>
+<li>After coming back to this paper after months of being stalled, I decided which branch I wanted to move forward with, and with a simple <code>git merge</code> command, it merged seamlessly into my main branch, and I could just move on.</li>
+<li>I ran a little not-quite-one-hour tutorial session for some friends at work, and that was enough for many of them to be excited and feeling ready to start using it themselves. This could mean that git is the absolute most bang for the buck in terms of time invested and returns gained in reproducibility and security of one&#8217;s research.</li>
+<li>For the projects I&#8217;m working on at home and in the office, for which I can push things to GitHub, I never have to wonder about where the most recent version is.  Just a simple <code>git push</code> or <code>git pull</code>, and things are up to date.</li>
+<li>Working on a draft, I was editing various things, cutting some stuff, adding other stuff.  Finally, a few versions later I had something all ready to share with my co-author, when I realized that at some point, I had mistakenly deleted half of my opening paragraph.  All it took was a quick <code>git checkout</code> of a previous commit to pull up an older version with the intro still intact, copy that text in Emacs, <code>git checkout master</code> to revert back to the up-to-date version, and then paste in the text.  Easy, fast, beautiful.</li>
+</ul>
+
+
+<p>I&#8217;m a fan!</p>
+
+<p>If this sounds intriguing, check out <a href="https://github.com/shoestringpsycholing/rrr_tools/tree/master/git_tutorials">my (in progress) tutorials</a> on getting started with git (aimed at non-programmers, especially academic researchers).  Feedback welcome!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Kruschke Chapter 5, Part 3]]></title>
